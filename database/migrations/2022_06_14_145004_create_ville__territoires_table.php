@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('ville__territoires', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->unique();
+            $table->string('designation');
+            $table->foreignId('province_id')->references('id')->on('provinces');
             $table->timestamps();
         });
     }

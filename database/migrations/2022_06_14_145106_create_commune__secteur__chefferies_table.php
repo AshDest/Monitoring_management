@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('commune__secteur__chefferies', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->unique();
+            $table->string('designation');
+            $table->foreignId('ville_id')->references('id')->on('ville__territoires');
             $table->timestamps();
         });
     }

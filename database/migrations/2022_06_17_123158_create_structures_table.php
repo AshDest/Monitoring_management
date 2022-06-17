@@ -15,6 +15,21 @@ return new class extends Migration
     {
         Schema::create('structures', function (Blueprint $table) {
             $table->id();
+            $table->string('codeStructure')->unique();
+            $table->string('designation');
+            $table->foreignId('adresse_id')->references('id')->on('quartier__villages');
+            $table->string('avenu');
+            $table->string('numParcelle');
+            $table->string('long');
+            $table->string('lat');
+            $table->string('numTel1');
+            $table->string('numTel2');
+            $table->string('email');
+            $table->string('siteWeb');
+            $table->string('rccm');
+            $table->string('idNational');
+            $table->string('numImpot');
+            $table->string('numCNSS');
             $table->timestamps();
         });
     }
