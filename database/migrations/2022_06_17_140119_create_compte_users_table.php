@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('agents', function (Blueprint $table) {
+        Schema::create('compte_users', function (Blueprint $table) {
             $table->id();
+            $table->foreign('codeAgent')->references('id')->on('agents');
             $table->string('username')->unique();
             $table->string('password');
             $table->timestamps();
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agents');
+        Schema::dropIfExists('compte_users');
     }
 };

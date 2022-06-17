@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('monnaie__electroniques', function (Blueprint $table) {
             $table->id();
+            $table->string('codeOperateur')->unique();
+            $table->string('numTel');
+            $table->double('soldeUSD');
+            $table->double('soldeCDF');
+            $table->foreign('codeStructure')->references('id')->on('structures');
+            $table->string('GLMonnaieE');
             $table->timestamps();
         });
     }
