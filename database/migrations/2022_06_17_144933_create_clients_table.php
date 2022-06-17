@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->string('codeClient')->unique();
+            $table->string('noms');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('adresse');
+            $table->string('GLClient');
             $table->timestamps();
         });
     }

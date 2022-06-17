@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('datePaiement');
+            $table->double('montantTotal');
+            $table->foreign('idVente')->references('id')->on('ventes');
+            $table->integer('id_structure');
             $table->timestamps();
         });
     }

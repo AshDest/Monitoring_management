@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('fournisseurs', function (Blueprint $table) {
             $table->id();
+            $table->string('codeFournisseur')->unique();
+            $table->string('noms');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('adresse');
+            $table->string('GLFournisseur');
             $table->timestamps();
         });
     }
