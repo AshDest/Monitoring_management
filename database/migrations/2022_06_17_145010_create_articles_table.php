@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('GLChargeArticle');
             $table->string('GLProduitArticle');
             $table->string('GLStockArticle');
+            $table->integer('id_structure');
             $table->timestamps();
         });
     }

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->dateTime('dateVente');
             $table->double('montantTotal');
             $table->foreign('codeClient')->references('id')->on('clients');
-            $table->integer('id_structure');
             $table->timestamps();
         });
     }

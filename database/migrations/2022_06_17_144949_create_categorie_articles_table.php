@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('categorie_articles', function (Blueprint $table) {
             $table->id();
             $table->string('designation');
+            $table->integer('id_structure');
             $table->timestamps();
         });
     }

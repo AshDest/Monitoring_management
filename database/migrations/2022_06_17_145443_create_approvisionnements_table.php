@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('codeAprro')->unique();
             $table->dateTime('dateAppro');
             $table->foreign('codeFournisseur')->references('id')->on('fournisseurs');
+            $table->integer('id_structure');
             $table->timestamps();
         });
     }
