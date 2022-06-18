@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('caissiers', function (Blueprint $table) {
             $table->id();
-            $table->integer('codeAgent')->index();
+            $table->unsignedBigInteger('codeAgent');
             $table->foreign('codeAgent')->references('id')->on('agents');
             $table->string('GLCaisse');
             $table->timestamps();

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('designation');
-            $table->integer('commune_id')->index();
+            $table->unsignedBigInteger('commune_id');
             $table->foreign('commune_id')->references('id')->on('commune__secteur__chefferies');
             $table->timestamps();
         });

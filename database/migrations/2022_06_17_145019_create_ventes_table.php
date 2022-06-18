@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('codeVente');
             $table->dateTime('dateVente');
             $table->double('montantTotal');
-            $table->integer('codeClient')->index();
+            $table->unsignedBigInteger('codeClient');
             $table->foreign('codeClient')->references('id')->on('clients');
             $table->timestamps();
         });

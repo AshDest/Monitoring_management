@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->dateTime('datePaiement');
             $table->double('montantTotal');
-            $table->integer('idVente')->index();
+            $table->unsignedBigInteger('idVente');
             $table->foreign('idVente')->references('id')->on('ventes');
             $table->integer('id_structure');
             $table->timestamps();

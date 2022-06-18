@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('codeStructure')->unique();
             $table->string('designation');
-            $table->integer('adresse_id')->index();
+            $table->unsignedBigInteger('adresse_id');
             $table->foreign('adresse_id')->references('id')->on('quartier__villages');
             $table->string('avenu');
             $table->string('numParcelle');
