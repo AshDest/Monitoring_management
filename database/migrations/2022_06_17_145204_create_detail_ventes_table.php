@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('detail_ventes', function (Blueprint $table) {
             $table->id();
             $table->foreign('idVente')->references('id')->on('ventes');
-            $table->
+            $table->integer('quantite');
+            $table->double('montant');
+            $table->foreign('idArticle')->references('id')->on('articles');
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('approvisionnements', function (Blueprint $table) {
             $table->id();
+            $table->string('codeAprro')->unique();
+            $table->dateTime('dateAppro');
+            $table->foreign('codeFournisseur')->references('id')->on('fournisseurs');
             $table->timestamps();
         });
     }
