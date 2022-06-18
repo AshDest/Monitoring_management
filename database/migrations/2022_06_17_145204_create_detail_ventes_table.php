@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('detail_ventes', function (Blueprint $table) {
             $table->id();
+            $table->integer('idVente')->index();
             $table->foreign('idVente')->references('id')->on('ventes');
             $table->integer('quantite');
             $table->double('montant');
+            $table->integer('idArticle')->index();
             $table->foreign('idArticle')->references('id')->on('articles');
             $table->timestamps();
         });

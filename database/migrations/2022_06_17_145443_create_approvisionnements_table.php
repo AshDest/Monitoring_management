@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('codeAprro')->unique();
             $table->dateTime('dateAppro');
+            $table->integer('codeFournisseur')->index();
             $table->foreign('codeFournisseur')->references('id')->on('fournisseurs');
             $table->integer('id_structure');
             $table->timestamps();

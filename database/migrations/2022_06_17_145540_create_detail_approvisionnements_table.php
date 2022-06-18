@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('detail_approvisionnements', function (Blueprint $table) {
             $table->id();
+            $table->integer('idAppro')->index();
             $table->foreign('idAppro')->references('id')->on('approvisionnements');
+            $table->integer('idArticle')->index();
             $table->foreign('idArticle')->references('id')->on('articles');
             $table->integer('quantite');
             $table->double('prix_achat');

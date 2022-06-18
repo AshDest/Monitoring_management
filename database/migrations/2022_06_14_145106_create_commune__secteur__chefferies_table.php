@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('designation');
+            $table->integer('ville_id');
             $table->foreign('ville_id')->references('id')->on('ville__territoires');
             $table->timestamps();
         });

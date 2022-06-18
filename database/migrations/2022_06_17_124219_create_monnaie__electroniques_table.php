@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('numTel');
             $table->double('soldeUSD');
             $table->double('soldeCDF');
+            $table->integer('codeStructure')->index();
             $table->foreign('codeStructure')->references('id')->on('structures');
             $table->string('GLMonnaieE');
             $table->timestamps();

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('codeMonnaie');
             $table->double('prixUnitaire');
             $table->integer('stockAlerte');
+            $table->integer('codeCategorie')->index();
             $table->foreign('codeCategorie')->references('id')->on('categorie_articles');
             $table->string('GLArticle');
             $table->string('GLChargeArticle');
