@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Operateur_tel extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'code',
+        'nomOperateur',
+        'numTel'
+    ];
 }

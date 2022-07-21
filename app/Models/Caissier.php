@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Caissier extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'codeAgent',
+        'GLCaisse'
+    ];
+
+    public function agent()
+    {
+        return $this->belongsTo(Agent::class);
+    }
 }
