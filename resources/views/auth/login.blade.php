@@ -51,7 +51,8 @@ License: For each use you must have a valid license purchased only from above li
 						<form method="POST" action="{{ route('login') }}">
                             @csrf
 							<div class="text-center mb-10">
-								<h1 class="text-dark mb-3">Login</h1>
+								<h1 class="text-dark mb-3">Sign In to Metronic</h1>
+								<div class="text-gray-400 fw-bold fs-4">New Here?
 								<a href="../../demo1/dist/authentication/layouts/dark/sign-up.html" class="link-primary fw-bolder">Create an Account</a></div>
 								<!--end::Link-->
 							</div>
