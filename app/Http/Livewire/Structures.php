@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Province;
 use App\Models\Structure;
+use App\Models\Ville_Territoire;
 use Livewire\Component;
 
 class Structures extends Component
@@ -23,6 +25,16 @@ class Structures extends Component
     public $idNational;
     public $numImpot;
     public $numCNSS;
+
+    public $provinces;
+    public $territoires;
+    public $communes;
+    public $quartiers;
+
+    public $selectedProvince = null;
+    public $selectedCity = null;
+    public $selectedCommune=null;
+    public $selectedQuartier=null;
 
 
     public function save()
@@ -56,6 +68,24 @@ class Structures extends Component
                 'type' => 'error',
                 'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
             ]);
+        }
+    }
+
+    public function mount()
+    {
+        $this->provinces = Province::all();
+        $this->territoires = collect();
+        $this->communes = collect();
+        $this->quartiers = collect();
+    }
+
+    public function updatedSelectedProvince($province)
+    {
+        dd('ddd');
+        if (!is_null($province)) {
+            $this->territoires = Ville_Territoire::where('province_id', $province)->get();
+        $this->selectedQuartier = NULL;
+        $this->selectedCommune = NULL;
         }
     }
 

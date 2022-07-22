@@ -26,7 +26,7 @@
                         <div class="row mb-5">
                             <div class="col-md-6 fv-row">
                                 <label class="required fs-5 fw-bold mb-2">Code</label>
-                                <input type="text" class="form-control form-control-solid" placeholder=""
+                                <input type="text" wire:model='codeStructure' class="form-control form-control-solid" placeholder=""
                                     name="code" />
                             </div>
                             <div class="col-md-6 fv-row">
@@ -34,7 +34,7 @@
                                 <label class="required fs-5 fw-bold mb-2">Nommination</label>
                                 <!--end::Label-->
                                 <!--end::Input-->
-                                <input type="text" class="form-control form-control-solid" placeholder=""
+                                <input type="text" wire:model='designation' class="form-control form-control-solid" placeholder=""
                                     name="designation" />
                                 <!--end::Input-->
                             </div>
@@ -43,37 +43,27 @@
                         <div class="row mb-5">
                             <label class="required fs-5 fw-bold mb-2">Adresse</label>
                             <div class="col-md-6 fv-row">
-                                <select name="province" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="province" wire:model='selectedProvince' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Provinces..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
-                                <option value="AF">Afghanistan</option>
-                                <option value="AX">Aland Islands</option>
-                                <option value="AL">Albania</option>
-                                <option value="DZ">Algeria</option>
-                                <option value="AS">American Samoa</option>
-                                <option value="AD">Andorra</option>
-                                <option value="AO">Angola</option>
-                                <option value="AI">Anguilla</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{$province->id}}">{{$province->designation}}</option>
+                                @endforeach
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <select name="territoire" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="territoire" wire:model='selectedCity' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Ville/Territoires ...." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
-                                <option value="AF">Afghanistan</option>
-                                <option value="AX">Aland Islands</option>
-                                <option value="AL">Albania</option>
-                                <option value="DZ">Algeria</option>
-                                <option value="AS">American Samoa</option>
-                                <option value="AD">Andorra</option>
-                                <option value="AO">Angola</option>
-                                <option value="AI">Anguilla</option>
+                                @foreach ($territoires as $territoire)
+                                <option value="{{$territoire->id}}">{{$territoire->designation}}</option>
+                                @endforeach
                             </select>
                             </div>
                         </div>
                         <div class="row mb-5">
                             <div class="col-md-6 fv-row">
-                                <select name="commune" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="commune" wire:model='selectedCommune' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Communes/Secteurs/Chefferies..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
@@ -87,7 +77,7 @@
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <select name="quartier" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="quartier" wire:model='selectedQuartier' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Quartier/Village..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
