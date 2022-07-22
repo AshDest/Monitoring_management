@@ -19,4 +19,5 @@ class Quartier_Village extends Model
     {
         return $this->belongsTo(Commune_Secteur_Chefferie::class);
     }
+
 }

@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('lat');
             $table->string('numTel1');
             $table->string('numTel2');
-            $table->string('email');
-            $table->string('siteWeb');
+            $table->string('email')->nullable();
+            $table->string('siteWeb')->nullable();
             $table->string('rccm');
             $table->string('idNational');
             $table->string('numImpot');

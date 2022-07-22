@@ -61,6 +61,7 @@ class Structures extends Component
 
     public function render()
     {
-        return view('livewire.structures');
+        $structures = Structure::all();
+        return view('livewire.structures', ['structures'=>$structures]);
     }
 }

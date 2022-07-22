@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Structure extends Model
 {
@@ -35,5 +36,10 @@ class Structure extends Model
     public function agent()
     {
         return $this->hasMany(Agent::class);
+    }
+
+    public function addresse()
+    {
+        return $this->belongsTo(Quartier_Village::class);
     }
 }
