@@ -102,83 +102,66 @@
                             </div>
                         </div>
                         <div class="row g-9 mb-5">
-                            <!--begin::Col-->
                             <div class="col-md-6 fv-row">
-                                <!--begin::Label-->
                                 <label class="fs-5 fw-bold mb-2">Avenue</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
                                 <input class="form-control form-control-solid" placeholder="" name="state" />
-                                <!--end::Input-->
                             </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
                             <div class="col-md-6 fv-row">
-                                <!--begin::Label-->
                                 <label class="fs-5 fw-bold mb-2">Code Parcelle</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
                                 <input class="form-control form-control-solid" placeholder="" name="postcode" />
-                                <!--end::Input-->
                             </div>
-                            <!--end::Col-->
                         </div>
 
                         <div class="row g-9 mb-5">
                             <label class="fs-5 fw-bold mb-2">Coordonnees Geographique</label>
-                            <!--begin::Col-->
                             <div class="col-md-6 fv-row">
-                                <!--begin::Label-->
                                 <label class="fs-5 fw-bold mb-2">Longitude</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
                                 <input class="form-control form-control-solid" placeholder="" name="state" />
-                                <!--end::Input-->
                             </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
                             <div class="col-md-6 fv-row">
-                                <!--begin::Label-->
                                 <label class="fs-5 fw-bold mb-2">Latitude</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
                                 <input class="form-control form-control-solid" placeholder="" name="postcode" />
-                                <!--end::Input-->
                             </div>
-                            <!--end::Col-->
+                        </div>
+                        <div class="row g-9 mb-5">
+                            <label class="fs-5 fw-bold mb-2">Contact Telephoniques</label>
+                            <div class="col-md-6 fv-row">
+                                <label class="fs-5 fw-bold mb-2">Numero 1</label>
+                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                            </div>
+                            <div class="col-md-6 fv-row">
+                                <label class="fs-5 fw-bold mb-2">Numero 2</label>
+                                <input class="form-control form-control-solid" placeholder="" name="postcode" />
+                            </div>
                         </div>
 
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-5">
-                            <!--begin::Wrapper-->
-                            <div class="d-flex flex-stack">
-                                <!--begin::Label-->
-                                <div class="me-5">
-                                    <!--begin::Label-->
-                                    <label class="fs-5 fw-bold">Use as a billing adderess?</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div class="fs-7 fw-bold text-muted">If you need more info, please check budget
-                                        planning</div>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Label-->
-                                <!--begin::Switch-->
-                                <label class="form-check form-switch form-check-custom form-check-solid">
-                                    <!--begin::Input-->
-                                    <input class="form-check-input" name="billing" type="checkbox" value="1"
-                                        checked="checked" />
-                                    <!--end::Input-->
-                                    <!--begin::Label-->
-                                    <span class="form-check-label fw-bold text-muted">Yes</span>
-                                    <!--end::Label-->
-                                </label>
-                                <!--end::Switch-->
+                        <div class="row g-9 mb-5">
+                            <div class="col-md-12 fv-row">
+                                <label class="fs-5 fw-bold mb-2">Email</label>
+                                <input class="form-control form-control-solid" placeholder="" name="state" />
                             </div>
-                            <!--begin::Wrapper-->
                         </div>
-                        <!--end::Input group-->
+                        <div class="row g-9 mb-5">
+                            <div class="col-md-12 fv-row">
+                                <label class="fs-5 fw-bold mb-2">Web Site</label>
+                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                            </div>
+                        </div>
+                        <div class="row g-9 mb-5">
+                            <label class="fs-5 fw-bold mb-2">Indentification</label>
+                            <div class="col-md-6 fv-row">
+                                <input class="form-control form-control-solid" placeholder="RCCM" name="state" />
+                            </div>
+                            <div class="col-md-6 fv-row">
+                                <input class="form-control form-control-solid" placeholder="N°Impot" name="postcode" />
+                            </div>
+                            <div class="col-md-6 fv-row">
+                                <input class="form-control form-control-solid" placeholder="ID National" name="postcode" />
+                            </div>
+                            <div class="col-md-6 fv-row">
+                                <input class="form-control form-control-solid" placeholder="N° CNSS" name="postcode" />
+                            </div>
+                        </div>
                     </div>
                     <!--end::Scroll-->
                 </div>
