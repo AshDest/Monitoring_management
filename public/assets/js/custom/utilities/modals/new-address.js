@@ -8,11 +8,27 @@ var KTModalNewAddress = (function () {
                 (o = document.querySelector("#kt_modal_new_address_form")),
                 (t = document.getElementById("kt_modal_new_address_submit")),
                 (e = document.getElementById("kt_modal_new_address_cancel")),
-                $(o.querySelector('[name="country"]'))
+                $(o.querySelector('[name="province"]'))
                     .select2()
                     .on("change", function () {
-                        n.revalidateField("country");
+                        n.revalidateField("province");
                     }),
+                    $(o.querySelector('[name="territoire"]'))
+                    .select2()
+                    .on("change", function () {
+                        n.revalidateField("territoire");
+                    }),
+                    $(o.querySelector('[name="commune"]'))
+                    .select2()
+                    .on("change", function () {
+                        n.revalidateField("commune");
+                    }),
+                    $(o.querySelector('[name="quartier"]'))
+                    .select2()
+                    .on("change", function () {
+                        n.revalidateField("quartier");
+                    }),
+
                 (n = FormValidation.formValidation(o, {
                     fields: {
                         "code": {
@@ -85,34 +101,24 @@ var KTModalNewAddress = (function () {
                                 notEmpty: { message: "Num CNSS is required" },
                             },
                         },
-                        country: {
+                        province: {
                             validators: {
-                                notEmpty: { message: "Country is required" },
+                                notEmpty: { message: "province is required" },
                             },
                         },
-                        address1: {
+                        territoire: {
                             validators: {
-                                notEmpty: { message: "Address 1 is required" },
+                                notEmpty: { message: "territoire 1 is required" },
                             },
                         },
-                        address2: {
+                        commune: {
                             validators: {
-                                notEmpty: { message: "Address 2 is required" },
+                                notEmpty: { message: "commune is required" },
                             },
                         },
-                        city: {
+                        quartier: {
                             validators: {
-                                notEmpty: { message: "City is required" },
-                            },
-                        },
-                        state: {
-                            validators: {
-                                notEmpty: { message: "State is required" },
-                            },
-                        },
-                        postcode: {
-                            validators: {
-                                notEmpty: { message: "Postcode is required" },
+                                notEmpty: { message: "quartier is required" },
                             },
                         },
                     },
