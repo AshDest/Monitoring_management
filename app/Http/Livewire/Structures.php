@@ -26,6 +26,8 @@ class Structures extends Component
     public $numImpot;
     public $numCNSS;
 
+    public $toto;
+
     public $provinces;
     public $territoires;
     public $communes;
@@ -79,14 +81,19 @@ class Structures extends Component
         $this->quartiers = collect();
     }
 
+    // public function updatedSelectedProvince($province)
+    // {
+    //     dd('ddd');
+    //     if (!is_null($province)) {
+    //         $this->territoires = Ville_Territoire::where('province_id', $province)->get();
+    //     $this->selectedQuartier = NULL;
+    //     $this->selectedCommune = NULL;
+    //     }
+    // }
+
     public function updatedSelectedProvince($province)
     {
-        dd('ddd');
-        if (!is_null($province)) {
-            $this->territoires = Ville_Territoire::where('province_id', $province)->get();
-        $this->selectedQuartier = NULL;
-        $this->selectedCommune = NULL;
-        }
+        dd($province);
     }
 
     public function render()

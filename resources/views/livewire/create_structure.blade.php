@@ -40,6 +40,11 @@
                             </div>
                             <!--end::Col-->
                         </div>
+                        <select wire:model='selectedProvince' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                        data-placeholder="Select Provinces..." class="form-select form-select-solid">
+                            <option value="aaa">dest</option>
+                            <option value="bbb">ash</option>
+                        </select>
                         <div class="row mb-5">
                             <label class="required fs-5 fw-bold mb-2">Adresse</label>
                             <div class="col-md-6 fv-row">
