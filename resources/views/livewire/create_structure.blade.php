@@ -4,7 +4,7 @@
         <div class="modal-content">
             <form class="form" action="#" id="kt_modal_new_address_form">
                 <div class="modal-header" id="kt_modal_new_address_header">
-                    <h2>Add New Address</h2>
+                    <h2>Ajouter Nouveau Structure</h2>
                     <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
                         <span class="svg-icon svg-icon-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -27,7 +27,7 @@
                             <div class="col-md-6 fv-row">
                                 <label class="required fs-5 fw-bold mb-2">Code</label>
                                 <input type="text" class="form-control form-control-solid" placeholder=""
-                                    name="first-name" />
+                                    name="code" />
                             </div>
                             <div class="col-md-6 fv-row">
                                 <!--end::Label-->
@@ -35,7 +35,7 @@
                                 <!--end::Label-->
                                 <!--end::Input-->
                                 <input type="text" class="form-control form-control-solid" placeholder=""
-                                    name="last-name" />
+                                    name="designation" />
                                 <!--end::Input-->
                             </div>
                             <!--end::Col-->
@@ -43,7 +43,7 @@
                         <div class="row mb-5">
                             <label class="required fs-5 fw-bold mb-2">Adresse</label>
                             <div class="col-md-6 fv-row">
-                                <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="province" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Provinces..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
@@ -57,7 +57,7 @@
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="territoire" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Ville/Territoires ...." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="row mb-5">
                             <div class="col-md-6 fv-row">
-                                <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="commune" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Communes/Secteurs/Chefferies..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
@@ -87,7 +87,7 @@
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
+                                <select name="quartier" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Quartier/Village..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
@@ -104,11 +104,11 @@
                         <div class="row g-9 mb-5">
                             <div class="col-md-6 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Avenue</label>
-                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                                <input class="form-control form-control-solid" placeholder="" name="avenue" />
                             </div>
                             <div class="col-md-6 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Code Parcelle</label>
-                                <input class="form-control form-control-solid" placeholder="" name="postcode" />
+                                <input class="form-control form-control-solid" placeholder="" name="numParcelle" />
                             </div>
                         </div>
 
@@ -116,50 +116,50 @@
                             <label class="fs-5 fw-bold mb-2">Coordonnees Geographique</label>
                             <div class="col-md-6 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Longitude</label>
-                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                                <input class="form-control form-control-solid" placeholder="" name="long" />
                             </div>
                             <div class="col-md-6 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Latitude</label>
-                                <input class="form-control form-control-solid" placeholder="" name="postcode" />
+                                <input class="form-control form-control-solid" placeholder="" name="lat" />
                             </div>
                         </div>
                         <div class="row g-9 mb-5">
                             <label class="fs-5 fw-bold mb-2">Contact Telephoniques</label>
                             <div class="col-md-6 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Numero 1</label>
-                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                                <input class="form-control form-control-solid" placeholder="" name="tel1" />
                             </div>
                             <div class="col-md-6 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Numero 2</label>
-                                <input class="form-control form-control-solid" placeholder="" name="postcode" />
+                                <input class="form-control form-control-solid" placeholder="" name="tel2" />
                             </div>
                         </div>
 
                         <div class="row g-9 mb-5">
                             <div class="col-md-12 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Email</label>
-                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                                <input class="form-control form-control-solid" placeholder="" name="email" />
                             </div>
                         </div>
                         <div class="row g-9 mb-5">
                             <div class="col-md-12 fv-row">
                                 <label class="fs-5 fw-bold mb-2">Web Site</label>
-                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                                <input class="form-control form-control-solid" placeholder="" name="website" />
                             </div>
                         </div>
                         <div class="row g-9 mb-5">
                             <label class="fs-5 fw-bold mb-2">Indentification</label>
                             <div class="col-md-6 fv-row">
-                                <input class="form-control form-control-solid" placeholder="RCCM" name="state" />
+                                <input class="form-control form-control-solid" placeholder="RCCM" name="rccm" />
                             </div>
                             <div class="col-md-6 fv-row">
-                                <input class="form-control form-control-solid" placeholder="N°Impot" name="postcode" />
+                                <input class="form-control form-control-solid" placeholder="N°Impot" name="num_impot" />
                             </div>
                             <div class="col-md-6 fv-row">
-                                <input class="form-control form-control-solid" placeholder="ID National" name="postcode" />
+                                <input class="form-control form-control-solid" placeholder="ID National" name="id_nat" />
                             </div>
                             <div class="col-md-6 fv-row">
-                                <input class="form-control form-control-solid" placeholder="N° CNSS" name="postcode" />
+                                <input class="form-control form-control-solid" placeholder="N° CNSS" name="num_cnss" />
                             </div>
                         </div>
                     </div>

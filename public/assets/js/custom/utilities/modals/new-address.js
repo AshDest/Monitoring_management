@@ -15,14 +15,74 @@ var KTModalNewAddress = (function () {
                     }),
                 (n = FormValidation.formValidation(o, {
                     fields: {
-                        "first-name": {
+                        "code": {
                             validators: {
-                                notEmpty: { message: "First name is required" },
+                                notEmpty: { message: "Code is required" },
                             },
                         },
-                        "last-name": {
+                        "designation": {
                             validators: {
-                                notEmpty: { message: "Last name is required" },
+                                notEmpty: { message: "nommination name is required" },
+                            },
+                        },
+                        "Avenue": {
+                            validators: {
+                                notEmpty: { message: "Avenue name is required" },
+                            },
+                        },
+                        "numParcelle": {
+                            validators: {
+                                notEmpty: { message: "numParcelle is required" },
+                            },
+                        },
+                        "long": {
+                            validators: {
+                                notEmpty: { message: "long is required" },
+                            },
+                        },
+                        "lat": {
+                            validators: {
+                                notEmpty: { message: "lat is required" },
+                            },
+                        },
+                        "tel1": {
+                            validators: {
+                                notEmpty: { message: "Phone number is required" },
+                            },
+                        },
+                        "tel2": {
+                            validators: {
+                                notEmpty: { message: "Phone number is required" },
+                            },
+                        },
+                        "email": {
+                            validators: {
+                                notEmpty: { message: "email is required" },
+                            },
+                        },
+                        "website": {
+                            validators: {
+                                notEmpty: { message: "website is required" },
+                            },
+                        },
+                        "rccm": {
+                            validators: {
+                                notEmpty: { message: "RCCM is required" },
+                            },
+                        },
+                        "num_impot": {
+                            validators: {
+                                notEmpty: { message: "Num Impot is required" },
+                            },
+                        },
+                        "id_nat": {
+                            validators: {
+                                notEmpty: { message: "ID Nationnal is required" },
+                            },
+                        },
+                        "num_cnss": {
+                            validators: {
+                                notEmpty: { message: "Num CNSS is required" },
                             },
                         },
                         country: {
