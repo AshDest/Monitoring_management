@@ -41,10 +41,10 @@
                             <!--end::Col-->
                         </div>
                         <div class="row mb-5">
+                            <label class="required fs-5 fw-bold mb-2">Adresse</label>
                             <div class="col-md-6 fv-row">
-                                <label class="required fs-5 fw-bold mb-2">Provinces</label>
                                 <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                data-placeholder="Select Provinces..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
@@ -57,9 +57,8 @@
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <label class="required fs-5 fw-bold mb-2">Ville/Territoires</label>
                                 <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                data-placeholder="Select Ville/Territoires ...." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
@@ -74,9 +73,8 @@
                         </div>
                         <div class="row mb-5">
                             <div class="col-md-6 fv-row">
-                                <label class="required fs-5 fw-bold mb-2">Communes/Secteurs/Chefferies</label>
                                 <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                data-placeholder="Select Communes/Secteurs/Chefferies..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
@@ -89,9 +87,8 @@
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <label class="required fs-5 fw-bold mb-2">Quartier/Village</label>
                                 <select name="country" data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Select a Country..." class="form-select form-select-solid">
+                                data-placeholder="Select Quartier/Village..." class="form-select form-select-solid">
                                 <option value="">Select a Country...</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
@@ -126,6 +123,31 @@
                             </div>
                             <!--end::Col-->
                         </div>
+
+                        <div class="row g-9 mb-5">
+                            <label class="fs-5 fw-bold mb-2">Coordonnees Geographique</label>
+                            <!--begin::Col-->
+                            <div class="col-md-6 fv-row">
+                                <!--begin::Label-->
+                                <label class="fs-5 fw-bold mb-2">Longitude</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" placeholder="" name="state" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-md-6 fv-row">
+                                <!--begin::Label-->
+                                <label class="fs-5 fw-bold mb-2">Latitude</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" placeholder="" name="postcode" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-5">
