@@ -40,16 +40,11 @@
                             </div>
                             <!--end::Col-->
                         </div>
-                        <select wire:model='selectedProvince' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                        data-placeholder="Select Provinces..." class="form-select form-select-solid">
-                            <option value="aaa">dest</option>
-                            <option value="bbb">ash</option>
-                        </select>
                         <div class="row mb-5">
                             <label class="required fs-5 fw-bold mb-2">Adresse</label>
                             <div class="col-md-6 fv-row">
-                                <select name="province" wire:model='selectedProvince' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Select Provinces..." class="form-select form-select-solid">
+                                <select name="province" wire:model='selectedProvince' data-dropdown-parent="#kt_modal_new_address"
+                                data-placeholder="Select Provinces..." class="form-select">
                                 <option value="">Select a Country...</option>
                                 @foreach ($provinces as $province)
                                     <option value="{{$province->id}}">{{$province->designation}}</option>
@@ -57,8 +52,8 @@
                             </select>
                             </div>
                             <div class="col-md-6 fv-row">
-                                <select name="territoire" wire:model='selectedCity' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                                data-placeholder="Select Ville/Territoires ...." class="form-select form-select-solid">
+                                <select name="territoire" wire:model='selectedCity' data-dropdown-parent="#kt_modal_new_address"
+                                data-placeholder="Select Ville/Territoires ...." class="form-select">
                                 <option value="">Select a Country...</option>
                                 @foreach ($territoires as $territoire)
                                 <option value="{{$territoire->id}}">{{$territoire->designation}}</option>

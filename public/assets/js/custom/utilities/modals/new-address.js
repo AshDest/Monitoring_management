@@ -9,12 +9,12 @@ var KTModalNewAddress = (function () {
                 (t = document.getElementById("kt_modal_new_address_submit")),
                 (e = document.getElementById("kt_modal_new_address_cancel")),
                 $(o.querySelector('[name="province"]'))
-                    .select2()
+
                     .on("change", function () {
                         n.revalidateField("province");
                     }),
                     $(o.querySelector('[name="territoire"]'))
-                    .select2()
+
                     .on("change", function () {
                         n.revalidateField("territoire");
                     }),

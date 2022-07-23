@@ -91,9 +91,13 @@ class Structures extends Component
     //     }
     // }
 
-    public function updatedSelectedProvince($province)
+    public function updatingSelectedProvince($province)
     {
-        dd($province);
+        if (!is_null($province)) {
+            $this->territoires = Ville_Territoire::where('province_id', $province)->get();
+        $this->selectedQuartier = NULL;
+        $this->selectedCommune = NULL;
+        }
     }
 
     public function render()
