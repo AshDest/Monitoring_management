@@ -1,8 +1,8 @@
 <!--begin::Modal - New Address-->
-<div class="modal fade" id="kt_modal_new_address" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_new_address" tabindex="-1" aria-hidden="true" wire:ignore.self>
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <div class="modal-content">
-            <form class="form" action="#" id="kt_modal_new_address_form">
+            <form class="form" action="#" id="kt_modal_new_address_form" wire:ignore.self>
                 <div class="modal-header" id="kt_modal_new_address_header">
                     <h2>Ajouter Nouveau Structure</h2>
                     <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="row mb-5">
                             <label class="required fs-5 fw-bold mb-2">Adresse</label>
-                            <div class="col-md-6 fv-row">
+                            <div class="col-md-6 fv-row" wire:ignore.self>
                                 <select name="province" wire:model='selectedProvince' data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Provinces..." class="form-select">
                                 <option value="">Select a Country...</option>
@@ -51,7 +51,7 @@
                                 @endforeach
                             </select>
                             </div>
-                            <div class="col-md-6 fv-row">
+                            <div class="col-md-6 fv-row" wire:ignore.self>
                                 <select name="territoire" wire:model='selectedCity' data-dropdown-parent="#kt_modal_new_address"
                                 data-placeholder="Select Ville/Territoires ...." class="form-select">
                                 <option value="">Select a Country...</option>

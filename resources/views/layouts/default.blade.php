@@ -100,7 +100,6 @@
         <!--end::Svg Icon-->
     </div>
     <!--end::Scrolltop-->
-    @livewireScripts
     <script>
         var hostUrl = "assets/";
     </script>
@@ -121,6 +120,7 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/new-address.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+    @livewireScripts
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
 </body>
