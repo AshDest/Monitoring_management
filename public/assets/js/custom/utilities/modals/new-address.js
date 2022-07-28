@@ -8,26 +8,26 @@ var KTModalNewAddress = (function () {
                 (o = document.querySelector("#kt_modal_new_address_form")),
                 (t = document.getElementById("kt_modal_new_address_submit")),
                 (e = document.getElementById("kt_modal_new_address_cancel")),
-                $(o.querySelector('[name="province"]'))
-
-                    .on("change", function () {
-                        n.revalidateField("province");
-                    }),
-                    $(o.querySelector('[name="territoire"]'))
-
-                    .on("change", function () {
-                        n.revalidateField("territoire");
-                    }),
-                    $(o.querySelector('[name="commune"]'))
+                $(o.querySelector('[name="selectedProvince"]'))
                     .select2()
                     .on("change", function () {
-                        n.revalidateField("commune");
+                        n.revalidateField("selectedProvince");
                     }),
-                    $(o.querySelector('[name="quartier"]'))
-                    .select2()
-                    .on("change", function () {
-                        n.revalidateField("quartier");
-                    }),
+                    // $(o.querySelector('[name="territoire"]'))
+                    // .select2()
+                    // .on("change", function () {
+                    //     n.revalidateField("territoire");
+                    // }),
+                    // $(o.querySelector('[name="commune"]'))
+                    // .select2()
+                    // .on("change", function () {
+                    //     n.revalidateField("commune");
+                    // }),
+                    // $(o.querySelector('[name="quartier"]'))
+                    // .select2()
+                    // .on("change", function () {
+                    //     n.revalidateField("quartier");
+                    // }),
 
                 (n = FormValidation.formValidation(o, {
                     fields: {

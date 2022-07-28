@@ -93,8 +93,12 @@ class Structures extends Component
 
     public function updatingSelectedProvince($province)
     {
-        if (!is_null($province)) {
-            dd(Ville_Territoire::where('province_id', $province)->get());
+        try {
+            if (!is_null($province)) {
+                $this->territoires = Ville_Territoire::where('province_id', $province)->get();
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
         }
     }
 
