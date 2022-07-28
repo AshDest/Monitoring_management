@@ -9,7 +9,7 @@ var KTModalNewAddress = (function () {
                 (t = document.getElementById("kt_modal_new_address_submit")),
                 (e = document.getElementById("kt_modal_new_address_cancel")),
                 $(o.querySelector('[name="selectedProvince"]'))
-                    .select2()
+                    //.select2()
                     .on("change", function () {
                         n.revalidateField("selectedProvince");
                     }),
