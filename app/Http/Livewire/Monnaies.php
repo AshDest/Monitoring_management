@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Monnai;
 use Livewire\Component;
 
 class Monnaies extends Component
 {
     public function render()
     {
-        return view('livewire.monnaies');
+        $monnaies = Monnai::all();
+        return view('livewire.monnaies', ['monnaies' => $monnaies]);
     }
 }
