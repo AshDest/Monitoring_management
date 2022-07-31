@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Commune_Secteur_Chefferie;
 use App\Models\Province;
 use App\Models\Structure;
 use App\Models\Ville_Territoire;
@@ -73,14 +74,23 @@ class CreateStructure extends Component
         }
     }
 
-    public function updatingSelectedProvince($province)
+    public function updatedSelectedProvince($province)
     {
         try {
             if (!is_null($province)) {
                 $this->territoires = Ville_Territoire::where('province_id', $province)->get();
+                // $this->communes = null;
+                // $this->quartiers = null;
             }
         } catch (\Throwable $th) {
             //throw $th;
+        }
+    }
+    public function updatedSelectedCommune($territoires)
+    {
+        if (!is_null($territoires)) {
+            $this->communes = Commune_Secteur_Chefferie::where('ville_id', $territoires)->get();
+            $this->quartiers = null;
         }
     }
     public function mount()

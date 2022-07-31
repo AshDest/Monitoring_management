@@ -1,5 +1,3 @@
-@include('livewire.create_structure')
-<!--begin::Content-->
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Toolbar-->
     <div class="toolbar" id="kt_toolbar">
@@ -202,3 +200,12 @@
     <!--end::Post-->
 </div>
 <!--end::Content-->
+
+<div class="modal fade" id="kt_modal_new_address" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <div class="modal-content">
+            @livewire('create-structure')
+            <!--end::Form-->
+        </div>
+    </div>
+</div>
