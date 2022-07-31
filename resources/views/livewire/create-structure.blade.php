@@ -68,28 +68,23 @@
                 </select>
                 </div>
                 <div class="col-md-6 fv-row">
-                    <select name="quartier" wire:model='selectedQuartier' data-control="select2" data-dropdown-parent="#kt_modal_new_address"
-                    data-placeholder="Select Quartier/Village..." class="form-select form-select-solid">
+                    <select name="quartier" wire:model='selectedQuartier'
+                    data-placeholder="Select Quartier/Village..." class="form-select">
                     <option value="">Select a Country...</option>
-                    <option value="AF">Afghanistan</option>
-                    <option value="AX">Aland Islands</option>
-                    <option value="AL">Albania</option>
-                    <option value="DZ">Algeria</option>
-                    <option value="AS">American Samoa</option>
-                    <option value="AD">Andorra</option>
-                    <option value="AO">Angola</option>
-                    <option value="AI">Anguilla</option>
+                    @foreach ($quartiers as $quartier)
+                        <option value="{{$quartier->id}}">{{$quartier->designation}}</option>
+                    @endforeach
                 </select>
                 </div>
             </div>
             <div class="row g-9 mb-5">
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Avenue</label>
-                    <input class="form-control form-control-solid" placeholder="" name="avenue" />
+                    <input class="form-control form-control-solid" wire:model='avenu' placeholder="" name="avenue" />
                 </div>
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Code Parcelle</label>
-                    <input class="form-control form-control-solid" placeholder="" name="numParcelle" />
+                    <input class="form-control form-control-solid" wire:model='numParcelle' placeholder="" name="numParcelle" />
                 </div>
             </div>
 
@@ -97,50 +92,50 @@
                 <label class="fs-5 fw-bold mb-2">Coordonnees Geographique</label>
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Longitude</label>
-                    <input class="form-control form-control-solid" placeholder="" name="long" />
+                    <input class="form-control form-control-solid" wire:model='long' placeholder="" name="long" />
                 </div>
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Latitude</label>
-                    <input class="form-control form-control-solid" placeholder="" name="lat" />
+                    <input class="form-control form-control-solid" wire:model='lat' placeholder="" name="lat" />
                 </div>
             </div>
             <div class="row g-9 mb-5">
                 <label class="fs-5 fw-bold mb-2">Contact Telephoniques</label>
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Numero 1</label>
-                    <input class="form-control form-control-solid" placeholder="" name="tel1" />
+                    <input class="form-control form-control-solid" wire:model='numTel1' placeholder="" name="tel1" />
                 </div>
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Numero 2</label>
-                    <input class="form-control form-control-solid" placeholder="" name="tel2" />
+                    <input class="form-control form-control-solid" wire:model='numTel2' placeholder="" name="tel2" />
                 </div>
             </div>
 
             <div class="row g-9 mb-5">
                 <div class="col-md-12 fv-row">
                     <label class="fs-5 fw-bold mb-2">Email</label>
-                    <input class="form-control form-control-solid" placeholder="" name="email" />
+                    <input class="form-control form-control-solid" wire:model='email' placeholder="" name="email" />
                 </div>
             </div>
             <div class="row g-9 mb-5">
                 <div class="col-md-12 fv-row">
                     <label class="fs-5 fw-bold mb-2">Web Site</label>
-                    <input class="form-control form-control-solid" placeholder="" name="website" />
+                    <input class="form-control form-control-solid" wire:model='siteWeb' placeholder="" name="website" />
                 </div>
             </div>
             <div class="row g-9 mb-5">
                 <label class="fs-5 fw-bold mb-2">Indentification</label>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" placeholder="RCCM" name="rccm" />
+                    <input class="form-control form-control-solid" wire:model='rccm' placeholder="RCCM" name="rccm" />
                 </div>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" placeholder="N°Impot" name="num_impot" />
+                    <input class="form-control form-control-solid" wire:model='numImpot' placeholder="N°Impot" name="num_impot" />
                 </div>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" placeholder="ID National" name="id_nat" />
+                    <input class="form-control form-control-solid" wire:model='idNational' placeholder="ID National" name="id_nat" />
                 </div>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" placeholder="N° CNSS" name="num_cnss" />
+                    <input class="form-control form-control-solid" wire:model='numCNSS' placeholder="N° CNSS" name="num_cnss" />
                 </div>
             </div>
         </div>
