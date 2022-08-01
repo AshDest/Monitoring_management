@@ -107,7 +107,7 @@
                                     </td>
                                     <td>
                                         <a href="#"
-                                            class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$structure->adresse_id}}</a>
+                                            class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$structure->addresse->designation}}</a>
                                         <span
                                             class="text-muted fw-bold text-muted d-block fs-7">{{$structure->avenu}}</span>
                                     </td>
