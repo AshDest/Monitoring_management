@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Commune_Secteur_Chefferie;
 use App\Models\Province;
+use App\Models\Quartier_Village;
 use App\Models\Structure;
 use App\Models\Ville_Territoire;
 use Livewire\Component;
@@ -39,39 +40,51 @@ class CreateStructure extends Component
     public $selectedQuartier=null;
 
 
+    protected $rules = [
+        'codeStructure' => 'required|min:8',
+        'designation' => 'required|email',
+        'selectedQuartier' => 'required|min:3',
+        'avenu' => 'required|min:3',
+        'numParcelle' => 'required',
+        'long' => 'required|min:8',
+        'lat' => 'required|email',
+        'numTel1' => 'required|min:3',
+        'numTel2' => 'required|min:3',
+        'email' => 'required',
+        'siteWeb' => 'required|min:8',
+        'rccm' => 'required|email',
+        'idNational' => 'required|min:3',
+        'numImpot' => 'required|min:3',
+        'numCNSS' => 'required',
+    ];
+
+    protected $messages = [
+        'codeStructure' => 'ce Champ est obligatoire',
+        'designation' => 'ce Champ est obligatoire',
+        'selectedQuartier' => 'ce Champ est obligatoire',
+        'avenu' => 'ce Champ est obligatoire',
+        'numParcelle' => 'ce Champ est obligatoire',
+        'long' => 'ce Champ est obligatoire',
+        'lat' => 'ce Champ est obligatoire',
+        'numTel1' => 'ce Champ est obligatoire',
+        'numTel2' => 'ce Champ est obligatoire',
+        'email' => 'ce Champ est obligatoire',
+        'siteWeb' => 'ce Champ est obligatoire',
+        'rccm' => 'ce Champ est obligatoire',
+        'idNational' => 'ce Champ est obligatoire',
+        'numImpot' => 'ce Champ est obligatoire',
+        'numCNSS' => 'ce Champ est obligatoire',
+    ];
+        // realtime validation
+        public function updated($propertyName)
+        {
+            $this->validateOnly($propertyName);
+        }
+
 
     public function save()
     {
-        $validatedData = $this->validate([
-            'codeStructure'=>'required',
-            'designation'=>'required',
-            'adresse_id'=>'required',
-            'avenu'=>'required',
-            'numParcelle'=>'required',
-            'long'=>'required',
-            'lat'=>'required',
-            'numTel1'=>'required',
-            'numTel2'=>'required',
-            'email'=>'required',
-            'siteWeb'=>'required',
-            'rccm'=>'required',
-            'idNational'=>'required',
-            'numImpot'=>'required',
-            'numCNSS'=>'required'
-        ]);
-        try {
-            Structure::create($validatedData);
-            $this->emit('StudentUpdated');
-            $this->dispatchBrowserEvent('alert', [
-                'type' => 'success',
-                'message' => "Classe enregistée avec succes!!"
-            ]);
-        } catch (\Exception $e) {
-            $this->dispatchBrowserEvent('alert', [
-                'type' => 'error',
-                'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
-            ]);
-        }
+        dd($this->designation);
     }
 
     public function updatedSelectedProvince($province)
@@ -86,11 +99,17 @@ class CreateStructure extends Component
             //throw $th;
         }
     }
-    public function updatedSelectedCommune($territoires)
+    public function updatedSelectedCity($territoires)
     {
         if (!is_null($territoires)) {
             $this->communes = Commune_Secteur_Chefferie::where('ville_id', $territoires)->get();
-            $this->quartiers = null;
+        }
+    }
+
+    public function updatedSelectedCommune($commune)
+    {
+        if (!is_null($commune)) {
+            $this->quartiers = Quartier_Village::where('commune_id', $commune)->get();
         }
     }
     public function mount()

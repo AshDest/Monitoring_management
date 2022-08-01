@@ -1,12 +1,11 @@
-<form class="form" id="kt_modal_new_address_form">
+<form class="form" wire:submit.prevent="save">
     <div class="modal-header" id="kt_modal_new_address_header">
         <h2>Ajouter Nouveau Structure</h2>
         <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
             <span class="svg-icon svg-icon-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none">
-                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
-                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)"
+                        fill="currentColor" />
                     <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)"
                         fill="currentColor" />
                 </svg>
@@ -39,42 +38,42 @@
             <div class="row mb-5">
                 <label class="required fs-5 fw-bold mb-2">Adresse</label>
                 <div class="col-md-6 fv-row">
-                    <select name="province" wire:model='selectedProvince'
-                    data-placeholder="Select Provinces..." class="form-control">
-                    <option value="">Select a Country...</option>
-                    @foreach ($provinces as $province)
+                    <select name="province" wire:model='selectedProvince' data-placeholder="Select Provinces..."
+                        class="form-select">
+                        <option value="">Select a Country...</option>
+                        @foreach ($provinces as $province)
                         <option value="{{$province->id}}">{{$province->designation}}</option>
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col-md-6 fv-row">
-                    <select name="territoire" wire:model='selectedCity'
-                    data-placeholder="Select Ville/Territoires ...." class="form-control">
-                    <option value="">Select a Ville...</option>
-                    @foreach ($territoires as $territoire)
-                    <option value="{{$territoire->id}}">{{$territoire->designation}}</option>
-                    @endforeach
-                </select>
+                    <select name="territoire" wire:model='selectedCity' data-placeholder="Select Ville/Territoires ...."
+                        class="form-select">
+                        <option value="">Select a Ville...</option>
+                        @foreach ($territoires as $territoire)
+                        <option value="{{$territoire->id}}">{{$territoire->designation}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="row mb-5">
                 <div class="col-md-6 fv-row">
                     <select name="commune" wire:model='selectedCommune'
-                    data-placeholder="Select Communes/Secteurs/Chefferies..." class="form-select">
-                    <option value="">Select a Commune...</option>
-                    @foreach ($communes as $commune)
+                        data-placeholder="Select Communes/Secteurs/Chefferies..." class="form-select">
+                        <option value="">Select a Commune...</option>
+                        @foreach ($communes as $commune)
                         <option value="{{$commune->id}}">{{$commune->designation}}</option>
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col-md-6 fv-row">
-                    <select name="quartier" wire:model='selectedQuartier'
-                    data-placeholder="Select Quartier/Village..." class="form-select">
-                    <option value="">Select a Country...</option>
-                    @foreach ($quartiers as $quartier)
+                    <select name="quartier" wire:model='selectedQuartier' data-placeholder="Select Quartier/Village..."
+                        class="form-select">
+                        <option value="">Select a Country...</option>
+                        @foreach ($quartiers as $quartier)
                         <option value="{{$quartier->id}}">{{$quartier->designation}}</option>
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="row g-9 mb-5">
@@ -84,7 +83,8 @@
                 </div>
                 <div class="col-md-6 fv-row">
                     <label class="fs-5 fw-bold mb-2">Code Parcelle</label>
-                    <input class="form-control form-control-solid" wire:model='numParcelle' placeholder="" name="numParcelle" />
+                    <input class="form-control form-control-solid" wire:model='numParcelle' placeholder=""
+                        name="numParcelle" />
                 </div>
             </div>
 
@@ -129,13 +129,16 @@
                     <input class="form-control form-control-solid" wire:model='rccm' placeholder="RCCM" name="rccm" />
                 </div>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" wire:model='numImpot' placeholder="N°Impot" name="num_impot" />
+                    <input class="form-control form-control-solid" wire:model='numImpot' placeholder="N°Impot"
+                        name="num_impot" />
                 </div>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" wire:model='idNational' placeholder="ID National" name="id_nat" />
+                    <input class="form-control form-control-solid" wire:model='idNational' placeholder="ID National"
+                        name="id_nat" />
                 </div>
                 <div class="col-md-6 fv-row">
-                    <input class="form-control form-control-solid" wire:model='numCNSS' placeholder="N° CNSS" name="num_cnss" />
+                    <input class="form-control form-control-solid" wire:model='numCNSS' placeholder="N° CNSS"
+                        name="num_cnss" />
                 </div>
             </div>
         </div>
@@ -148,10 +151,10 @@
         <button type="reset" id="kt_modal_new_address_cancel" class="btn btn-light me-3">Discard</button>
         <!--end::Button-->
         <!--begin::Button-->
-        <button type="submit" id="kt_modal_new_address_submit" class="btn btn-primary">
-            <span class="indicator-label">Submit</span>
-            <span class="indicator-progress">Please wait...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+        <button class="btn btn-primary">
+            <span class="indicator-label">Save</span>
+            {{-- <span class="indicator-progress">Please wait...
+                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span> --}}
         </button>
         <!--end::Button-->
     </div>
