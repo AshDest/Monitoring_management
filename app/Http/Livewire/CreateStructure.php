@@ -41,20 +41,20 @@ class CreateStructure extends Component
 
 
     protected $rules = [
-        'codeStructure' => 'required|min:8',
-        'designation' => 'required|email',
-        'selectedQuartier' => 'required|min:3',
-        'avenu' => 'required|min:3',
+        'codeStructure' => 'required',
+        'designation' => 'required',
+        'selectedQuartier' => 'required',
+        'avenu' => 'required',
         'numParcelle' => 'required',
-        'long' => 'required|min:8',
-        'lat' => 'required|email',
-        'numTel1' => 'required|min:3',
-        'numTel2' => 'required|min:3',
+        'long' => 'required',
+        'lat' => 'required',
+        'numTel1' => 'required',
+        'numTel2' => 'required',
         'email' => 'required',
-        'siteWeb' => 'required|min:8',
-        'rccm' => 'required|email',
-        'idNational' => 'required|min:3',
-        'numImpot' => 'required|min:3',
+        'siteWeb' => 'required',
+        'rccm' => 'required',
+        'idNational' => 'required',
+        'numImpot' => 'required',
         'numCNSS' => 'required',
     ];
 
@@ -84,7 +84,35 @@ class CreateStructure extends Component
 
     public function save()
     {
-        dd($this->designation);
+        // try {
+            Structure::create([
+                'codeStructure' => $this->codeStructure,
+                'designation' => $this->designation,
+                'adresse_id' => $this->selectedQuartier,
+                'avenu' => $this->avenu,
+                'numParcelle' => $this->numParcelle,
+                'long' => $this->long,
+                'lat' => $this->lat,
+                'numTel1' => $this->numTel1,
+                'numTel2' => $this->numTel2,
+                'email' => $this->email,
+                'siteWeb' => $this->siteWeb,
+                'rccm' => $this->rccm,
+                'idNational' => $this->idNational,
+                'numImpot' => $this->numImpot,
+                'numCNSS' => $this->numCNSS,
+            ])->save();
+            $this->emit('StudentUpdated');
+            $this->dispatchBrowserEvent('alert', [
+                'type' => 'success',
+                'message' => "Classe enregistée avec succes!!"
+            ]);
+        // } catch (\Exception $e) {
+        //     $this->dispatchBrowserEvent('alert', [
+        //         'type' => 'error',
+        //         'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
+        //     ]);
+        // }
     }
 
     public function updatedSelectedProvince($province)
