@@ -41,7 +41,7 @@ class CreateStructure extends Component
 
 
     protected $rules = [
-        'codeStructure' => 'required',
+        'codeStructure' => 'required|min:8',
         'designation' => 'required',
         'selectedQuartier' => 'required',
         'avenu' => 'required',
@@ -84,7 +84,7 @@ class CreateStructure extends Component
 
     public function save()
     {
-        // try {
+        try {
             Structure::create([
                 'codeStructure' => $this->codeStructure,
                 'designation' => $this->designation,
@@ -107,12 +107,12 @@ class CreateStructure extends Component
                 'type' => 'success',
                 'message' => "Classe enregistée avec succes!!"
             ]);
-        // } catch (\Exception $e) {
-        //     $this->dispatchBrowserEvent('alert', [
-        //         'type' => 'error',
-        //         'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
-        //     ]);
-        // }
+        } catch (\Exception $e) {
+            $this->dispatchBrowserEvent('alert', [
+                'type' => 'error',
+                'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
+            ]);
+        }
     }
 
     public function updatedSelectedProvince($province)
