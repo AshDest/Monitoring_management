@@ -5,7 +5,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="../../demo1/dist/index.html">
+        <a href="/">
             <img alt="Logo" src="assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
         </a>
         <!--end::Logo-->
@@ -55,7 +55,6 @@
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Dashboards</span>
-                        <span class="menu-arrow"></span>
                     </span>
                 </div>
                 <div class="menu-item">
@@ -218,7 +217,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/layouts/aside/light.html">
+                            <a class="menu-link" href="/">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -235,7 +234,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/layouts/aside/font-icons.html">
+                            <a class="menu-link" href="/">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -252,7 +251,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/layouts/aside/minimized.html">
+                            <a class="menu-link" href="/">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -269,7 +268,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/layouts/aside/only-header.html">
+                            <a class="menu-link" href="/">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -289,25 +288,20 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html"
+                    <a class="menu-link" href="/"
                         title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip"
                         data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                             <span class="svg-icon svg-icon-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z"
-                                        fill="currentColor" />
-                                    <path opacity="0.3"
-                                        d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z"
-                                        fill="currentColor" />
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="currentColor"/>
+                                    <path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="currentColor"/>
+                                    </svg>
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Layout Builder</span>
+                        <span class="menu-title">Comptabilité</span>
                     </a>
                 </div>
             </div>
