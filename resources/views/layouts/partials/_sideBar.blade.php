@@ -5,7 +5,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="/">
+        <a href="/home">
             <img alt="Logo" src="assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
         </a>
         <!--end::Logo-->
@@ -40,7 +40,7 @@
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
                 id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
                 <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-                    <span class="menu-link">
+                    <a class="menu-link" href="/home">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -55,7 +55,7 @@
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Dashboards</span>
-                    </span>
+                    </a>
                 </div>
                 <div class="menu-item">
                     <div class="menu-content pt-8 pb-2">
@@ -145,7 +145,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -162,7 +162,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -179,7 +179,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -217,7 +217,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="/">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -234,7 +234,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -251,7 +251,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -268,7 +268,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/">
+                            <a class="menu-link" href="/home">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -288,7 +288,7 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="/"
+                    <a class="menu-link" href="/home"
                         title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip"
                         data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
