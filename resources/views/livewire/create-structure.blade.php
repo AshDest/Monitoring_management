@@ -148,13 +148,16 @@
     <!--begin::Modal footer-->
     <div class="modal-footer flex-center">
         <!--begin::Button-->
-        <button type="reset" id="kt_modal_new_address_cancel" class="btn btn-light me-3">Discard</button>
+        <button type="reset" class="btn btn-light me-3">Discard</button>
         <!--end::Button-->
         <!--begin::Button-->
-        <button class="btn btn-primary">
-            <span class="indicator-label">Save</span>
-            {{-- <span class="indicator-progress">Please wait...
-                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span> --}}
+        <button class="btn btn-primary" id="kt_button_1">
+            <span class="indicator-label">
+                Save
+            </span>
+            <span class="indicator-progress">
+                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+            </span>
         </button>
         <!--end::Button-->
     </div>
