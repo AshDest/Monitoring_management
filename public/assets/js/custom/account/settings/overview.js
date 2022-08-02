@@ -1,5 +1,1 @@
-"use strict";
-var KTAccountSettingsOverview = { init: function () {} };
-KTUtil.onDOMContentLoaded(function () {
-    KTAccountSettingsOverview.init();
-});
+"use strict";var KTAccountSettingsOverview={init:function(){}};KTUtil.onDOMContentLoaded((function(){KTAccountSettingsOverview.init()}));
