@@ -29,4 +29,8 @@ class HomeController extends Controller
     {
         return view('pages.structure');
     }
+    public function banques()
+    {
+        return view('pages.data.banque');
+    }
 }

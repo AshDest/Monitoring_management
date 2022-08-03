@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    {{-- @include('layouts.partials._toolbar') --}}
+                    @include('layouts.partials._toolbar')
                     <main class="py-4">
                         @yield('content')
                     </main>
@@ -120,6 +120,11 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/new-address.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/subscriptions/list/export.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/subscriptions/list/list.js') }}"></script>
+    <!--end::Page Vendors Javascript-->
 
     <script src="{{ asset('assets/custom/waiting_buttons.js') }}"></script>
     @livewireScripts
