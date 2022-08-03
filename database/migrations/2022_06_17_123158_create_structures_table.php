@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('idNational');
             $table->string('numImpot');
             $table->string('numCNSS');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
