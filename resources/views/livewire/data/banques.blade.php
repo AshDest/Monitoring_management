@@ -5,6 +5,80 @@
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
+                <div class="card">
+                    <div class="card-body pt-0">
+                        {{-- Edit --}}
+                        @if (!is_null($form_edit))
+                        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                            <strong style="font-size: 14px; ">Modifier</strong> <br />
+
+                            <div>
+                                <div class="panel">
+                                    <div class="panel-header">
+                                        <h5 class="panel-title"></h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <fieldset>
+                                                        <div class="row">
+                                                            <div class="col-lg-2">
+                                                                <div class="form-group">
+                                                                    <label class="required fs-5 fw-bold mb-2">Code</label>
+                                                                    <input type="text" wire:model='codeBanque'
+                                                                        placeholder=" Code" class="form-control form-control-solid">
+                                                                    @error('codeBanque')
+                                                                    <span style="color: red;">{{ $message }}</span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-7">
+                                                                <div class="form-group">
+                                                                    <label class="required fs-5 fw-bold mb-2">Nommination</label>
+                                                                    <input type="text" wire:model='nomBanque'
+                                                                        placeholder=" Designation" class="form-control form-control-solid">
+                                                                    @error('nomBanque')
+                                                                    <span style="color: red;">{{ $message }}</span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="form-group">
+                                                                    <label class="required fs-5 fw-bold mb-2">Contact</label>
+                                                                    <input type="text" wire:model='contact'
+                                                                        placeholder=" contact" class="form-control form-control-solid">
+                                                                    @error('contact')
+                                                                    <span style="color: red;">{{ $message }}</span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <button class="btn btn-dark col-sm-12" wire:click=modifycmpt()><i
+                                                        class="fas fa-save"></i>&nbsp;&nbsp;Modifier Banque</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true" style="color: red; ">
+                                    <i class="mi-close"></i>
+                                </span>
+                            </button>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <div>
+
+                </div>
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card header-->
@@ -70,6 +144,7 @@
                     <!--end::Card header-->
                     <!--begin::Card body-->
                     <div class="card-body pt-0">
+
                         <!--begin::Table-->
                         <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_subscriptions_table">
                             <!--begin::Table head-->
@@ -114,7 +189,8 @@
                                     </td>
                                     <td class="text-end">
                                         <a href="#"
-                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                            wire:click="displayformedit({{$banque->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

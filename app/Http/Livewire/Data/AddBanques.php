@@ -32,6 +32,10 @@ class AddBanques extends Component
                 'nomBanque' => $this->nomBanque,
                 'contact' => $this->contact,
             ])->save();
+            $this->dispatchBrowserEvent('ok', [
+                'type' => 'success',
+                'message'=>'Banque Enregistrer avec Success',
+            ]);
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',
