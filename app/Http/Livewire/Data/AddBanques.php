@@ -4,13 +4,14 @@ namespace App\Http\Livewire\Data;
 
 use App\Models\Banque;
 use Livewire\Component;
-
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 class AddBanques extends Component
 {
     public $codeBanque;
     public $nomBanque;
     public $contact;
 
+    use LivewireAlert;
 
     protected $rules = [
         'codeBanque' => 'required|min:8',

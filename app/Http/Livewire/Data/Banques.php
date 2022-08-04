@@ -4,15 +4,17 @@ namespace App\Http\Livewire\Data;
 
 use App\Models\Banque;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Banques extends Component
 {
+    use LivewireAlert;
+
     public $codeBanque;
     public $nomBanque;
     public $contact;
 
     public $form_edit;
-
 
     public function modifycmpt(){
         Banque::whereId($this->form_edit)
