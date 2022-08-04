@@ -220,7 +220,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="$emit('triggerDelete',{{ $banque->id }})">
+                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $banque->id }})">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

@@ -16,6 +16,8 @@ class Banques extends Component
 
     public $form_edit;
 
+    public $ids;
+
     public function modifycmpt(){
         Banque::whereId($this->form_edit)
                                 ->update([
@@ -24,17 +26,35 @@ class Banques extends Component
                         'contact' => $this->contact,
                     ]);
         $this->form_edit =  NULL;
-        $this->dispatchBrowserEvent('ok', [
-            'type' => 'success',
-            'message'=>'Banque modifié',
-        ]);
+        $this->alert('success', 'Modifier avec Success', [
+            'position' => 'center',
+            'timer' => 3000,
+            'toast' => true,]);
     }
 
-    public function destroy($orderId)
-    {
-        Banque::find($orderId)->delete();
+    protected $listeners = [
+        'confirmed'
+    ];
 
-        session()->flash('message','Order deleted successfully!');
+    public function confirmed(){
+        Banque::whereId($this->ids)->delete();
+        $this->alert('success', 'Suppression avec Success', [
+            'position' => 'center',
+            'timer' => 3000,
+            'toast' => true,]);
+    }
+
+    public function cancelled()
+    {
+        // Do something when cancel button is clicked
+    }
+
+    public function delete($id){
+        //
+        $this->ids = $id;
+        $this->confirm('Voulez vous supprimer?', [
+            'onConfirmed' => 'confirmed',
+        ]);
     }
 
     public function displayformedit($id){
