@@ -66,6 +66,7 @@ class OperateurTels extends Component
     }
     public function render()
     {
-        return view('livewire.data.operateur-tels');
+        $operateurs = Operateur_tel::all();
+        return view('livewire.data.operateur-tels', ['operateurs' => $operateurs]);
     }
 }

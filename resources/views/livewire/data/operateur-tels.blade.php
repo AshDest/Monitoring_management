@@ -24,9 +24,9 @@
                                                 <div class="row mb-5">
                                                     <div class="col-md-4 fv-row">
                                                         <label class="required fs-5 fw-bold mb-2">Code</label>
-                                                        <input type="text" wire:model='codeBanque' class="form-control form-control-solid" placeholder=""
-                                                            name="codeBanque" />
-                                                            @error('codeBanque')
+                                                        <input type="text" wire:model='code' class="form-control form-control-solid" placeholder=""
+                                                            name="code ..." />
+                                                            @error('code')
                                                             <span style="color: red;">{{ $message }}</span>
                                                             @enderror
                                                     </div>
@@ -35,22 +35,10 @@
                                                         <label class="required fs-5 fw-bold mb-2">Nommination</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <input type="text" wire:model='nomBanque' class="form-control form-control-solid" placeholder=""
-                                                            name="nomBanque" />
+                                                        <input type="text" wire:model='nomOperateur' class="form-control form-control-solid" placeholder=""
+                                                            name="nommination" />
                                                         <!--end::Input-->
-                                                        @error('nomBanque')
-                                                        <span style="color: red;">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-md-4 fv-row">
-                                                        <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Contact</label>
-                                                        <!--end::Label-->
-                                                        <!--end::Input-->
-                                                        <input type="text" wire:model='contact' class="form-control form-control-solid" placeholder=""
-                                                            name="contact" />
-                                                        <!--end::Input-->
-                                                        @error('contact')
+                                                        @error('nomOperateur')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
@@ -59,7 +47,7 @@
                                             </fieldset>
                                             <div class="text-right">
                                                 <button class="btn btn-light-success col-sm-12" wire:click=modifycmpt()><i
-                                                        class="fas fa-save"></i>&nbsp;&nbsp;Modifier Banque</button>
+                                                        class="fas fa-save"></i>&nbsp;&nbsp;Modifier</button>
                                             </div>
                                         </form>
                                         <!--end::Content-->
@@ -137,22 +125,11 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->Ajouter une Banque
+                                    <!--end::Svg Icon-->Ajouter un Operateur
                                 </a>
                                 <!--end::Add subscription-->
                             </div>
                             <!--end::Toolbar-->
-                            <!--begin::Group actions-->
-                            <div class="d-flex justify-content-end align-items-center d-none"
-                                data-kt-subscription-table-toolbar="selected">
-                                <div class="fw-bolder me-5">
-                                    <span class="me-2"
-                                        data-kt-subscription-table-select="selected_count"></span>Selected
-                                </div>
-                                <button type="button" class="btn btn-danger"
-                                    data-kt-subscription-table-select="delete_selected">Delete Selected</button>
-                            </div>
-                            <!--end::Group actions-->
                         </div>
                         <!--end::Card toolbar-->
                     </div>
@@ -173,9 +150,8 @@
                                                 value="1" />
                                         </div>
                                     </th>
-                                    <th class="min-w-125px">CODE BANQUE</th>
-                                    <th class="min-w-125px">NOM BANQUE</th>
-                                    <th class="min-w-125px">CONTACT</th>
+                                    <th class="min-w-125px">CODE OPERATEUR</th>
+                                    <th class="min-w-125px">NOM OPERATEUR</th>
                                     <th class="text-end min-w-70px">Actions</th>
                                 </tr>
                                 <!--end::Table row-->
@@ -184,28 +160,24 @@
                             <!--begin::Table body-->
                             <tbody class="text-gray-600 fw-bold">
                                 <tr>
-                                    @forelse ($banques as $banque)
+                                    @forelse ($operateurs as $operateur)
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="{{$banque->id}}" />
+                                            <input class="form-check-input" type="checkbox" value="{{$operateur->id}}" />
                                         </div>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$banque->codeBanque}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$operateur->code}}</a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$banque->nomBanque}}</a>
-                                    </td>
-                                    <td>
-                                        <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$banque->contact}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$operateur->nomOperateur}}</a>
                                     </td>
                                     <td class="text-end">
                                         <a href="#"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                            wire:click="displayformedit({{$banque->id}})">
+                                            wire:click="update({{$operateur->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -220,7 +192,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $banque->id }})">
+                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $operateur->id }})">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -262,7 +234,7 @@
     <!--end::Content-->
 </div>
 
-<div class="modal fade" id="add_banque" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="add_element_forms" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <div class="modal-content">
             @livewire('data.add-banques')

@@ -33,4 +33,8 @@ class HomeController extends Controller
     {
         return view('pages.data.banque');
     }
+    public function operateurs()
+    {
+        return view('pages.data.operateur');
+    }
 }
