@@ -27,6 +27,7 @@
         type="text/css" />
     <!--end::Page Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     @livewireStyles
@@ -119,13 +120,19 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/new-address.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <!--begin::Page Vendors Javascript(used by this page)-->
     <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/custom/apps/subscriptions/list/export.js') }}"></script>
     <script src="{{ asset('assets/js/custom/apps/subscriptions/list/list.js') }}"></script>
     <!--end::Page Vendors Javascript-->
 
+    		<!--begin::Page Vendors Javascript(used by this page)-->
+		<script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+        		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="{{ asset('assets/js/custom/documentation/documentation.js') }}"></script>
+		<script src="{{ asset('assets/js/custom/documentation/search.js') }}"></script>
+		<!--end::Page Custom Javascript-->
+		<!--end::Page Vendors Javascript-->
     <script src="{{ asset('assets/custom/waiting_buttons.js') }}"></script>
     @livewireScripts
 

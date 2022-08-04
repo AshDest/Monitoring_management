@@ -9,70 +9,85 @@
                     <div class="card-body pt-0">
                         {{-- Edit --}}
                         @if (!is_null($form_edit))
-                        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
-                            <strong style="font-size: 14px; ">Modifier</strong> <br />
-
-                            <div>
-                                <div class="panel">
-                                    <div class="panel-header">
-                                        <h5 class="panel-title"></h5>
-                                    </div>
-                                    <div class="panel-body">
+                        <!--begin::Alert-->
+                        <div class="py-5">
+                            <div class="rounded border p-10 pb-0 d-flex flex-column">
+                                <!--begin::Alert-->
+                                <div
+                                    class="alert alert-dismissible bg-light-primary d-flex flex-column flex-sm-row w-100 p-5 mb-10">
+                                    <!--begin::Content-->
+                                    <div class="d-flex flex-column pe-0 pe-sm-10">
+                                        <h4 class="fw-bold">Modification</h4>
+                                        <!--begin::Content-->
                                         <form>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <fieldset>
-                                                        <div class="row">
-                                                            <div class="col-lg-2">
-                                                                <div class="form-group">
-                                                                    <label class="required fs-5 fw-bold mb-2">Code</label>
-                                                                    <input type="text" wire:model='codeBanque'
-                                                                        placeholder=" Code" class="form-control form-control-solid">
-                                                                    @error('codeBanque')
-                                                                    <span style="color: red;">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-7">
-                                                                <div class="form-group">
-                                                                    <label class="required fs-5 fw-bold mb-2">Nommination</label>
-                                                                    <input type="text" wire:model='nomBanque'
-                                                                        placeholder=" Designation" class="form-control form-control-solid">
-                                                                    @error('nomBanque')
-                                                                    <span style="color: red;">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-3">
-                                                                <div class="form-group">
-                                                                    <label class="required fs-5 fw-bold mb-2">Contact</label>
-                                                                    <input type="text" wire:model='contact'
-                                                                        placeholder=" contact" class="form-control form-control-solid">
-                                                                    @error('contact')
-                                                                    <span style="color: red;">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
+                                            <fieldset>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-4 fv-row">
+                                                        <label class="required fs-5 fw-bold mb-2">Code</label>
+                                                        <input type="text" wire:model='codeBanque' class="form-control form-control-solid" placeholder=""
+                                                            name="codeBanque" />
+                                                            @error('codeBanque')
+                                                            <span style="color: red;">{{ $message }}</span>
+                                                            @enderror
+                                                    </div>
+                                                    <div class="col-md-4 fv-row">
+                                                        <!--end::Label-->
+                                                        <label class="required fs-5 fw-bold mb-2">Nommination</label>
+                                                        <!--end::Label-->
+                                                        <!--end::Input-->
+                                                        <input type="text" wire:model='nomBanque' class="form-control form-control-solid" placeholder=""
+                                                            name="nomBanque" />
+                                                        <!--end::Input-->
+                                                        @error('nomBanque')
+                                                        <span style="color: red;">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="col-md-4 fv-row">
+                                                        <!--end::Label-->
+                                                        <label class="required fs-5 fw-bold mb-2">Contact</label>
+                                                        <!--end::Label-->
+                                                        <!--end::Input-->
+                                                        <input type="text" wire:model='contact' class="form-control form-control-solid" placeholder=""
+                                                            name="contact" />
+                                                        <!--end::Input-->
+                                                        @error('contact')
+                                                        <span style="color: red;">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <!--end::Col-->
                                                 </div>
-                                            </div>
+                                            </fieldset>
                                             <div class="text-right">
-                                                <button class="btn btn-dark col-sm-12" wire:click=modifycmpt()><i
+                                                <button class="btn btn-light-success col-sm-12" wire:click=modifycmpt()><i
                                                         class="fas fa-save"></i>&nbsp;&nbsp;Modifier Banque</button>
                                             </div>
                                         </form>
+                                        <!--end::Content-->
                                     </div>
+                                    <!--end::Content-->
+                                    <!--begin::Close-->
+                                    <button type="button"
+                                        class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto"
+                                        data-bs-dismiss="alert">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-1 svg-icon-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                                    transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
+                                                    transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </button>
+                                    <!--end::Close-->
                                 </div>
+                                <!--end::Alert-->
                             </div>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true" style="color: red; ">
-                                    <i class="mi-close"></i>
-                                </span>
-                            </button>
                         </div>
+                        <!--end::Alert-->
+
                         @endif
                     </div>
                 </div>
