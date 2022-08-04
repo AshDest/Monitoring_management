@@ -46,7 +46,7 @@
                                                 </div>
                                             </fieldset>
                                             <div class="text-right">
-                                                <button class="btn btn-light-success col-sm-12" wire:click=modifycmpt()><i
+                                                <button class="btn btn-light-success col-sm-12" wire:click=update()><i
                                                         class="fas fa-save"></i>&nbsp;&nbsp;Modifier</button>
                                             </div>
                                         </form>
@@ -114,7 +114,7 @@
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-kt-subscription-table-toolbar="base">
                                 <!--begin::Add subscription-->
-                                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_banque">
+                                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_element_forms">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -177,7 +177,7 @@
                                     <td class="text-end">
                                         <a href="#"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                            wire:click="update({{$operateur->id}})">
+                                            wire:click="displayformedit({{$operateur->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -237,7 +237,7 @@
 <div class="modal fade" id="add_element_forms" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <div class="modal-content">
-            @livewire('data.add-banques')
+            @livewire('data.add-operateur')
             <!--end::Form-->
         </div>
     </div>

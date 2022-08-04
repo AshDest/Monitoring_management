@@ -40,6 +40,13 @@ class OperateurTels extends Component
             ]);
         }
     }
+    public function displayformedit($id){
+        $this->form_edit = $id;
+        $op = Operateur_tel::find($id);
+
+        $this->code = $op->code;
+        $this->nomOperateur = $op->nomOperateur;
+    }
     protected $listeners = [
         'confirmed'
     ];
