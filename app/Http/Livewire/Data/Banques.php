@@ -28,6 +28,13 @@ class Banques extends Component
         ]);
     }
 
+    public function destroy($orderId)
+    {
+        Banque::find($orderId)->delete();
+
+        session()->flash('message','Order deleted successfully!');
+    }
+
     public function displayformedit($id){
         $this->form_edit = $id;
         $bnq = Banque::find($id);

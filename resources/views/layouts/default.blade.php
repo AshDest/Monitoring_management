@@ -134,6 +134,8 @@
 		<!--end::Page Custom Javascript-->
 		<!--end::Page Vendors Javascript-->
     <script src="{{ asset('assets/custom/waiting_buttons.js') }}"></script>
+    <script src="{{ asset('assets/custom/cancelingModal.js') }}"></script>
+
     @livewireScripts
 
     <script type="text/javascript">
@@ -186,6 +188,8 @@
             })
         })
     </script>
+
+
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
 </body>

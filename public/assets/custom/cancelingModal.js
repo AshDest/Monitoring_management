@@ -3,7 +3,7 @@ var KTModalNewAddress = (function () {
     var t, e, n, o, i, r;
     return {
         init: function () {
-            (r = document.querySelector("#kt_modal_new_address")) &&
+            (r = document.querySelector("#add_banque")) &&
                 ((i = new bootstrap.Modal(r)),
                 (o = document.querySelector("#kt_modal_new_address_form")),
                 (t = document.getElementById("kt_modal_new_address_submit")),
@@ -13,58 +13,6 @@ var KTModalNewAddress = (function () {
                     .on("change", function () {
                         n.revalidateField("country");
                     }),
-                (n = FormValidation.formValidation(o, {
-                    fields: {
-                        "first-name": {
-                            validators: {
-                                notEmpty: { message: "First name is required" },
-                            },
-                        },
-                        "last-name": {
-                            validators: {
-                                notEmpty: { message: "Last name is required" },
-                            },
-                        },
-                        country: {
-                            validators: {
-                                notEmpty: { message: "Country is required" },
-                            },
-                        },
-                        address1: {
-                            validators: {
-                                notEmpty: { message: "Address 1 is required" },
-                            },
-                        },
-                        address2: {
-                            validators: {
-                                notEmpty: { message: "Address 2 is required" },
-                            },
-                        },
-                        city: {
-                            validators: {
-                                notEmpty: { message: "City is required" },
-                            },
-                        },
-                        state: {
-                            validators: {
-                                notEmpty: { message: "State is required" },
-                            },
-                        },
-                        postcode: {
-                            validators: {
-                                notEmpty: { message: "Postcode is required" },
-                            },
-                        },
-                    },
-                    plugins: {
-                        trigger: new FormValidation.plugins.Trigger(),
-                        bootstrap: new FormValidation.plugins.Bootstrap5({
-                            rowSelector: ".fv-row",
-                            eleInvalidClass: "",
-                            eleValidClass: "",
-                        }),
-                    },
-                })),
                 t.addEventListener("click", function (e) {
                     e.preventDefault(),
                         n &&

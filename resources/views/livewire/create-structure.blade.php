@@ -1,4 +1,4 @@
-<form class="form" wire:submit.prevent="save">
+<form class="form" id="kt_modal_new_target_form" wire:submit.prevent="save" >
     <div class="modal-header" id="kt_modal_new_address_header">
         <h2>Ajouter Nouveau Structure</h2>
         <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -148,7 +148,7 @@
     <!--begin::Modal footer-->
     <div class="modal-footer flex-center">
         <!--begin::Button-->
-        <button type="reset" class="btn btn-light me-3">Discard</button>
+        <button type="reset" class="btn btn-light me-3">Cancel</button>
         <!--end::Button-->
         <!--begin::Button-->
         <button class="btn btn-primary" id="kt_button_1">
