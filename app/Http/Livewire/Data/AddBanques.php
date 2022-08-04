@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class AddBanques extends Component
 {
-    public $code;
+    public $codeBanque;
     public $nomBanque;
     public $contact;
 
@@ -28,7 +28,7 @@ class AddBanques extends Component
     {
         try {
             Banque::create([
-                'codeBanque' => $this->code,
+                'codeBanque' => $this->codeBanque,
                 'nomBanque' => $this->nomBanque,
                 'contact' => $this->contact,
             ])->save();
