@@ -37,4 +37,20 @@ class HomeController extends Controller
     {
         return view('pages.data.operateur');
     }
+    public function provinces()
+    {
+        return view('pages.localisation.province');
+    }
+    public function villes()
+    {
+        return view('pages.localisation.ville');
+    }
+    public function communes()
+    {
+        return view('pages.localisation.commune');
+    }
+    public function quartiers()
+    {
+        return view('pages.localisation.quartier');
+    }
 }

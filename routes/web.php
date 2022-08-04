@@ -23,4 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/structures', [App\Http\Controllers\HomeController::class, 'structures'])->name('structures');
 Route::get('/banques', [App\Http\Controllers\HomeController::class, 'banques'])->name('banques');
 Route::get('/operateurs', [App\Http\Controllers\HomeController::class, 'operateurs'])->name('operateurs');
+Route::get('/provinces', [App\Http\Controllers\HomeController::class, 'provinces'])->name('provinces');
+Route::get('/villes', [App\Http\Controllers\HomeController::class, 'villes'])->name('villes');
+Route::get('/communes', [App\Http\Controllers\HomeController::class, 'communes'])->name('communes');
+Route::get('/quartiers', [App\Http\Controllers\HomeController::class, 'quartiers'])->name('quartiers');
 
