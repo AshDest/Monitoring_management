@@ -138,57 +138,6 @@
 
     @livewireScripts
 
-    <script type="text/javascript">
-        // window.addEventListener('ok', function(event){
-        //     // toastr.success(event.detail.message);
-        // });
-        window.addEventListener('fail', function(event){
-            //window.location.reload(true);
-            toastr.error(event.detail.message);
-        });
-
-        window.addEventListener('info', function(event){
-            //window.location.reload(true);
-            toastr.success(event.detail.message);
-        });
-
-    </script>
-    <!-- Hiden Modal Scripts -->
-
-<script>
-    window.livewire.on('ExerciceSaved', () => {
-        $('#modal_exercice').modal('hide');
-    })
-    </script>
-
-    <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'bottom-end',
-			iconColor: 'white',
-            showConfirmButton: false,
-            showCloseButton: true,
-            timer: 5000,
-            timerProgressBar:true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        });
-		window.addEventListener('ok',({detail:{type,message}})=>{
-            Toast.fire({
-                icon:type,
-                title:message
-            })
-        })
-        window.addEventListener('alert',({detail:{type,message}})=>{
-            Toast.fire({
-                icon:type,
-                title:message
-            })
-        })
-    </script>
-
     <!-- livewire alert Message -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
