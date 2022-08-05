@@ -75,7 +75,6 @@
                             </div>
                         </div>
                         <!--end::Alert-->
-
                         @endif
                     </div>
                 </div>
@@ -218,9 +217,11 @@
                                     <center> . . . Liste vide . . .</center>
                                 </div>
                                 @endforelse
+
                             </tbody>
                             <!--end::Table body-->
                         </table>
+                        {{ $provinces->links() }}
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->

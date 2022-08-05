@@ -125,14 +125,13 @@
     <script src="{{ asset('assets/js/custom/apps/subscriptions/list/export.js') }}"></script>
     <script src="{{ asset('assets/js/custom/apps/subscriptions/list/list.js') }}"></script>
     <!--end::Page Vendors Javascript-->
-
-    		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
-        		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="{{ asset('assets/js/custom/documentation/documentation.js') }}"></script>
-		<script src="{{ asset('assets/js/custom/documentation/search.js') }}"></script>
-		<!--end::Page Custom Javascript-->
-		<!--end::Page Vendors Javascript-->
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+    <!--begin::Page Custom Javascript(used by this page)-->
+    <script src="{{ asset('assets/js/custom/documentation/documentation.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/documentation/search.js') }}"></script>
+    <!--end::Page Custom Javascript-->
+    <!--end::Page Vendors Javascript-->
     <script src="{{ asset('assets/custom/waiting_buttons.js') }}"></script>
     <script src="{{ asset('assets/custom/cancelingModal.js') }}"></script>
 

@@ -44,8 +44,8 @@ class Villes extends Component
     public function displayformedit($id){
         $this->form_edit = $id;
         $var = Ville_Territoire::find($id);
-
         $result = Province::select('designation')->where('id', $id)->first();
+
         $this->codeSelected = $result->designation;
         $this->code = $var->code;
         $this->designation = $var->designation;

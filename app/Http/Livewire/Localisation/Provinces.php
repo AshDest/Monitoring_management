@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Localisation;
 use App\Models\Province;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithPagination;
 
 class Provinces extends Component
 {
@@ -70,9 +71,14 @@ class Provinces extends Component
             'onConfirmed' => 'confirmed',
         ]);
     }
+
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
     public function render()
     {
-        $provinces = Province::all();
+        $provinces = Province::paginate(5);
         return view('livewire.localisation.provinces', ['provinces' => $provinces]);
     }
 }
