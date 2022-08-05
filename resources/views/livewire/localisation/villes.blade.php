@@ -42,6 +42,21 @@
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
+                                                    <div class="col-md-4 fv-row">
+                                                        <!--end::Label-->
+                                                        <label class="required fs-5 fw-bold mb-2">Province</label>
+                                                        <!--end::Label-->
+                                                        <!--end::Input-->
+                                                        <select name="province_id" id="" wire:model='province_id'>
+                                                            @foreach ($provinces as $province)
+                                                                <option value="{{$province->id}}">{{$province->designation}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <!--end::Input-->
+                                                        @error('province_id')
+                                                        <span style="color: red;">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
                                                     <!--end::Col-->
                                                 </div>
                                             </fieldset>

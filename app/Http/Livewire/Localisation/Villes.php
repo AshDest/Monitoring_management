@@ -12,7 +12,7 @@ class Villes extends Component
     use LivewireAlert;
     public $code;
     public $designation;
-    public $province_id;
+    public $codeSelected;
 
     public $form_edit;
 
@@ -45,10 +45,10 @@ class Villes extends Component
         $this->form_edit = $id;
         $var = Ville_Territoire::find($id);
 
-        $this->comptes = Province::whereProvince_id($this->province_id)->get();
+        $result = Province::select('designation')->where('id', $id)->first();
+        $this->codeSelected = $result->designation;
         $this->code = $var->code;
         $this->designation = $var->designation;
-        $this->province_id = $var->province_id;
     }
     protected $listeners = [
         'confirmed'
