@@ -26,7 +26,7 @@ class Communes extends Component
                 ->update([
                     'code' => $this->code,
                     'designation' => $this->designation,
-                    'province_id' => $this->codeSelected,
+                    'ville_id' => $this->codeSelected,
                 ]);
             $this->form_edit =  NULL;
             $this->alert('success', 'Modifier avec Success', [
@@ -46,9 +46,14 @@ class Communes extends Component
     public function displayformedit($id){
         $this->form_edit = $id;
         $var = Commune_Secteur_Chefferie::find($id);
-        $this->codeSelected = $var->province_id;
+        $this->codeSelected = $var->ville_id;
         $this->code = $var->code;
         $this->designation = $var->designation;
+    }
+
+    public function closeEditForm()
+    {
+        $this->form_edit =  NULL;
     }
     protected $listeners = [
         'confirmed'

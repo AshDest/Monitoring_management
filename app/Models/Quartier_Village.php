@@ -20,7 +20,7 @@ class Quartier_Village extends Model
         return $this->hasMany(Structure::class);
     }
 
-    public function commune_secteur_chefferie()
+    public function communesecteurchefferie()
     {
         return $this->belongsTo(Commune_Secteur_Chefferie::class);
     }

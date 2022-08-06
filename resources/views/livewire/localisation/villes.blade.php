@@ -258,7 +258,7 @@
 <div class="modal fade" id="add_element_forms" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <div class="modal-content">
-            @livewire('data.add-operateur')
+            @livewire('localisation.add-villes')
             <!--end::Form-->
         </div>
     </div>
