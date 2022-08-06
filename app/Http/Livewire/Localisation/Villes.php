@@ -6,6 +6,7 @@ use App\Models\Province;
 use App\Models\Ville_Territoire;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithPagination;
 
 class Villes extends Component
 {
@@ -74,9 +75,14 @@ class Villes extends Component
             'onConfirmed' => 'confirmed',
         ]);
     }
+
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
     public function render()
     {
-        $villes = Ville_Territoire::all();
+        $villes = Ville_Territoire::paginate(5);
         return view('livewire.localisation.villes', ['villes' => $villes]);
     }
 }

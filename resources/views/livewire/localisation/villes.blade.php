@@ -165,9 +165,10 @@
                                                 value="1" />
                                         </div>
                                     </th>
-                                    <th class="min-w-125px">CODE PROVINCE</th>
-                                    <th class="min-w-125px">NOM PROVINCE</th>
-                                    <th class="text-end min-w-70px">Actions</th>
+                                    <th class="min-w-125px">CODE VILLE/TERRITOIRES</th>
+                                    <th class="min-w-125px">NOM VILLE/TERRITOIRES</th>
+                                    <th class="min-w-125px">PROVINCE</th>
+                                    <th class="text-end min-w-70px">ACTIONS</th>
                                 </tr>
                                 <!--end::Table row-->
                             </thead>
@@ -175,24 +176,28 @@
                             <!--begin::Table body-->
                             <tbody class="text-gray-600 fw-bold">
                                 <tr>
-                                    @forelse ($provinces as $province)
+                                    @forelse ($villes as $ville)
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="{{$province->id}}" />
+                                            <input class="form-check-input" type="checkbox" value="{{$ville->id}}" />
                                         </div>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$province->code}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$ville->code}}</a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$province->designation}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$ville->designation}}</a>
+                                    </td>
+                                    <td>
+                                        <a href=""
+                                            class="text-gray-800 text-hover-primary mb-1">{{$ville->province->designation}}</a>
                                     </td>
                                     <td class="text-end">
                                         <a href="#"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                            wire:click="displayformedit({{$province->id}})">
+                                            wire:click="displayformedit({{$ville->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -207,7 +212,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $province->id }})">
+                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $ville->id }})">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -236,6 +241,7 @@
                             </tbody>
                             <!--end::Table body-->
                         </table>
+                        {{ $villes->links() }}
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->
