@@ -47,7 +47,7 @@
                                                         <label class="required fs-5 fw-bold mb-2">Province</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <select name="province_id" id="" wire:model='province_id'>
+                                                        <select name="province_id" id="" wire:model='codeSelected' class="form-select">
                                                             @foreach ($provinces as $province)
                                                                 <option value="{{$province->id}}">{{$province->designation}}</option>
                                                             @endforeach

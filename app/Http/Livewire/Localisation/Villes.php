@@ -18,6 +18,7 @@ class Villes extends Component
     public $form_edit;
 
     public $ids;
+    public $provinces;
 
     public function update()
     {
@@ -26,6 +27,7 @@ class Villes extends Component
                 ->update([
                     'code' => $this->code,
                     'designation' => $this->designation,
+                    'province_id' => $this->codeSelected,
                 ]);
             $this->form_edit =  NULL;
             $this->alert('success', 'Modifier avec Success', [
@@ -45,9 +47,7 @@ class Villes extends Component
     public function displayformedit($id){
         $this->form_edit = $id;
         $var = Ville_Territoire::find($id);
-        $result = Province::select('designation')->where('id', $id)->first();
-
-        $this->codeSelected = $result->designation;
+        $this->codeSelected = $var->province_id;
         $this->code = $var->code;
         $this->designation = $var->designation;
     }
@@ -76,6 +76,10 @@ class Villes extends Component
         ]);
     }
 
+    public function mount()
+    {
+        $this->provinces = Province::all();
+    }
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
