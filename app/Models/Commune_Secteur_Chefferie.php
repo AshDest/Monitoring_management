@@ -17,7 +17,7 @@ class Commune_Secteur_Chefferie extends Model
 
     public function villeterritoires()
     {
-        return $this->belongsTo(Ville_Territoire::class);
+        return $this->belongsTo(Ville_Territoire::class, 'ville_id');
     }
 
     public function quartier_village()

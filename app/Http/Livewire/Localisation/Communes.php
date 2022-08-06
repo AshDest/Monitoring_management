@@ -90,7 +90,7 @@ class Communes extends Component
 
     public function render()
     {
-        $communes = Commune_Secteur_Chefferie::all();
+        $communes = Commune_Secteur_Chefferie::paginate(5);
         return view('livewire.localisation.communes', ['communes' => $communes]);
     }
 }
