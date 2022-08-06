@@ -51,10 +51,10 @@ class Communes extends Component
         $this->designation = $var->designation;
     }
 
-    public function closeEditForm()
-    {
-        $this->form_edit =  NULL;
-    }
+    // public function closeEditForm()
+    // {
+    //     $this->form_edit =  NULL;
+    // }
     protected $listeners = [
         'confirmed'
     ];
@@ -82,7 +82,7 @@ class Communes extends Component
 
     public function mount()
     {
-        $this->villes = Ville_Territoire::all();
+        //$this->villes = Ville_Territoire::all();
     }
     use WithPagination;
 
@@ -90,7 +90,7 @@ class Communes extends Component
 
     public function render()
     {
-        $communes = Commune_Secteur_Chefferie::paginate(5);
+        $communes = Commune_Secteur_Chefferie::all();
         return view('livewire.localisation.communes', ['communes' => $communes]);
     }
 }
