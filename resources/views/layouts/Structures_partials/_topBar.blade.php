@@ -12,35 +12,6 @@
 <!--end::Navbar-->
 <!--begin::Toolbar wrapper-->
 <div class="d-flex align-items-stretch flex-shrink-0">
-    <!--begin::Search-->
-    <div class="d-flex align-items-stretch ms-1 ms-lg-3">
-        <!--begin::Search-->
-        <div id="kt_header_search" class="header-search d-flex align-items-stretch" data-kt-search-keypress="true"
-            data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu"
-            data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true"
-            data-kt-menu-placement="bottom-end">
-            <!--begin::Search toggle-->
-            <div class="d-flex align-items-center" data-kt-search-element="toggle" id="kt_header_search_toggle">
-                <div
-                    class="btn btn-icon btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px">
-                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-                    <span class="svg-icon svg-icon-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1"
-                                transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
-                            <path
-                                d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
-                                fill="currentColor" />
-                        </svg>
-                    </span>
-                    <!--end::Svg Icon-->
-                </div>
-            </div>
-            <!--end::Search toggle-->
-        </div>
-        <!--end::Search-->
-    </div>
-    <!--end::Search-->
     <!--begin::Activities-->
     <div class="d-flex align-items-center ms-1 ms-lg-3">
         <!--begin::Drawer toggle-->
@@ -60,40 +31,32 @@
         <!--end::Drawer toggle-->
     </div>
     <!--end::Activities-->
-    <!--begin::Notifications-->
-    <div class="d-flex align-items-center ms-1 ms-lg-3">
-        <!--begin::Menu- wrapper-->
-        <div class="btn btn-icon btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
-            data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-            <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
-            <span class="svg-icon svg-icon-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z"
-                        fill="currentColor" />
-                    <path
-                        d="M11.2929 14.7071C11.6834 14.3166 12.3166 14.3166 12.7071 14.7071L15.2929 17.2929C15.6834 17.6834 15.6834 18.3166 15.2929 18.7071L12.7071 21.2929C12.3166 21.6834 11.6834 21.6834 11.2929 21.2929L8.70711 18.7071C8.31658 18.3166 8.31658 17.6834 8.70711 17.2929L11.2929 14.7071Z"
-                        fill="currentColor" />
-                    <path opacity="0.3"
-                        d="M5.29289 8.70711C5.68342 8.31658 6.31658 8.31658 6.70711 8.70711L9.29289 11.2929C9.68342 11.6834 9.68342 12.3166 9.29289 12.7071L6.70711 15.2929C6.31658 15.6834 5.68342 15.6834 5.29289 15.2929L2.70711 12.7071C2.31658 12.3166 2.31658 11.6834 2.70711 11.2929L5.29289 8.70711Z"
-                        fill="currentColor" />
-                    <path opacity="0.3"
-                        d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z"
-                        fill="currentColor" />
-                </svg>
-            </span>
-            <!--end::Svg Icon-->
-        </div>
-        <!--end::Menu wrapper-->
-    </div>
     <!--begin::Theme mode-->
     <div class="d-flex align-items-center ms-1 ms-lg-3">
         <!--begin::Theme mode docs-->
         <a class="btn btn-icon btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
-            href="../../demo1/dist/documentation/getting-started/dark-mode.html">
-            <i class="fonticon-sun fs-2"></i>
+            data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+            <i class="fonticon-settings fs-2"></i>
         </a>
         <!--end::Theme mode docs-->
+        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
+            data-kt-menu="true">
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+            <a href="#" class="menu-link px-3">
+                New Ticket
+            </a>
+        </div>
+        <!--end::Menu item-->
+
+        <!--begin::Menu item-->
+        <div class="menu-item px-3">
+            <a href="#" class="menu-link px-3">
+                New Customer
+            </a>
+        </div>
+        <!--end::Menu item-->
+        </div>
     </div>
     <!--end::Theme mode-->
     <!--begin::User menu-->
@@ -101,7 +64,7 @@
         <!--begin::Menu wrapper-->
         <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click"
             data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-            <img src="assets/media/avatars/300-1.jpg" alt="user" />
+            <img src="{{ asset('assets/media/avatars/300-1.jpg') }}" alt="user" />
         </div>
         <!--begin::User account menu-->
         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
@@ -111,13 +74,13 @@
                 <div class="menu-content d-flex align-items-center px-3">
                     <!--begin::Avatar-->
                     <div class="symbol symbol-50px me-5">
-                        <img alt="Logo" src="assets/media/avatars/300-1.jpg" />
+                        <img alt="Logo" src="{{ asset('assets/media/avatars/300-1.jpg') }}" />
                     </div>
                     <!--end::Avatar-->
                     <!--begin::Username-->
                     <div class="d-flex flex-column">
                         <div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::user()->name }}
-                            <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
+                            {{-- <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span> --}}
                         </div>
                         <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{ Auth::user()->email }}</a>
                     </div>
@@ -134,8 +97,7 @@
             </div>
             <!--begin::Menu item-->
             <div class="menu-item px-5">
-                <a class="menu-link px-5" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
+                <a class="menu-link px-5" href="{{ route('logout') }}" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">Sign Out</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
@@ -145,19 +107,6 @@
             <!--begin::Menu separator-->
             <div class="separator my-2"></div>
             <!--end::Menu separator-->
-            <!--begin::Menu item-->
-            <div class="menu-item px-5">
-                <div class="menu-content px-5">
-                    <label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success"
-                        for="kt_user_menu_dark_mode_toggle">
-                        <input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode"
-                            id="kt_user_menu_dark_mode_toggle" data-kt-url="http://127.0.0.1:5000/home" />
-                        <span class="pulse-ring ms-n1"></span>
-                        <span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
-                    </label>
-                </div>
-            </div>
-            <!--end::Menu item-->
         </div>
         <!--end::User account menu-->
         <!--end::Menu wrapper-->
