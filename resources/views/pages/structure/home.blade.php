@@ -1,4 +1,4 @@
 @extends('layouts.structure_Default')
 @section('content')
-    @livewire('structures', ['structure'=>$structure])
+    @livewire('structure.homes', ['structure'=>$structure])
 @endsection
