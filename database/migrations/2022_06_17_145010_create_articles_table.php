@@ -22,7 +22,7 @@ return new class extends Migration
             $table->double('prixUnitaire');
             $table->integer('stockAlerte');
             $table->unsignedBigInteger('codeCategorie');
-            $table->foreign('codeCategorie')->references('id')->on('categorie_articles');
+            $table->foreign('codeCategorie')->references('id')->on('categorie_articles')->onUpdate('cascade')->onDelete('cascade');
             $table->string('GLArticle');
             $table->string('GLChargeArticle');
             $table->string('GLProduitArticle');

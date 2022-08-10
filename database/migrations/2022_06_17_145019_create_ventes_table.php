@@ -19,7 +19,7 @@ return new class extends Migration
             $table->dateTime('dateVente');
             $table->double('montantTotal');
             $table->unsignedBigInteger('codeClient');
-            $table->foreign('codeClient')->references('id')->on('clients');
+            $table->foreign('codeClient')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

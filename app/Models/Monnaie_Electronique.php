@@ -20,6 +20,6 @@ class Monnaie_Electronique extends Model
 
     public function structure()
     {
-        return $this->belongsTo(Structure::class);
+        return $this->belongsTo(Structure::class, 'codeOperateur');
     }
 }

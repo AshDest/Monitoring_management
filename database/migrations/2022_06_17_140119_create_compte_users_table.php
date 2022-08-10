@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('compte_users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('codeAgent');
-            $table->foreign('codeAgent')->references('id')->on('agents');
+            $table->foreign('codeAgent')->references('id')->on('agents')->onUpdate('cascade')->onDelete('cascade');
             $table->string('username')->unique();
             $table->string('password');
             $table->timestamps();

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('designation');
             $table->unsignedBigInteger('province_id');
-            $table->foreign('province_id')->references('id')->on('provinces');
+            $table->foreign('province_id')->references('id')->on('provinces')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

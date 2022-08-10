@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('codeAprro')->unique();
             $table->dateTime('dateAppro');
             $table->unsignedBigInteger('codeFournisseur');
-            $table->foreign('codeFournisseur')->references('id')->on('fournisseurs');
+            $table->foreign('codeFournisseur')->references('id')->on('fournisseurs')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('id_structure');
             $table->timestamps();
         });

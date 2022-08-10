@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('etatcivil', ['Marie', 'Celibataire']);
             $table->string('adresse');
             $table->unsignedBigInteger('codeStructure');
-            $table->foreign('codeStructure')->references('id')->on('structures');
+            $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

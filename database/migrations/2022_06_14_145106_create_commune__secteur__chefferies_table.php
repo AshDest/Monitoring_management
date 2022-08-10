@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('designation');
             $table->unsignedBigInteger('ville_id');
-            $table->foreign('ville_id')->references('id')->on('ville__territoires');
+            $table->foreign('ville_id')->references('id')->on('ville__territoires')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

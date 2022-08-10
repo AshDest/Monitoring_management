@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('monnaie__electroniques', function (Blueprint $table) {
             $table->id();
-            $table->string('codeOperateur')->unique();
+            $table->unsignedBigInteger('codeOperateur');
+            $table->foreign('codeOperateur')->references('id')->on('operateur_tels')->onUpdate('cascade')->onDelete('cascade');
             $table->string('numTel');
             $table->double('soldeUSD');
             $table->double('soldeCDF');
             $table->unsignedBigInteger('codeStructure');
-            $table->foreign('codeStructure')->references('id')->on('structures');
+            $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->string('GLMonnaieE');
             $table->timestamps();
         });

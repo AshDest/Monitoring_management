@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('numeroCompte')->unique();
             $table->unsignedBigInteger('codeBanque');
-            $table->foreign('codeBanque')->references('id')->on('banques');
+            $table->foreign('codeBanque')->references('id')->on('banques')->onUpdate('cascade')->onDelete('cascade');
             $table->string('designation');
             $table->string('agence');
             $table->double('solde');
             $table->unsignedBigInteger('codeStructure');
-            $table->foreign('codeStructure')->references('id')->on('structures');
+            $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->string('GLCompteBanque');
             $table->timestamps();
         });
