@@ -39,7 +39,7 @@
     style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
     <div class="d-flex flex-column flex-root">
         <div class="page d-flex flex-row flex-column-fluid">
-            @include('layouts.partials._sideBar')
+            @include('layouts.Structures_partials._sideBar')
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 <!--begin::Header-->
                 <div id="kt_header" style="" class="header align-items-stretch">
@@ -72,17 +72,17 @@
                             </a>
                         </div>
                         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
-                            @include('layouts.partials._topBar')
+                            @include('layouts.Structures_partials._topBar')
                         </div>
                     </div>
                 </div>
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    @include('layouts.partials._toolbar')
+                    @include('layouts.Structures_partials._toolbar')
                     <main class="py-4">
                         @yield('content')
                     </main>
                 </div>
-                @include('layouts.partials._foot')
+                @include('layouts.Structures_partials._foot')
             </div>
         </div>
     </div>
