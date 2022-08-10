@@ -26,6 +26,19 @@ class StructuresController extends Controller
     {
         return view('pages.structure.home', compact('structure'));
     }
+    public function comptebancaire($structure)
+    {
+        return view('pages.structure.compte-bancaire', compact('structure'));
+    }
+    public function monnaielectronique($structure)
+    {
+        return view('pages.structure.monnai-electro', compact('structure'));
+    }
+    public function agents($structure)
+    {
+        return view('pages.structure.agent', compact('structure'));
+    }
+
 
 
 }

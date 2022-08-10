@@ -31,3 +31,6 @@ Route::get('/quartiers', [App\Http\Controllers\HomeController::class, 'quartiers
 // Route vers les pages de la structure
 
 Route::get('{structure}/home', [App\Http\Controllers\StructuresController::class, 'index'])->name('home');
+Route::get('{structure}/comptes', [App\Http\Controllers\StructuresController::class, 'comptebancaire'])->name('comptebancaire');
+Route::get('{structure}/monnais', [App\Http\Controllers\StructuresController::class, 'monnaielectronique'])->name('monnaielectronique');
+Route::get('{structure}/agents', [App\Http\Controllers\StructuresController::class, 'agents'])->name('agents');
