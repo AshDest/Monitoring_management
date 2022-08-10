@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire\Structure;
 
+use App\Models\Agent;
 use Livewire\Component;
 
 class Agents extends Component
 {
+    public $structure;
     public function render()
     {
-        return view('livewire.structure.agents');
+        $agents = Agent::whereId($this->structure)->get();
+        return view('livewire.structure.agents', ['agents' => $agents]);
     }
 }

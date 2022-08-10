@@ -14,4 +14,9 @@ class Operateur_tel extends Model
         'nomOperateur',
         'numTel'
     ];
+
+    public function monnaielectronique()
+    {
+        return $this->hasMany(Monnaie_Electronique::class);
+    }
 }
