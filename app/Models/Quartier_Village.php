@@ -22,7 +22,7 @@ class Quartier_Village extends Model
 
     public function communesecteurchefferie()
     {
-        return $this->belongsTo(Commune_Secteur_Chefferie::class);
+        return $this->belongsTo(Commune_Secteur_Chefferie::class, 'commune_id');
     }
 
 }

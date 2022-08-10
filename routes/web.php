@@ -30,4 +30,4 @@ Route::get('/quartiers', [App\Http\Controllers\HomeController::class, 'quartiers
 
 // Route vers les pages de la structure
 
-Route::get('/structure', [App\Http\Controllers\StructuresController::class, 'index'])->name('home');
+Route::get('{structure}/home', [App\Http\Controllers\StructuresController::class, 'index'])->name('home');

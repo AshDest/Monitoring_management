@@ -5,7 +5,7 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted fw-bold me-1">2022©</span>
-            <a href="#" target="_blank" class="text-gray-800 text-hover-primary">Njira</a>
+            <a href="#" target="_blank" class="text-gray-800 text-hover-primary">Njira {{$structure}}</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Menu-->

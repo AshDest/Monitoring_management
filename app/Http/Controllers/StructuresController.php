@@ -22,9 +22,9 @@ class StructuresController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index()
+    public function index($structure)
     {
-        return view('pages.structure.home');
+        return view('pages.structure.home', compact('structure'));
     }
 
 

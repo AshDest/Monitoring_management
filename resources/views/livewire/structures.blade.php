@@ -98,35 +98,43 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#"
+                                        <a href="/{{$structure->id}}/home"
                                             class="text-dark fw-bolder text-hover-primary fs-6">{{$structure->codeStructure}}</a>
                                     </td>
                                     <td>
-                                        <a href="#"
+                                        <a href="/{{$structure->id}}/home"
                                             class="text-dark fw-bolder text-hover-primary fs-6">{{$structure->designation}}</a>
                                     </td>
                                     <td>
-                                        <a href="#"
-                                            class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$structure->adresse_id}}</a>
+                                        <a href="/{{$structure->id}}/home"
+                                            class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$structure->avenu}}</a>
                                         <span
-                                            class="text-muted fw-bold text-muted d-block fs-7">{{$structure->avenu}}</span>
+                                            class="text-muted fw-bold text-muted d-block fs-7">{{$structure->addresse->designation}}</span>
+                                            <span
+                                            class="text-muted fw-bold text-muted d-block fs-7">
+                                                {{$structure->addresse->communesecteurchefferie->villeterritoires->designation}}: {{$structure->addresse->communesecteurchefferie->designation}}
+                                            </span>
+                                            <span
+                                            class="text-muted fw-bold text-muted d-block fs-7">
+                                                {{$structure->addresse->communesecteurchefferie->villeterritoires->province->designation}}
+                                            </span>
                                     </td>
                                     <td>
-                                        <a href="#"
+                                        <a href="/{{$structure->id}}/home"
                                             class="text-dark fw-bolder text-hover-primary fs-6">{{$structure->email}}</a>
                                     </td>
                                     <td>
-                                        <a href="#"
+                                        <a href="/{{$structure->id}}/home"
                                             class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$structure->numTel1}}</a>
                                         <span
                                             class="text-muted fw-bold text-muted d-block fs-7">{{$structure->numTel2}}</span>
                                     </td>
                                     <td>
-                                        <a href="#"
+                                        <a href="/{{$structure->id}}/home"
                                             class="text-dark fw-bolder text-hover-primary fs-6">{{$structure->numImpot}}</a>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#"
+                                        <a href="/{{$structure->id}}/home"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
                                             <span class="svg-icon svg-icon-3">

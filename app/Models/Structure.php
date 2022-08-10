@@ -40,6 +40,6 @@ class Structure extends Model
 
     public function addresse()
     {
-        return $this->belongsTo(Quartier_Village::class);
+        return $this->belongsTo(Quartier_Village::class, 'adresse_id');
     }
 }

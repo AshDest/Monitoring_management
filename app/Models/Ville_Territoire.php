@@ -22,6 +22,6 @@ class Ville_Territoire extends Model
 
     public function communesecteurchefferie()
     {
-        return $this->hasMany(Commune_Secteur_Chefferie::class);
+        return $this->hasMany(Commune_Secteur_Chefferie::class, 'province_id');
     }
 }
