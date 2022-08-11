@@ -39,7 +39,7 @@
                     <!--end::Label-->
                     <!--end::Input-->
                     <select name="province_id" wire:model='province_id' class="form-select">
-                        <option value=""> -- Select Province -- </option>
+                        <option value=""> -- Select Ville -- </option>
                         @foreach ($provinces as $province)
                             <option value="{{$province->id}}">{{$province->designation}}</option>
                         @endforeach

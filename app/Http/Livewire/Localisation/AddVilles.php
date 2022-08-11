@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Localisation;
 
 use App\Models\Province;
+use App\Models\Ville_Territoire;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
@@ -27,7 +28,7 @@ class AddVilles extends Component
     public function save()
     {
         try {
-            Province::create([
+            Ville_Territoire::create([
                 'code' => $this->code,
                 'designation' => $this->designation,
                 'province_id' => $this->province_id,

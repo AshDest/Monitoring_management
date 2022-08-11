@@ -82,7 +82,7 @@ class Communes extends Component
 
     public function mount()
     {
-        //$this->villes = Ville_Territoire::all();
+        $this->villes = Ville_Territoire::all();
     }
     use WithPagination;
 
