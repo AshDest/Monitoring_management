@@ -92,7 +92,6 @@
                     </div>
                 </div>
                 <div>
-
                 </div>
                 <!--begin::Card-->
                 <div class="card">
@@ -269,6 +268,7 @@
         </div>
         <!--end::Post-->
     </div>
+    <input type="hidden" value="{{$structure}}" wire:model='codeStructure' />
     <!--end::Content-->
 </div>
 

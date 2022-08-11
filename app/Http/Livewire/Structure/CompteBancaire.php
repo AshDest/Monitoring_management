@@ -10,6 +10,8 @@ class CompteBancaire extends Component
     public $structure;
     public $form_edit;
 
+    public $banque_id;
+
     public $ids;
     public function render()
     {
