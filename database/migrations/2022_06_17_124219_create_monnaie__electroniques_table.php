@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('codeOperateur');
             $table->foreign('codeOperateur')->references('id')->on('operateur_tels')->onUpdate('cascade')->onDelete('cascade');
             $table->string('numTel');
-            $table->double('soldeUSD');
-            $table->double('soldeCDF');
+            $table->double('soldeUSD')->nullable();
+            $table->double('soldeCDF')->nullable();
             $table->unsignedBigInteger('codeStructure');
             $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->string('GLMonnaieE');

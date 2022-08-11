@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreign('codeBanque')->references('id')->on('banques')->onUpdate('cascade')->onDelete('cascade');
             $table->string('designation');
             $table->string('agence');
-            $table->double('solde');
+            $table->double('solde')->nullable();
             $table->unsignedBigInteger('codeStructure');
             $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->string('GLCompteBanque');

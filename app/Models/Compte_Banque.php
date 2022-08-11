@@ -21,6 +21,6 @@ class Compte_Banque extends Model
 
     public function banque()
     {
-        return $this->belongsTo(Banque::class, 'agence');
+        return $this->belongsTo(Banque::class, 'codeBanque');
     }
 }
