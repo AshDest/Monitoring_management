@@ -16,6 +16,8 @@ class AddCompteBancaire extends Component
     public $codeStructure;
     public $GLCompteBanque;
 
+    public $structure;
+
     protected $rules = [
         'numeroCompte' => 'required',
         'codeBanque' => 'required',
@@ -50,6 +52,10 @@ class AddCompteBancaire extends Component
                 'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
             ]);
         }
+    }
+    public function mount($structure)
+    {
+        $this->structure = $structure;
     }
     public function render()
     {

@@ -268,14 +268,12 @@
         </div>
         <!--end::Post-->
     </div>
-    <input type="hidden" value="{{$structure}}" wire:model='codeStructure' />
-    <!--end::Content-->
 </div>
 
 <div class="modal fade" id="add_banque" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <div class="modal-content">
-            @livewire('structure.add-compte-bancaire')
+            @livewire('structure.add-compte-bancaire',['structure'=>$structure])
             <!--end::Form-->
         </div>
     </div>

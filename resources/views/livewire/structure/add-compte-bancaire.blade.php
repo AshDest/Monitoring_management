@@ -1,7 +1,3 @@
-@php
-use App\Models\Structure;
-$struc = Structure::select('id','designation')->where('id',$structure)->first();
-@endphp
 <form class="form" wire:submit.prevent="save">
     <div class="modal-header" id="kt_modal_new_address_header">
         <h2>Ajouter un comote bancaire</h2>
@@ -59,7 +55,7 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                         name="agence" />
                     <!--end::Input-->
                 </div>
-                    <input type="hidden" value="{{$struc}}" wire:model='codeStructure' />
+                    <input type="hidden" value="{{$structure}}" wire:model='codeStructure' />
                     <input type="hidden" value="0" wire:model='solde' />
                 <div class="col-md-6 fv-row">
                     <!--end::Label-->
