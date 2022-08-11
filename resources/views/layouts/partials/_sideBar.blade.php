@@ -145,7 +145,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/banques">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -162,7 +162,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/operateurs">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -217,7 +217,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/provinces">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -234,7 +234,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/villes">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -251,7 +251,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/communes">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -268,7 +268,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/quartiers">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
