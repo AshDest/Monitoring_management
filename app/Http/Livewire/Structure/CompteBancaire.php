@@ -8,9 +8,12 @@ use Livewire\Component;
 class CompteBancaire extends Component
 {
     public $structure;
+    public $form_edit;
+
+    public $ids;
     public function render()
     {
-        $comptebancaires = Compte_Banque::whereId($this->structure)->get();
+        $comptebancaires = Compte_Banque::all();
         return view('livewire.structure.compte-bancaire', ['comptebancaires' => $comptebancaires]);
     }
 }
