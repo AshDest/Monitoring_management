@@ -75,7 +75,6 @@
                             </div>
                         </div>
                         <!--end::Alert-->
-
                         @endif
                     </div>
                 </div>

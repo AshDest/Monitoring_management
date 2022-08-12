@@ -8,6 +8,10 @@ use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 class MonnaiElectronique extends Component
 {
+    public $codeOperateur;
+    public $numTel;
+    public $GLMonnaieE;
+
     public $structure;
     public $operateurs;
     public $form_edit;
@@ -15,11 +19,9 @@ class MonnaiElectronique extends Component
     public function modifycmpt(){
         Monnaie_Electronique::whereId($this->form_edit)
                                 ->update([
-                        'numeroCompte' => $this->numeroCompte,
-                        'codeBanque' => $this->codeBanque,
-                        'designation' => $this->designation,
-                        'agence' => $this->agence,
-                        'GLCompteBanque' => $this->GLCompteBanque,
+                        'codeOperateur' => $this->codeOperateur,
+                        'numTel' => $this->numTel,
+                        'GLMonnaieE' => $this->GLMonnaieE,
                     ]);
         $this->form_edit =  NULL;
         $this->alert('success', 'Modifier avec Success', [
@@ -57,11 +59,9 @@ class MonnaiElectronique extends Component
         $this->form_edit = $id;
         $var = Monnaie_Electronique::find($id);
 
-        $this->numeroCompte = $var->numeroCompte;
-        $this->codeBanque = $var->codeBanque;
-        $this->agence = $var->agence;
-        $this->designation = $var->designation;
-        $this->GLCompteBanque = $var->GLCompteBanque;
+        $this->codeOperateur = $var->codeOperateur;
+        $this->numTel = $var->numTel;
+        $this->GLMonnaieE = $var->GLMonnaieE;
     }
     public function mount()
     {
@@ -69,7 +69,7 @@ class MonnaiElectronique extends Component
     }
     public function render()
     {
-        $monnaielectroniques = Monnaie_Electronique::whereId($this->structure)->get();
+        $monnaielectroniques = Monnaie_Electronique::where('codeStructure',$this->structure)->get();
         return view('livewire.structure.monnai-electronique', ['monnaielectroniques' => $monnaielectroniques]);
     }
 }

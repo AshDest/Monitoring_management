@@ -23,67 +23,46 @@
                                             <fieldset>
                                                 <div class="row mb-5">
                                                     <div class="col-md-4 fv-row">
-                                                        <label class="required fs-5 fw-bold mb-2">Numero Compte</label>
-                                                        <input type="text" wire:model='numeroCompte' class="form-control form-control-solid" placeholder=""
-                                                            name="numeroCompte" />
-                                                            @error('numeroCompte')
-                                                            <span style="color: red;">{{ $message }}</span>
-                                                            @enderror
-                                                    </div>
-                                                    <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Banque</label>
+                                                        <label class="required fs-5 fw-bold mb-2">Operateur Telephonique</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <select name="codeBanque" class="form-select" wire:model='codeBanque'>
-                                                            @foreach ($banques as $banque)
-                                                            <option value="{{$banque->id}}">{{$banque->nomBanque}}</option>
+                                                        <select name="codeOperateur" class="form-select" wire:model='codeOperateur'>
+                                                            @foreach ($operateurs as $operateur)
+                                                            <option value="{{$operateur->id}}">{{$operateur->nomOperateur}}</option>
                                                         @endforeach
                                                         </select>
 
-                                                        @error('codeBanque')
+                                                        @error('codeOperateur')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
-                                                        <label class="required fs-5 fw-bold mb-2">Intituler</label>
-                                                        <input type="text" wire:model='designation' class="form-control form-control-solid" placeholder=""
-                                                        name="designation" />
+                                                        <label class="required fs-5 fw-bold mb-2">Numero Telephone</label>
+                                                        <input type="text" wire:model='numTel' class="form-control form-control-solid" placeholder=""
+                                                        name="numTel" />
                                                     <!--end::Input-->
-                                                    @error('designation')
+                                                    @error('numTel')
                                                     <span style="color: red;">{{ $message }}</span>
                                                     @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Agence</label>
+                                                        <label class="required fs-5 fw-bold mb-2">Numero Comptable</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <input type="text" wire:model='agence' class="form-control form-control-solid" placeholder=""
-                                                            name="agence" />
+                                                        <input type="text" wire:model='GLMonnaieE' class="form-control form-control-solid" placeholder=""
+                                                            name="GLMonnaieE" />
                                                         <!--end::Input-->
-                                                        @error('agence')
+                                                        @error('GLMonnaieE')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
-                                                    <div class="col-md-4 fv-row">
-                                                        <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Agence</label>
-                                                        <!--end::Label-->
-                                                        <!--end::Input-->
-                                                        <input type="text" wire:model='GLCompteBanque' class="form-control form-control-solid" placeholder=""
-                                                            name="GLCompteBanque" />
-                                                        <!--end::Input-->
-                                                        @error('GLCompteBanque')
-                                                        <span style="color: red;">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                    <!--end::Col-->
                                                 </div>
                                             </fieldset>
                                             <div class="text-right">
                                                 <button class="btn btn-light-success col-sm-12" wire:click=modifycmpt()><i
-                                                        class="fas fa-save"></i>&nbsp;&nbsp;Modifier Banque</button>
+                                                        class="fas fa-save"></i>&nbsp;&nbsp;Modifier</button>
                                             </div>
                                         </form>
                                         <!--end::Content-->
@@ -214,6 +193,10 @@
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
                                             <input class="form-check-input" type="checkbox" value="{{$monnaielectronique->id}}" />
                                         </div>
+                                    </td>
+                                    <td>
+                                        <a href=""
+                                            class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->operateur->nomOperateur}}</a>
                                     </td>
                                     <td>
                                         <a href=""

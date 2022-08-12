@@ -24,7 +24,7 @@
                     <label class="required fs-5 fw-bold mb-2">Operateur Telephonique</label>
                     <!--end::Label-->
                     <!--end::Input-->
-                    <select name="codeBanque" wire:model='codeBanque' class="form-select">
+                    <select name="codeOperateur" wire:model='codeOperateur' class="form-select">
                         <option value=""> -- Select Operateur -- </option>
                         @foreach ($operateurs as $operateur)
                             <option value="{{$operateur->id}}">{{$operateur->nomOperateur}}</option>
