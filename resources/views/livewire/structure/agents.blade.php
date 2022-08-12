@@ -20,37 +20,45 @@
                                                 <div class="row mb-5">
                                                     <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Operateur Telephonique</label>
+                                                        <label class="required fs-5 fw-bold mb-2">Matricule Agent</label>
                                                         <!--end::Label-->
-                                                        <!--end::Input-->
-                                                        <select name="codeOperateur" class="form-select" wire:model='codeOperateur'>
-                                                            @foreach ($operateurs as $operateur)
-                                                            <option value="{{$operateur->id}}">{{$operateur->nomOperateur}}</option>
-                                                        @endforeach
-                                                        </select>
+                                                        <input type="text" wire:model='matricule' class="form-control form-control-solid" placeholder=""
+                                                        name="matricule" />
 
-                                                        @error('codeOperateur')
+                                                        @error('matricule')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
-                                                        <label class="required fs-5 fw-bold mb-2">Numero Telephone</label>
-                                                        <input type="text" wire:model='numTel' class="form-control form-control-solid" placeholder=""
-                                                        name="numTel" />
+                                                        <label class="required fs-5 fw-bold mb-2">Noms de l'Agent</label>
+                                                        <input type="text" wire:model='noms' class="form-control form-control-solid" placeholder=""
+                                                        name="noms" />
                                                     <!--end::Input-->
-                                                    @error('numTel')
+                                                    @error('noms')
                                                     <span style="color: red;">{{ $message }}</span>
                                                     @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Numero Comptable</label>
+                                                        <label class="required fs-5 fw-bold mb-2">Etat Civil</label>
+                                                        <!--end::Label-->
+                                                        <select name="etatcivil" wire:model='etatcivil' id="etatcivil" class="form-select">
+                                                            <option value="Marie">Marié</option>
+                                                            <option value="Celibataire">Célibataire</option>
+                                                        </select>
+                                                        @error('etatcivil')
+                                                        <span style="color: red;">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="col-md-4 fv-row">
+                                                        <!--end::Label-->
+                                                        <label class="required fs-5 fw-bold mb-2">Adresse</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <input type="text" wire:model='GLMonnaieE' class="form-control form-control-solid" placeholder=""
-                                                            name="GLMonnaieE" />
+                                                        <input type="text" wire:model='adresse' class="form-control form-control-solid" placeholder=""
+                                                            name="adresse" />
                                                         <!--end::Input-->
-                                                        @error('GLMonnaieE')
+                                                        @error('adresse')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
@@ -135,7 +143,7 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->Ajouter un Compte
+                                    <!--end::Svg Icon-->Ajouter un agent
                                 </a>
                                 <!--end::Add subscription-->
                             </div>
@@ -171,11 +179,10 @@
                                                 value="1" />
                                         </div>
                                     </th>
-                                    <th class="min-w-125px">OPERATEUR</th>
-                                    <th class="min-w-125px">NUMERO TELEPHONE</th>
-                                    <th class="min-w-125px">SOLDE EN $</th>
-                                    <th class="min-w-125px">SOLDE EN FC</th>
-                                    <th class="min-w-125px">NUMERO COMPTABLE</th>
+                                    <th class="min-w-125px">MATRICULE</th>
+                                    <th class="min-w-125px">NOM COMPLET</th>
+                                    <th class="min-w-125px">ETAT CIVIL</th>
+                                    <th class="min-w-125px">ADRESSE</th>
                                     <th class="text-end min-w-70px">Actions</th>
                                 </tr>
                                 <!--end::Table row-->
@@ -184,36 +191,32 @@
                             <!--begin::Table body-->
                             <tbody class="text-gray-600 fw-bold">
                                 <tr>
-                                    @forelse ($monnaielectroniques as $monnaielectronique)
+                                    @forelse ($agents as $agent)
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="{{$monnaielectronique->id}}" />
+                                            <input class="form-check-input" type="checkbox" value="{{$agent->id}}" />
                                         </div>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->operateur->nomOperateur}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$agent->matricule}}</a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->numTel}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$agent->noms}}</a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->soldeUSD}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$agent->etatcivil}}</a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->soldeCDF}}</a>
-                                    </td>
-                                    <td>
-                                        <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->GLMonnaieE}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$agent->adresse}}</a>
                                     </td>
                                     <td class="text-end">
                                         <a href="#"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                            wire:click="displayformedit({{$monnaielectronique->id}})">
+                                            wire:click="displayformedit({{$agent->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -228,7 +231,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $monnaielectronique->id }})">
+                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $agent->id }})">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

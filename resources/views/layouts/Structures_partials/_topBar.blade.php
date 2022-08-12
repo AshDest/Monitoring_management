@@ -43,7 +43,7 @@
             data-kt-menu="true">
         <!--begin::Menu item-->
         <div class="menu-item px-3">
-            <a href="#" class="menu-link px-3">
+            <a href="/{{$structure}}/agents" class="menu-link px-3">
                 Agents
             </a>
         </div>
