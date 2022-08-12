@@ -164,7 +164,7 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/home">
+                            <a class="menu-link" href="/{{$structure}}/monnais">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
