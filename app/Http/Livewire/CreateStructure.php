@@ -8,9 +8,11 @@ use App\Models\Quartier_Village;
 use App\Models\Structure;
 use App\Models\Ville_Territoire;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class CreateStructure extends Component
 {
+    use LivewireAlert;
     public $codeStructure;
     public $designation;
     public $adresse_id;
@@ -41,7 +43,7 @@ class CreateStructure extends Component
 
 
     protected $rules = [
-        'codeStructure' => 'required|min:8',
+        'codeStructure' => 'required|max:8',
         'designation' => 'required',
         'selectedQuartier' => 'required',
         'avenu' => 'required',
@@ -102,11 +104,12 @@ class CreateStructure extends Component
                 'numImpot' => $this->numImpot,
                 'numCNSS' => $this->numCNSS,
             ])->save();
-            $this->emit('StudentUpdated');
-            $this->dispatchBrowserEvent('alert', [
-                'type' => 'success',
-                'message' => "Classe enregistée avec succes!!"
+            $this->alert('success', 'Saved Successfully', [
+                'position' => 'center',
+                'timer' => 3000,
+                'toast' => true,
             ]);
+            //return redirect()->to('/structures');
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',

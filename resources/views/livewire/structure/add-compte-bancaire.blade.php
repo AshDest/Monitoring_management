@@ -55,7 +55,6 @@
                         name="agence" />
                     <!--end::Input-->
                 </div>
-                    <input type="hidden" value="{{$structure}}" wire:model='codeStructure' />
                     <input type="hidden" value="0" wire:model='solde' />
                 <div class="col-md-6 fv-row">
                     <!--end::Label-->

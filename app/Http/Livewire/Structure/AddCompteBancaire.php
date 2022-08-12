@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Structure;
 
 use App\Models\Banque;
+use App\Models\Compte_Banque;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
@@ -17,6 +18,7 @@ class AddCompteBancaire extends Component
     public $GLCompteBanque;
 
     public $structure;
+    use LivewireAlert;
 
     protected $rules = [
         'numeroCompte' => 'required',
@@ -32,13 +34,13 @@ class AddCompteBancaire extends Component
     public function save()
     {
         try {
-            Banque::create([
+            Compte_Banque::create([
                 'numeroCompte' => $this->numeroCompte,
                 'codeBanque' => $this->codeBanque,
                 'designation' => $this->designation,
                 'agence' => $this->agence,
                 'solde' => $this->solde,
-                'codeStructure' => $this->codeStructure,
+                'codeStructure' => $this->structure,
                 'GLCompteBanque' => $this->GLCompteBanque,
             ])->save();
             $this->alert('success', 'Saved Successfully!', [
