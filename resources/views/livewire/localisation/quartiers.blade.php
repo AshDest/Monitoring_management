@@ -47,7 +47,7 @@
                                                     <label class="required fs-5 fw-bold mb-2">Ville</label>
                                                     <!--end::Label-->
                                                     <!--end::Input-->
-                                                    <select name="codeSelect" id="" wire:model=''
+                                                    <select name="codeSelected" id="" wire:model='codeSelected'
                                                         class="form-select">
                                                         @foreach ($communes as $commune)
                                                         <option value="{{$commune->id}}">{{$commune->designation}}
@@ -55,7 +55,7 @@
                                                         @endforeach
                                                     </select>
                                                     <!--end::Input-->
-                                                    @error('province_id')
+                                                    @error('codeSelected')
                                                     <span style="color: red;">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -198,7 +198,7 @@
                                     <a href="" class="text-gray-800 text-hover-primary mb-1">{{$quartier->communesecteurchefferie->villeterritoires->province->designation}}</a>
                                 </td>
                                 <td class="text-end">
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                    <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                         wire:click="displayformedit({{$quartier->id}})">
                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                         <span class="svg-icon svg-icon-3">
@@ -214,7 +214,7 @@
                                         </span>
                                         <!--end::Svg Icon-->
                                     </a>
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+                                    <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
                                         wire:click="delete({{ $quartier->id }})">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                         <span class="svg-icon svg-icon-3">

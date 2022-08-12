@@ -23,34 +23,58 @@
                                             <fieldset>
                                                 <div class="row mb-5">
                                                     <div class="col-md-4 fv-row">
-                                                        <label class="required fs-5 fw-bold mb-2">Code</label>
-                                                        <input type="text" wire:model='codeBanque' class="form-control form-control-solid" placeholder=""
-                                                            name="codeBanque" />
-                                                            @error('codeBanque')
+                                                        <label class="required fs-5 fw-bold mb-2">Numero Compte</label>
+                                                        <input type="text" wire:model='numeroCompte' class="form-control form-control-solid" placeholder=""
+                                                            name="numeroCompte" />
+                                                            @error('numeroCompte')
                                                             <span style="color: red;">{{ $message }}</span>
                                                             @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Nommination</label>
+                                                        <label class="required fs-5 fw-bold mb-2">Banque</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <input type="text" wire:model='nomBanque' class="form-control form-control-solid" placeholder=""
-                                                            name="nomBanque" />
+                                                        <select name="codeBanque" class="form-select" wire:model='codeBanque'>
+                                                            @foreach ($banques as $banque)
+                                                            <option value="{{$banque->id}}">{{$banque->nomBanque}}</option>
+                                                        @endforeach
+                                                        </select>
+
+                                                        @error('codeBanque')
+                                                        <span style="color: red;">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="col-md-4 fv-row">
+                                                        <label class="required fs-5 fw-bold mb-2">Intituler</label>
+                                                        <input type="text" wire:model='designation' class="form-control form-control-solid" placeholder=""
+                                                        name="designation" />
+                                                    <!--end::Input-->
+                                                    @error('designation')
+                                                    <span style="color: red;">{{ $message }}</span>
+                                                    @enderror
+                                                    </div>
+                                                    <div class="col-md-4 fv-row">
+                                                        <!--end::Label-->
+                                                        <label class="required fs-5 fw-bold mb-2">Agence</label>
+                                                        <!--end::Label-->
                                                         <!--end::Input-->
-                                                        @error('nomBanque')
+                                                        <input type="text" wire:model='agence' class="form-control form-control-solid" placeholder=""
+                                                            name="agence" />
+                                                        <!--end::Input-->
+                                                        @error('agence')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Contact</label>
+                                                        <label class="required fs-5 fw-bold mb-2">Agence</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <input type="text" wire:model='contact' class="form-control form-control-solid" placeholder=""
-                                                            name="contact" />
+                                                        <input type="text" wire:model='GLCompteBanque' class="form-control form-control-solid" placeholder=""
+                                                            name="GLCompteBanque" />
                                                         <!--end::Input-->
-                                                        @error('contact')
+                                                        @error('GLCompteBanque')
                                                         <span style="color: red;">{{ $message }}</span>
                                                         @enderror
                                                     </div>

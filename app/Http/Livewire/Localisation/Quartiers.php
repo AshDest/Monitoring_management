@@ -28,7 +28,9 @@ class Quartiers extends Component
                     'designation' => $this->designation,
                     'commune_id' => $this->codeSelected,
                 ]);
+            $this->ResetControle();
             $this->form_edit =  NULL;
+
             $this->alert('success', 'Modifier avec Success', [
                 'position' => 'center',
                 'timer' => 3000,
@@ -49,6 +51,13 @@ class Quartiers extends Component
         $this->codeSelected = $var->commune_id;
         $this->code = $var->code;
         $this->designation = $var->designation;
+    }
+
+    public function ResetControle()
+    {
+        $this->codeSelected = '';
+        $this->code = '';
+        $this->designation = '';
     }
 
     // public function closeEditForm()
