@@ -82,7 +82,7 @@ class CompteBancaire extends Component
     }
     public function render()
     {
-        $comptebancaires = Compte_Banque::all();
+        $comptebancaires = Compte_Banque::where('codeStructure', $this->structure)->get();
         return view('livewire.structure.compte-bancaire', ['comptebancaires' => $comptebancaires]);
     }
 }

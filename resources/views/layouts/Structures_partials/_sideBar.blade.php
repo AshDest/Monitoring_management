@@ -11,7 +11,6 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
         <!--begin::Logo-->
         <a href="/home">
             <img alt="Logo" src="{{ asset('assets/media/logos/logo-1-dark.svg') }}" class="h-25px logo" />
-            <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{$struc->designation}}</span>
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->

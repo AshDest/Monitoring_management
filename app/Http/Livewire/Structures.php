@@ -6,6 +6,7 @@ use App\Models\Province;
 use App\Models\Structure;
 use App\Models\Ville_Territoire;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Structures extends Component
 {
@@ -38,6 +39,8 @@ class Structures extends Component
     public $selectedCommune=null;
     public $selectedQuartier=null;
 
+    public $form_edit;
+    use LivewireAlert;
 
     public function save()
     {
