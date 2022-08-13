@@ -70,7 +70,7 @@ class Agents extends Component
     }
     public function render()
     {
-        $agents = Agent::whereId($this->structure)->get();
+        $agents = Agent::where('codeStructure',$this->structure)->get();
         return view('livewire.structure.agents', ['agents' => $agents]);
     }
 }

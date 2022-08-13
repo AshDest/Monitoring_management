@@ -24,8 +24,8 @@
                     <label class="required fs-5 fw-bold mb-2">Matricule</label>
                     <!--end::Label-->
                     <!--end::Input-->
-                    <input type="text" wire:model='structure' class="form-control form-control-solid" placeholder=""
-                        name="structure" />
+                    <input type="text" wire:model='matricule' class="form-control form-control-solid" placeholder=""
+                        name="matricule" />
                     <!--end::Input-->
                 </div>
                 <div class="col-md-6 fv-row">
@@ -42,7 +42,22 @@
                     <label class="required fs-5 fw-bold mb-2">Etat Civil</label>
                     <!--end::Label-->
                     <!--end::Label-->
+                    <select name="sexe" wire:model='sexe' id="sexe" class="form-select">
+                        <option value="">select sexe</option>
+                        <option value="M">Masculin</option>
+                        <option value="F">Feminin</option>
+                    </select>
+                    @error('sexe')
+                    <span style="color: red;">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="col-md-6 fv-row">
+                    <!--end::Label-->
+                    <label class="required fs-5 fw-bold mb-2">Etat Civil</label>
+                    <!--end::Label-->
+                    <!--end::Label-->
                     <select name="etatcivil" wire:model='etatcivil' id="etatcivil" class="form-select">
+                        <option value="">select Etat Civil</option>
                         <option value="Marie">Marié</option>
                         <option value="Celibataire">Célibataire</option>
                     </select>
@@ -52,11 +67,11 @@
                 </div>
                 <div class="col-md-6 fv-row">
                     <!--end::Label-->
-                    <label class="required fs-5 fw-bold mb-2">Num Comptable</label>
+                    <label class="required fs-5 fw-bold mb-2">Adresse de l'Agent</label>
                     <!--end::Label-->
                     <!--end::Input-->
-                    <input type="text" wire:model='GLMonnaieE' class="form-control form-control-solid" placeholder=""
-                        name="GLMonnaieE" />
+                    <input type="text" wire:model='adresse' class="form-control form-control-solid" placeholder=""
+                        name="adresse" />
                     <!--end::Input-->
                 </div>
             </div>
@@ -67,7 +82,7 @@
     <!--begin::Modal footer-->
     <div class="modal-footer flex-center">
         <!--begin::Button-->
-        <button type="reset" class="btn btn-light me-3">Discard</button>
+        <button type="reset" data-bs-dismiss="modal" class="btn btn-light me-3">Discard</button>
         <!--end::Button-->
         <!--begin::Button-->
         <button class="btn btn-primary">
