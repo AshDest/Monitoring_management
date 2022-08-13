@@ -1,14 +1,13 @@
-<div>
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Post-->
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
+                {{-- Edit --}}
+                @if (!is_null($form_edit))
                 <div class="card">
                     <div class="card-body pt-0">
-                        {{-- Edit --}}
-                        @if (!is_null($form_edit))
                         <!--begin::Alert-->
                         <div class="py-5">
                             <div class="rounded border p-10 pb-0 d-flex flex-column">
@@ -24,18 +23,20 @@
                                                 <div class="row mb-5">
                                                     <div class="col-md-4 fv-row">
                                                         <label class="required fs-5 fw-bold mb-2">Code</label>
-                                                        <input type="text" wire:model='code' class="form-control form-control-solid" placeholder=""
-                                                            name="code ..." />
-                                                            @error('code')
-                                                            <span style="color: red;">{{ $message }}</span>
-                                                            @enderror
+                                                        <input type="text" wire:model='code'
+                                                            class="form-control form-control-solid" placeholder=""
+                                                            name="code" />
+                                                        @error('code')
+                                                        <span style="color: red;">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-md-4 fv-row">
                                                         <!--end::Label-->
                                                         <label class="required fs-5 fw-bold mb-2">Nommination</label>
                                                         <!--end::Label-->
                                                         <!--end::Input-->
-                                                        <input type="text" wire:model='nomOperateur' class="form-control form-control-solid" placeholder=""
+                                                        <input type="text" wire:model='nomOperateur'
+                                                            class="form-control form-control-solid" placeholder=""
                                                             name="nommination" />
                                                         <!--end::Input-->
                                                         @error('nomOperateur')
@@ -75,9 +76,9 @@
                             </div>
                         </div>
                         <!--end::Alert-->
-                        @endif
                     </div>
                 </div>
+                @endif
                 <div>
 
                 </div>
@@ -113,7 +114,8 @@
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-kt-subscription-table-toolbar="base">
                                 <!--begin::Add subscription-->
-                                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_element_forms">
+                                <a href="" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#add_element_forms">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -162,7 +164,8 @@
                                     @forelse ($operateurs as $operateur)
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="{{$operateur->id}}" />
+                                            <input class="form-check-input" type="checkbox"
+                                                value="{{$operateur->id}}" />
                                         </div>
                                     </td>
                                     <td>
@@ -174,8 +177,7 @@
                                             class="text-gray-800 text-hover-primary mb-1">{{$operateur->nomOperateur}}</a>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#"
-                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                        <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                             wire:click="displayformedit({{$operateur->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
@@ -191,7 +193,8 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </a>
-                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" wire:click="delete({{ $operateur->id }})">
+                                        <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+                                            wire:click="delete({{$operateur->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -231,7 +234,6 @@
         <!--end::Post-->
     </div>
     <!--end::Content-->
-</div>
 
 <div class="modal fade" id="add_element_forms" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered mw-650px">
@@ -241,4 +243,3 @@
         </div>
     </div>
 </div>
-

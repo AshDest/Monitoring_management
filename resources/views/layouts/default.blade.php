@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    @include('layouts.partials._toolbar')
+                    {{-- @include('layouts.partials._toolbar') --}}
                     <main class="py-4">
                         @yield('content')
                     </main>

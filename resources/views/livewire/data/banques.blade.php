@@ -5,10 +5,11 @@
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
+                @if (!is_null($form_edit))
                 <div class="card">
                     <div class="card-body pt-0">
                         {{-- Edit --}}
-                        @if (!is_null($form_edit))
+
                         <!--begin::Alert-->
                         <div class="py-5">
                             <div class="rounded border p-10 pb-0 d-flex flex-column">
@@ -87,10 +88,9 @@
                             </div>
                         </div>
                         <!--end::Alert-->
-
-                        @endif
                     </div>
                 </div>
+                @endif
                 <div>
 
                 </div>
