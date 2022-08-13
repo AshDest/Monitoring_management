@@ -55,7 +55,7 @@
     <!--begin::Modal footer-->
     <div class="modal-footer flex-center">
         <!--begin::Button-->
-        <button type="reset" class="btn btn-light me-3">Discard</button>
+        <button type="reset" data-bs-dismiss="modal" class="btn btn-light me-3">Annuler</button>
         <!--end::Button-->
         <!--begin::Button-->
         <button class="btn btn-primary">
