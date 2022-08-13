@@ -36,46 +36,85 @@ class Structures extends Component
 
     public $selectedProvince = null;
     public $selectedCity = null;
-    public $selectedCommune=null;
-    public $selectedQuartier=null;
+    public $selectedCommune = null;
+    public $selectedQuartier = null;
 
     public $form_edit;
     use LivewireAlert;
 
-    public function save()
+    public function modifycmpt()
     {
-        $validatedData = $this->validate([
-            'codeStructure'=>'required',
-            'designation'=>'required',
-            'adresse_id'=>'required',
-            'avenu'=>'required',
-            'numParcelle'=>'required',
-            'long'=>'required',
-            'lat'=>'required',
-            'numTel1'=>'required',
-            'numTel2'=>'required',
-            'email'=>'required',
-            'siteWeb'=>'required',
-            'rccm'=>'required',
-            'idNational'=>'required',
-            'numImpot'=>'required',
-            'numCNSS'=>'required'
+        Structure::whereId($this->form_edit)
+            ->update([
+                'codeStructure' => $this->codeStructure,
+                'designation' => $this->designation,
+                'adresse_id' => $this->adresse_id,
+                'avenu' => $this->avenu,
+                'numParcelle' => $this->numParcelle,
+                'long' => $this->long,
+                'lat' => $this->lat,
+                'numTel1' => $this->numTel1,
+                'numTel2' => $this->numTel2,
+                'email' => $this->email,
+                'siteWeb' => $this->siteWeb,
+                'rccm' => $this->rccm,
+                'idNational' => $this->idNational,
+                'numImpot' => $this->numImpot,
+                'numCNSS' => $this->numCNSS,
+            ]);
+        $this->form_edit =  NULL;
+        $this->alert('success', 'Modifier avec Success', [
+            'position' => 'center',
+            'timer' => 3000,
+            'toast' => true,
         ]);
-        try {
-            Structure::create($validatedData);
-            $this->emit('StudentUpdated');
-            $this->dispatchBrowserEvent('alert', [
-                'type' => 'success',
-                'message' => "Classe enregistée avec succes!!"
-            ]);
-        } catch (\Exception $e) {
-            $this->dispatchBrowserEvent('alert', [
-                'type' => 'error',
-                'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
-            ]);
-        }
+    }
+    protected $listeners = [
+        'confirmed'
+    ];
+
+    public function confirmed(){
+        Structure::whereId($this->ids)->delete();
+        $this->alert('success', 'Suppression avec Success', [
+            'position' => 'center',
+            'timer' => 3000,
+            'toast' => true,]);
     }
 
+    public function cancelled()
+    {
+        // Do something when cancel button is clicked
+    }
+
+    public function delete($id){
+        //
+        $this->ids = $id;
+        $this->confirm('Voulez vous supprimer?', [
+            'onConfirmed' => 'confirmed',
+        ]);
+    }
+
+    public function displayformedit($id){
+        $this->form_edit = $id;
+        $var = Structure::find($id);
+
+        $this->codeStructure = $var->codeStructure;
+        $this->designation = $var->designation;
+        $this->adresse_id = $var->adresse_id;
+        $this->avenu = $var->avenu;
+        $this->numParcelle = $var->numParcelle;
+        $this->long = $var->long;
+        $this->lat = $var->lat;
+        $this->numTel1 = $var->numTel1;
+
+        $this->numTel2 = $var->numTel2;
+        $this->siteWeb = $var->siteWeb;
+        $this->rccm = $var->rccm;
+        $this->idNational = $var->idNational;
+        $this->numParcelle = $var->numParcelle;
+        $this->numImpot = $var->numImpot;
+        $this->numCNSS = $var->numCNSS;
+    }
     public function mount()
     {
         $this->provinces = Province::all();
@@ -108,6 +147,6 @@ class Structures extends Component
     public function render()
     {
         $structures = Structure::all();
-        return view('livewire.structures', ['structures'=>$structures]);
+        return view('livewire.structures', ['structures' => $structures]);
     }
 }
