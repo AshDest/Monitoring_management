@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Structure;
 
 use App\Models\Agent;
+use Illuminate\Support\Facades\Hash;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
@@ -14,6 +15,8 @@ class AddAgents extends Component
     public $sexe;
     public $etatcivil;
     public $adresse;
+    public $username;
+    public $password;
     public $codeStructure;
     public $structure;
 
@@ -24,6 +27,8 @@ class AddAgents extends Component
         'sexe' => 'required',
         'etatcivil' => 'required',
         'adresse' => 'required',
+        'username' => 'required',
+        'password' => 'required'
     ];
     // realtime validation
     public function updated($propertyName)
@@ -40,6 +45,8 @@ class AddAgents extends Component
                 'sexe' => $this->sexe,
                 'etatcivil' => $this->etatcivil,
                 'adresse' => $this->adresse,
+                'username' => $this->username,
+                'password' => Hash::make($this->password),
                 'codeStructure' => $this->structure,
 
             ])->save();
