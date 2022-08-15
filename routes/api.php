@@ -1,6 +1,16 @@
 <?php
 
 use App\Http\Controllers\Api\AgentController;
+use App\Http\Controllers\Api\ApprovisionnementController;
+use App\Http\Controllers\Api\ArticleController;
+use App\Http\Controllers\Api\CategorieArticleController;
+use App\Http\Controllers\Api\ClientController;
+use App\Http\Controllers\Api\DetailApprovisionnementController;
+use App\Http\Controllers\Api\DetailVenteController;
+use App\Http\Controllers\Api\FournisseurController;
+use App\Http\Controllers\Api\PaiementController;
+use App\Http\Controllers\Api\StructureController;
+use App\Http\Controllers\Api\VenteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +30,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('agent', AgentController::class);
+Route::apiResource('approvisionnement', ApprovisionnementController::class);
+Route::apiResource('article', ArticleController::class);
+Route::apiResource('categoriearticle', CategorieArticleController::class);
+Route::apiResource('client', ClientController::class);
+Route::apiResource('detailapprovionnement', DetailApprovisionnementController::class);
+Route::apiResource('detailvente', DetailVenteController::class);
+Route::apiResource('fournisseur', FournisseurController::class);
+Route::apiResource('paiement', PaiementController::class);
+Route::apiResource('structure', StructureController::class);
+Route::apiResource('vente', VenteController::class);
