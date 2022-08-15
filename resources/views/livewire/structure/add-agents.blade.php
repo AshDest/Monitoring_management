@@ -75,6 +75,38 @@
                     <!--end::Input-->
                 </div>
             </div>
+            <div class="row mb-5">
+                <div class="col-md-6 fv-row">
+                    <!--end::Label-->
+                    <label class="required fs-5 fw-bold mb-2">Username</label>
+                    <!--end::Label-->
+                    <!--end::Input-->
+                    <input type="text" wire:model='username' class="form-control form-control-solid" placeholder=""
+                        name="username" />
+                    <!--end::Input-->
+                </div>
+                <div class="col-md-6 fv-row">
+                    <!--end::Label-->
+                    <label class="required fs-5 fw-bold mb-2">Password</label>
+                    <!--end::Label-->
+                    <!--end::Input-->
+                    <input type="password" wire:model='password' class="form-control form-control-solid" placeholder=""
+                        name="password" />
+                    <!--end::Input-->
+                </div>
+                <div class="col-md-6 fv-row">
+                    <!--end::Label-->
+                    <label class="required fs-5 fw-bold mb-2">Roles</label>
+                    <!--end::Label-->
+                    <!--end::Input-->
+                    <select name="roles" wire:model='roles' class="form-select">
+                        <option value="">-- Select Role --</option>
+                        <option value="1">Admin</option>
+                        <option value="2">User</option>
+                        <option value="3">Viewer</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <!--end::Scroll-->
     </div>

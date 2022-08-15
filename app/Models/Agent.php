@@ -17,6 +17,7 @@ class Agent extends Model
         'adresse',
         'username',
         'password',
+        'roles',
         'codeStructure'
     ];
 

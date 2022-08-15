@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('adresse');
             $table->string('username');
             $table->string('password');
+            $table->integer('roles');
             $table->unsignedBigInteger('codeStructure');
             $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

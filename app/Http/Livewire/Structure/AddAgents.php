@@ -17,6 +17,7 @@ class AddAgents extends Component
     public $adresse;
     public $username;
     public $password;
+    public $roles;
     public $codeStructure;
     public $structure;
 
@@ -28,7 +29,8 @@ class AddAgents extends Component
         'etatcivil' => 'required',
         'adresse' => 'required',
         'username' => 'required',
-        'password' => 'required'
+        'password' => 'required',
+        'roles' => 'required',
     ];
     // realtime validation
     public function updated($propertyName)
@@ -47,6 +49,7 @@ class AddAgents extends Component
                 'adresse' => $this->adresse,
                 'username' => $this->username,
                 'password' => Hash::make($this->password),
+                'roles' => $this->roles,
                 'codeStructure' => $this->structure,
 
             ])->save();
