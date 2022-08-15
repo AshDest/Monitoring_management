@@ -26,7 +26,13 @@ class VenteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Vente::create($request->all())) {
+            return response()->json(
+                [
+                    'success' => 'Enregistrer avec Success'
+                ]
+                );
+        }
     }
 
     /**

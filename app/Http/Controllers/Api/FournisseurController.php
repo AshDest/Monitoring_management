@@ -26,7 +26,13 @@ class FournisseurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Fournisseur::create($request->all())) {
+            return response()->json(
+                [
+                    'success' => 'Enregistrer avec Success'
+                ]
+                );
+        }
     }
 
     /**

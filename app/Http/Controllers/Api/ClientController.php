@@ -26,7 +26,13 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Client::create($request->all())) {
+            return response()->json(
+                [
+                    'success' => 'Enregistrer avec Success'
+                ]
+                );
+        }
     }
 
     /**

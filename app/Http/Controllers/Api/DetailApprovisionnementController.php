@@ -26,7 +26,13 @@ class DetailApprovisionnementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (DetailApprovisionnement::create($request->all())) {
+            return response()->json(
+                [
+                    'success' => 'Enregistrer avec Success'
+                ]
+                );
+        }
     }
 
     /**

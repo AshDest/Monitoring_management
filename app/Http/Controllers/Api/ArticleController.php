@@ -26,7 +26,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Article::create($request->all())) {
+            return response()->json(
+                [
+                    'success' => 'Enregistrer avec Success'
+                ]
+                );
+        }
     }
 
     /**

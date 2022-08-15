@@ -37,7 +37,10 @@ class StructureController extends Controller
      */
     public function show(Structure $structure)
     {
-        //
+        if($structure)
+        {
+            return $structure;
+        }
     }
 
     /**
