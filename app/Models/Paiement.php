@@ -10,6 +10,9 @@ class Paiement extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'datePaiement',
+        'montantTotal',
+        'idVente',
+        'id_structure',
     ];
 }

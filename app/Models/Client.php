@@ -9,6 +9,12 @@ class Client extends Model
 {
     use HasFactory;
     protected $fillable = [
-
+        'codeClient',
+        'noms',
+        'telephone',
+        'email',
+        'adresse',
+        'GLClient',
+        'id_structure'
     ];
 }

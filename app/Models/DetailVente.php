@@ -9,6 +9,9 @@ class DetailVente extends Model
 {
     use HasFactory;
     protected $fillable = [
-
+        'idVente',
+        'quantite',
+        'montant',
+        'idArticle',
     ];
 }

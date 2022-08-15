@@ -10,6 +10,9 @@ class Approvisionnement extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'codeAprro',
+        'dateAppro',
+        'codeFournisseur',
+        'id_structure',
     ];
 }

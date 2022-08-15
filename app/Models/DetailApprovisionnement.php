@@ -10,6 +10,9 @@ class DetailApprovisionnement extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'idAppro',
+        'idArticle',
+        'quantite',
+        'prix_achat',
     ];
 }

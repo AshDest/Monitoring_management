@@ -10,6 +10,9 @@ class Vente extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'codeVente',
+        'dateVente',
+        'montantTotal',
+        'codeClient'
     ];
 }

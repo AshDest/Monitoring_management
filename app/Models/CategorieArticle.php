@@ -10,6 +10,7 @@ class CategorieArticle extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'designation',
+        'id_structure'
     ];
 }
