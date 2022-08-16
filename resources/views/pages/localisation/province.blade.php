@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default', ['title'=>'Province'])
 @section('content')
     @livewire('localisation.provinces')
 @endsection

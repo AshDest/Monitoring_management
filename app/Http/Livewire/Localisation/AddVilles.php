@@ -38,7 +38,7 @@ class AddVilles extends Component
                 'timer' => 3000,
                 'toast' => true,
             ]);
-            $refresh;
+            // $refresh;
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',
