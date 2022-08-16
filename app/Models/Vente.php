@@ -16,4 +16,16 @@ class Vente extends Model
         'codeClient',
         'id_structure'
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'id_structure');
+    }
+
+    public function detail()
+    {
+        return $this->hasMany(DetailVente::class);
+    }
+
+
 }

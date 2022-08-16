@@ -90,7 +90,7 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                     </span>
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
-                            <a class="menu-link" href="/structures">
+                            <a class="menu-link" href="#">
                                     <span class="menu-icon">
                                         <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                         <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -108,7 +108,7 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/structures">
+                            <a class="menu-link" href="/{{$structure}}/ventes">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->

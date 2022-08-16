@@ -36,3 +36,4 @@ Route::get('{structure}/home', [App\Http\Controllers\StructuresController::class
 Route::get('{structure}/comptes', [App\Http\Controllers\StructuresController::class, 'comptebancaire'])->name('comptebancaire');
 Route::get('{structure}/monnais', [App\Http\Controllers\StructuresController::class, 'monnaielectronique'])->name('monnaielectronique');
 Route::get('{structure}/agents', [App\Http\Controllers\StructuresController::class, 'agents'])->name('agents');
+Route::get('{structure}/ventes', [App\Http\Controllers\StructuresController::class, 'ventes'])->name('ventes');

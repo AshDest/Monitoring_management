@@ -17,4 +17,9 @@ class Client extends Model
         'GLClient',
         'id_structure'
     ];
+
+    public function vente()
+    {
+        return $this->hasMany(Vente::class);
+    }
 }

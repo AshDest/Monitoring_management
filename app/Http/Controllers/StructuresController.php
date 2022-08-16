@@ -38,6 +38,10 @@ class StructuresController extends Controller
     {
         return view('pages.structure.agent', compact('structure'));
     }
+    public function ventes($structure)
+    {
+        return view('pages.structure.vente', compact('structure'));
+    }
 
 
 
