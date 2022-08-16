@@ -25,6 +25,8 @@
         type="text/css" />
     <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet') }}"
         type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.css') }}" rel="stylesheet"
+        type="text/css" />
     <!--end::Page Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -134,6 +136,7 @@
     <!--end::Page Vendors Javascript-->
     <script src="{{ asset('assets/custom/waiting_buttons.js') }}"></script>
     <script src="{{ asset('assets/custom/cancelingModal.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.js') }}"></script>
 
     @livewireScripts
 
