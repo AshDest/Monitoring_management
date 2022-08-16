@@ -109,7 +109,7 @@ class CreateStructure extends Component
                 'timer' => 3000,
                 'toast' => true,
             ]);
-            //return redirect()->to('/structures');
+            // $refresh;
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',

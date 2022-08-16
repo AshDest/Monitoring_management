@@ -51,6 +51,7 @@ class AddMonnaieElectronique extends Component
                 'timer' => 3000,
                 'toast' => true,
             ]);
+            // $this->$refresh();
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',

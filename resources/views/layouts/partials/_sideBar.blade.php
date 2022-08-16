@@ -84,7 +84,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
-                            <a class="menu-link" href="/structures">
+                            <a class="menu-link" data-bs-toggle="modal" data-bs-target="#add_banque">
                                     <span class="menu-icon">
                                         <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
                                         <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
@@ -310,4 +310,12 @@
         <!--end::Aside Menu-->
     </div>
     <!--end::Aside menu-->
+</div>
+<div class="modal fade" id="add_banque" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <div class="modal-content">
+            @livewire('create-structure')
+            <!--end::Form-->
+        </div>
+    </div>
 </div>

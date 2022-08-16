@@ -1,6 +1,6 @@
 <form class="form" wire:submit.prevent="save">
     <div class="modal-header" id="kt_modal_new_address_header">
-        <h2>Ajouter Ville ou Territoire</h2>
+        <h2>Ajouter Un quartier</h2>
         <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
             <span class="svg-icon svg-icon-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

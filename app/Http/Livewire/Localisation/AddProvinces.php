@@ -36,6 +36,7 @@ class AddProvinces extends Component
                 'timer' => 3000,
                 'toast' => true,
             ]);
+            // $refresh;
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',

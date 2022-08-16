@@ -37,6 +37,7 @@ class AddBanques extends Component
                 'position' => 'center',
                 'timer' => 3000,
                 'toast' => true,]);
+                // $refresh;
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',
