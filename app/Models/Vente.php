@@ -13,6 +13,7 @@ class Vente extends Model
         'codeVente',
         'dateVente',
         'montantTotal',
-        'codeClient'
+        'codeClient',
+        'id_structure'
     ];
 }

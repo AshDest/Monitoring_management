@@ -20,6 +20,7 @@ return new class extends Migration
             $table->double('montantTotal');
             $table->unsignedBigInteger('codeClient');
             $table->foreign('codeClient')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('id_structure');
             $table->timestamps();
         });
     }
