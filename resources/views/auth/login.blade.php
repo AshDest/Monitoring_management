@@ -34,15 +34,15 @@
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
 					<a href="#" class="mb-12">
-						<img alt="Logo" src="assets/media/logos/logo-2.svg" class="h-40px" />
+						<img alt="Logo" src="assets/media/logos/single-Duka.svg" class="h-150px" />
 					</a>
 					<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 						<form method="POST" action="{{ route('login') }}">
                             @csrf
 							<div class="text-center mb-10">
 								<h1 class="text-dark mb-3">Login</h1>
-								<div class="text-gray-400 fw-bold fs-4">
-								<a href="#" class="link-primary fw-bolder">Create an Account</a></div>
+								{{-- <div class="text-gray-400 fw-bold fs-4">
+								<a href="#" class="link-primary fw-bolder">Create an Account</a></div> --}}
 								<!--end::Link-->
 							</div>
 							<!--begin::Heading-->
