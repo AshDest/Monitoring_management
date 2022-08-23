@@ -32,6 +32,7 @@ class AddOperateur extends Component
 
     public function save()
     {
+
         try {
             Operateur_tel::create([
                 'code' => $this->code,

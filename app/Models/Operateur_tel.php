@@ -12,7 +12,6 @@ class Operateur_tel extends Model
     protected $fillable = [
         'code',
         'nomOperateur',
-        'numTel'
     ];
 
     public function monnaielectronique()

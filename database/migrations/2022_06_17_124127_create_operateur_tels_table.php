@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('nomOperateur');
-            $table->string('numTel');
             $table->timestamps();
         });
     }
