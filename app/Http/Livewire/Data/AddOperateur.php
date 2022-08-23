@@ -18,6 +18,12 @@ class AddOperateur extends Component
         'nomOperateur' => 'required',
     ];
 
+    public function resetAllFiels()
+    {
+        $this->code = '';
+        $this->nomOperateur = '';
+    }
+
     // realtime validation
     public function updated($propertyName)
     {
@@ -31,6 +37,7 @@ class AddOperateur extends Component
                 'code' => $this->code,
                 'nomOperateur' => $this->nomOperateur,
             ])->save();
+            $this->resetAllFiels();
             $this->alert('success', 'Enregistrement Effectuer!', [
                 'position' => 'center',
                 'timer' => 3000,

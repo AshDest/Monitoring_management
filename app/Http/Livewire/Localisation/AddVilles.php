@@ -20,6 +20,13 @@ class AddVilles extends Component
         'province_id' => 'required',
     ];
 
+    public function resetAllFiels()
+    {
+        $this->code = '';
+        $this->designation = '';
+        $this->province_id = null;
+    }
+
     // realtime validation
     public function updated($propertyName)
     {
@@ -33,6 +40,9 @@ class AddVilles extends Component
                 'designation' => $this->designation,
                 'province_id' => $this->province_id,
             ])->save();
+
+            $this->resetAllFiels();
+
             $this->alert('success', 'Saved Successfully', [
                 'position' => 'center',
                 'timer' => 3000,

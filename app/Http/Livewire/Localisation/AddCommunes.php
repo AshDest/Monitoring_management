@@ -20,6 +20,13 @@ class AddCommunes extends Component
         'ville_id' => 'required',
     ];
 
+    public function resetAllFiels()
+    {
+        $this->code = '';
+        $this->designation = '';
+        $this->ville_id = null;
+    }
+
     // realtime validation
     public function updated($propertyName)
     {
@@ -33,6 +40,7 @@ class AddCommunes extends Component
                 'designation' => $this->designation,
                 'ville_id' => $this->ville_id,
             ])->save();
+            $this->resetAllFiels();
             $this->alert('success', 'Saved Successfully', [
                 'position' => 'center',
                 'timer' => 3000,

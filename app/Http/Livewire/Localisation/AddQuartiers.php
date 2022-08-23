@@ -20,6 +20,13 @@ class AddQuartiers extends Component
         'commune_id' => 'required',
     ];
 
+    public function resetAllFiels()
+    {
+        $this->code = '';
+        $this->designation = '';
+        $this->commune_id = null;
+    }
+
     // realtime validation
     public function updated($propertyName)
     {
@@ -33,6 +40,9 @@ class AddQuartiers extends Component
                 'designation' => $this->designation,
                 'commune_id' => $this->commune_id,
             ])->save();
+
+            $this->resetAllFiels();
+
             $this->alert('success', 'Saved Successfully', [
                 'position' => 'center',
                 'timer' => 3000,

@@ -19,6 +19,12 @@ class AddProvinces extends Component
         'designation' => 'required',
     ];
 
+    public function resetAllFiels()
+    {
+        $this->code = '';
+        $this->designation = '';
+    }
+
     // realtime validation
     public function updated($propertyName)
     {
@@ -31,6 +37,7 @@ class AddProvinces extends Component
                 'code' => $this->code,
                 'designation' => $this->designation,
             ])->save();
+            $this->resetAllFiels();
             $this->alert('success', 'Saved Successfully', [
                 'position' => 'center',
                 'timer' => 3000,
