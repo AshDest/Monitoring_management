@@ -35,7 +35,7 @@ class AddOperateur extends Component
                 'position' => 'center',
                 'timer' => 3000,
                 'toast' => true,]);
-                return redirect()->to('/quartiers');
+                // return redirect()->to('/quartiers');
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',

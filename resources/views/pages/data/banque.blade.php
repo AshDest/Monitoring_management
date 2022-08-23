@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title'=>'Banques'])
+@extends('layouts.default', ['title'=>'Banque'])
 @section('content')
     @livewire('data.banques')
 @endsection

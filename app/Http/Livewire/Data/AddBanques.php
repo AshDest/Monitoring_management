@@ -25,6 +25,13 @@ class AddBanques extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function resetAllFiels()
+    {
+        $this->codeBanque = '';
+        $this->nomBanque = '';
+        $this->contact = '';
+    }
+
     public function save()
     {
         try {
@@ -33,6 +40,8 @@ class AddBanques extends Component
                 'nomBanque' => $this->nomBanque,
                 'contact' => $this->contact,
             ])->save();
+
+            $this->resetAllFiels();
             $this->alert('success', 'Success is approaching!', [
                 'position' => 'center',
                 'timer' => 3000,
