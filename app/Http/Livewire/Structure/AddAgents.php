@@ -32,6 +32,15 @@ class AddAgents extends Component
         'password' => 'required',
         'roles' => 'required',
     ];
+
+    public function resetAllFiels()
+    {
+        $this->matricule = '';
+        $this->noms = '';
+        $this->sexe = null;
+        $this->etatcivil = '';
+        $this->adresse = '';
+    }
     // realtime validation
     public function updated($propertyName)
     {
