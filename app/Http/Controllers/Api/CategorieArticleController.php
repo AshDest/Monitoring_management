@@ -26,7 +26,14 @@ class CategorieArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(CategorieArticle::create($request->all()))
+        {
+            return response()->json(
+                [
+                    'success' => 'Enregistrer avec Success'
+                ]
+            );
+        }
     }
 
     /**
@@ -49,7 +56,13 @@ class CategorieArticleController extends Controller
      */
     public function update(Request $request, CategorieArticle $categorieArticle)
     {
-        //
+            if($categorieArticle->update($request->all())){
+                return response()->json(
+                    [
+                        'success' => 'Update avec Success'
+                    ]
+                );
+            }
     }
 
     /**

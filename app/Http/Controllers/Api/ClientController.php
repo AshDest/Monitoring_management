@@ -31,7 +31,7 @@ class ClientController extends Controller
                 [
                     'success' => 'Enregistrer avec Success'
                 ]
-                );
+            );
         }
     }
 
@@ -55,7 +55,13 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        if($client->update($request->all())){
+            return response()->json(
+                [
+                    'success' => 'Update avec Success'
+                ]
+            );
+        }
     }
 
     /**
