@@ -12,7 +12,8 @@ class Utilisateur extends Model
     protected $fillable = [
         'agent_id',
         'username',
-        'password'
+        'password',
+        'role'
     ];
 
     public function agent()
