@@ -42,6 +42,10 @@ class StructuresController extends Controller
     {
         return view('pages.structure.vente', compact('structure'));
     }
+    public function utilisateurs($structure)
+    {
+        return view('pages.structure.utilisateur', compact('structure'));
+    }
 
 
 

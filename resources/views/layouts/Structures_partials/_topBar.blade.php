@@ -64,6 +64,11 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                     Agents
                 </a>
             </div>
+            <div class="menu-item px-3">
+                <a href="/{{$structure}}/utilisateurs" class="menu-link px-3">
+                    Utilisateur
+                </a>
+            </div>
             <!--end::Menu item-->
 
             <!--begin::Menu item-->
