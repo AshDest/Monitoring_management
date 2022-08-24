@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Structure;
 
+use App\Models\Agent;
 use App\Models\Utilisateur;
 use Illuminate\Support\Facades\Hash;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -17,6 +18,7 @@ class AddUilisateur extends Component
     public $password;
     public $role;
 
+    public $structure;
     protected $rules = [
         'agent_id' => 'required',
         'username' => 'required',
@@ -45,6 +47,7 @@ class AddUilisateur extends Component
                 'username' => $this->username,
                 'password' => Hash::make($this->password),
                 'roles' => $this->roles,
+                'codeStructure' => $this->structure
 
             ])->save();
             $this->alert('success', 'Saved Successfully!', [
@@ -67,6 +70,7 @@ class AddUilisateur extends Component
     }
     public function render()
     {
-        return view('livewire.structure.add-uilisateur');
+        $agents = Agent::where('codeStructure',$this->structure)->get();
+        return view('livewire.structure.add-uilisateur', ['agents' => $agents]);
     }
 }

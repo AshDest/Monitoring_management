@@ -20,9 +20,6 @@ return new class extends Migration
             $table->enum('sexe', ['M', 'F']);
             $table->enum('etatcivil', ['Marie', 'Celibataire']);
             $table->string('adresse');
-            $table->string('username');
-            $table->string('password');
-            $table->integer('roles');
             $table->unsignedBigInteger('codeStructure');
             $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

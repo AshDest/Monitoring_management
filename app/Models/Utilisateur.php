@@ -13,7 +13,8 @@ class Utilisateur extends Model
         'agent_id',
         'username',
         'password',
-        'role'
+        'role',
+        'codeStructure'
     ];
 
     public function agent()

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('avatar')->nullable();
+            $table->integer('role');
+            $table->integer('codeStructure')->nullable();
             $table->timestamps();
         });
     }
