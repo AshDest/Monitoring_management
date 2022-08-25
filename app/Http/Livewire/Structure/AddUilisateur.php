@@ -23,7 +23,7 @@ class AddUilisateur extends Component
         'agent_id' => 'required',
         'username' => 'required',
         'password' => 'required',
-        'roles' => 'required',
+        'role' => 'required',
     ];
 
     public function resetAllFiels()
@@ -46,7 +46,7 @@ class AddUilisateur extends Component
                 'agent_id' => $this->agent_id,
                 'username' => $this->username,
                 'password' => Hash::make($this->password),
-                'roles' => $this->roles,
+                'role' => $this->role,
                 'codeStructure' => $this->structure
 
             ])->save();

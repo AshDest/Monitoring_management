@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('agent_id');
-            $table->foreign('agent_id')->references('id')->on('agent')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('agent_id')->references('id')->on('agents')->onUpdate('cascade')->onDelete('cascade');
             $table->string('username')->unique();
             $table->string('password');
             $table->string('avatar')->nullable();

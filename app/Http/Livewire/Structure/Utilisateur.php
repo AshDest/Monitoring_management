@@ -16,7 +16,7 @@ class Utilisateur extends Component
 
     public function render()
     {
-        $utilisateurs = ModelsUtilisateur::where('id_structure', $this->structure)->get();
-        return view('livewire.structure.utilisateur');
+        $utilisateurs = ModelsUtilisateur::where('codeStructure', $this->structure)->get();
+        return view('livewire.structure.utilisateur', ['utilisateurs' => $utilisateurs]);
     }
 }

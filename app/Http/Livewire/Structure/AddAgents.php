@@ -15,9 +15,6 @@ class AddAgents extends Component
     public $sexe;
     public $etatcivil;
     public $adresse;
-    public $username;
-    public $password;
-    public $roles;
     public $codeStructure;
     public $structure;
 
@@ -28,9 +25,6 @@ class AddAgents extends Component
         'sexe' => 'required',
         'etatcivil' => 'required',
         'adresse' => 'required',
-        'username' => 'required',
-        'password' => 'required',
-        'roles' => 'required',
     ];
 
     public function resetAllFiels()
@@ -38,8 +32,8 @@ class AddAgents extends Component
         $this->matricule = '';
         $this->noms = '';
         $this->sexe = null;
-        $this->etatcivil = '';
-        $this->adresse = '';
+        $this->etatcivil = null;
+        $this->adresse = null;
     }
     // realtime validation
     public function updated($propertyName)
@@ -56,9 +50,6 @@ class AddAgents extends Component
                 'sexe' => $this->sexe,
                 'etatcivil' => $this->etatcivil,
                 'adresse' => $this->adresse,
-                'username' => $this->username,
-                'password' => Hash::make($this->password),
-                'roles' => $this->roles,
                 'codeStructure' => $this->structure,
 
             ])->save();

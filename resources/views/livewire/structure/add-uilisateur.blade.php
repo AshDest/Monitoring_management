@@ -59,7 +59,7 @@
                     <label class="required fs-5 fw-bold mb-2">Roles</label>
                     <!--end::Label-->
                     <!--end::Input-->
-                    <select name="roles" wire:model='roles' class="form-select">
+                    <select name="role" wire:model='role' class="form-select">
                         <option value="">-- Select Role --</option>
                         <option value="1">Admin</option>
                         <option value="2">User</option>
