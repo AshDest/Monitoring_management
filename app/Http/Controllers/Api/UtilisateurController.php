@@ -15,7 +15,8 @@ class UtilisateurController extends Controller
      */
     public function index()
     {
-        //
+        $utilisateurs = Utilisateur::all();
+        return $utilisateurs->toJson();
     }
 
     /**
