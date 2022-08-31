@@ -42,3 +42,8 @@ Route::apiResource('paiement', PaiementController::class);
 Route::apiResource('structure', StructureController::class);
 Route::apiResource('vente', VenteController::class);
 Route::apiResource('utilisateurs', UtilisateurController::class);
+
+Route::controller(UtilisateurController::class)->group(function(){
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+});

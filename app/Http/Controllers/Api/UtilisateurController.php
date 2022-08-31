@@ -36,9 +36,15 @@ class UtilisateurController extends Controller
      * @param  \App\Models\Utilisateur  $utilisateur
      * @return \Illuminate\Http\Response
      */
-    public function show(Utilisateur $utilisateur)
+    public function show($username, $password)
     {
-        //
+        $utilisateur = Utilisateur::where('username', $username)->where('password', $password)->first();
+
+        if (is_null($utilisateur)) {
+            return $this->sendError('User not found.');
+        }
+
+        return $this->sendResponse($utilisateur, 'User successfully.');
     }
 
     /**
@@ -62,5 +68,24 @@ class UtilisateurController extends Controller
     public function destroy(Utilisateur $utilisateur)
     {
         //
+    }
+
+        /**
+     * Login api
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login(Request $request)
+    {
+        // if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        //     $user = Auth::user();
+        //     $success['token'] =  $user->createToken('MyApp')->plainTextToken;
+        //     $success['name'] =  $user->name;
+
+        //     return $this->sendResponse($success, 'User login successfully.');
+        // }
+        // else{
+        //     return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+        // }
     }
 }
