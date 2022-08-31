@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Models\Utilisateur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class UtilisateurController extends Controller
+class UtilisateurController extends  BaseController
 {
     /**
      * Display a listing of the resource.
@@ -77,15 +79,13 @@ class UtilisateurController extends Controller
      */
     public function login(Request $request)
     {
-        // if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-        //     $user = Auth::user();
-        //     $success['token'] =  $user->createToken('MyApp')->plainTextToken;
-        //     $success['name'] =  $user->name;
-
-        //     return $this->sendResponse($success, 'User login successfully.');
-        // }
-        // else{
-        //     return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
-        // }
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            $user = Auth::user();
+            $success['name'] =  $user->name;
+            return $this->sendResponse($success, 'User login successfully.');
+        }
+        else{
+            return $this->sendError('Erreur.', ['error'=>"L'utilisateur n'existe pas."]);
+        }
     }
 }
