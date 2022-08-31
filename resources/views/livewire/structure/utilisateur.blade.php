@@ -183,7 +183,7 @@
                                             class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->agent->noms}}</a>
                                     </td>
                                     <td>
-                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->username}}</a>
+                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->name}}</a>
                                     </td>
                                     <td>
                                         <a href=""

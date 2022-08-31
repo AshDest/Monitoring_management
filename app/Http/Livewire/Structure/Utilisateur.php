@@ -18,8 +18,8 @@ class Utilisateur extends Component
     public function render()
     {
         $utilisateurs = User::select('*')
-                            ->whereNotNull('codeStructure')
-                            ->where('codeStructure', $this->structure)->get();
+                            ->whereNotNull('structure_id')
+                            ->where('structure_id', $this->structure)->get();
         return view('livewire.structure.utilisateur', ['utilisateurs' => $utilisateurs]);
     }
 }
