@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Models\Structure;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Helper\TableRows;
 
-class StructureController extends Controller
+class StructureController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class StructureController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,12 +37,15 @@ class StructureController extends Controller
      * @param  \App\Models\Structure  $structure
      * @return \Illuminate\Http\Response
      */
-    public function show(Structure $structure)
+    public function show($id)
     {
-        if($structure)
-        {
-            return $structure;
+        $structure = Structure::find($id);
+
+        if (is_null($structure)) {
+            return $this->sendError('Structure not found.');
         }
+
+        return $this->sendResponse($structure, 'Structure retrieved successfully.');
     }
 
     /**

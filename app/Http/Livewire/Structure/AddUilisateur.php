@@ -16,14 +16,14 @@ class AddUilisateur extends Component
 
     public $agent_id;
     public $email;
-    public $username;
+    public $numTelephone;
     public $password;
     public $role;
 
     public $structure;
     protected $rules = [
         'agent_id' => 'required',
-        'username' => 'required',
+        'numTelephone' => 'required',
         'password' => 'required',
         'role' => 'required',
     ];
@@ -47,7 +47,7 @@ class AddUilisateur extends Component
         try {
             User::create([
                 'agent_id' => $this->agent_id,
-                'name' => $this->username,
+                'numTelephone' => $this->numTelephone,
                 'email' => $this->email,
                 'password' => Hash::make($this->password),
                 'role' => $this->role,

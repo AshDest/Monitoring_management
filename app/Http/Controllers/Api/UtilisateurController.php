@@ -83,23 +83,24 @@ class UtilisateurController extends  BaseController
             $success['email'] = $user->email;
             $success['structure_id'] = $user->structure_id;
 
-            return $this->sendResponse($success, 'User login successfully.');
-            $this->structures($user->structure_id);
-
-
+            return $this->sendResponse($user, 'User login successfully.');
         }
         else{
             return $this->sendError('Erreur.', ['error'=>"L'utilisateur n'existe pas."]);
         }
     }
 
+    /**
+     * Select Structures
+     */
     public function structures($id)
     {
         $structure = Structure::find($id);
+
         if (is_null($structure)) {
-            return $this->sendError('Pas de structure Pour ce user.');
-            // dd('Product not found.');
+            return $this->sendError('Structure not found.');
         }
-            return $this->sendResponse($structure, 'Structure retrieved successfully.');
+
+        return $this->sendResponse($structure, 'Structure retrieved successfully.');
     }
 }
