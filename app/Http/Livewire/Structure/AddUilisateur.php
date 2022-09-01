@@ -31,7 +31,7 @@ class AddUilisateur extends Component
     public function resetAllFiels()
     {
         $this->email = '';
-        $this->username = '';
+        $this->numTelephone = '';
         $this->password = '';
         $this->agent_id = null;
         $this->role = null;

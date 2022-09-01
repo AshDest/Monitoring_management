@@ -38,11 +38,11 @@
             <div class="row mb-5">
                 <div class="col-md-6 fv-row">
                     <!--end::Label-->
-                    <label class="required fs-5 fw-bold mb-2">Username</label>
+                    <label class="required fs-5 fw-bold mb-2">Numero Telephone</label>
                     <!--end::Label-->
                     <!--end::Input-->
-                    <input type="text" wire:model='username' class="form-control form-control-solid" placeholder=""
-                        name="username" />
+                    <input type="text" wire:model='numTelephone' class="form-control form-control-solid" placeholder=""
+                        name="numTelephone" />
                     <!--end::Input-->
                 </div>
                 <div class="col-md-6 fv-row">
@@ -61,9 +61,9 @@
                     <!--end::Input-->
                     <select name="role" wire:model='role' class="form-select">
                         <option value="">-- Select Role --</option>
-                        <option value="1">Admin</option>
-                        <option value="2">User</option>
-                        <option value="3">Viewer</option>
+                        <option value="Super Admin">Super Admin</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Utilisateur">Utilisateur</option>
                     </select>
                 </div>
             </div>

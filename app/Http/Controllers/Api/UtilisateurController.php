@@ -77,13 +77,13 @@ class UtilisateurController extends  BaseController
      */
     public function login(Request $request)
     {
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        if(Auth::attempt(['numTelephone' => $request->numTelephone, 'password' => $request->password])){
             $user = Auth::user();
             $success['numTelephone'] = $user->numTelephone;
-            $success['email'] = $user->email;
             $success['structure_id'] = $user->structure_id;
+            $success['structure'] = Structure::find($user->structure_id);
 
-            return $this->sendResponse($user, 'User login successfully.');
+            return $this->sendResponse($success, 'User login successfully.');
         }
         else{
             return $this->sendError('Erreur.', ['error'=>"L'utilisateur n'existe pas."]);

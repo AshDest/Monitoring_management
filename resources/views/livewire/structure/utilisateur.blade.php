@@ -162,7 +162,7 @@
                                         </div>
                                     </th>
                                     <th class="min-w-125px">AGENTS</th>
-                                    <th class="min-w-125px">USERNAME</th>
+                                    <th class="min-w-125px">TELEPHONE</th>
                                     <th class="min-w-125px">ROLES</th>
                                     <th class="text-end min-w-70px">ACTIONS</th>
                                 </tr>
@@ -183,7 +183,7 @@
                                             class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->agent->noms}}</a>
                                     </td>
                                     <td>
-                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->name}}</a>
+                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->numTelephone}}</a>
                                     </td>
                                     <td>
                                         <a href=""

@@ -40,11 +40,9 @@ class StructureController extends BaseController
     public function show($id)
     {
         $structure = Structure::find($id);
-
         if (is_null($structure)) {
             return $this->sendError('Structure not found.');
         }
-
         return $this->sendResponse($structure, 'Structure retrieved successfully.');
     }
 
