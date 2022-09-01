@@ -45,7 +45,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function structure()
+    public function structures()
     {
         return $this->belongsTo(Structure::class, 'structure_id');
     }

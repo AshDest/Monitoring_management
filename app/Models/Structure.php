@@ -42,4 +42,9 @@ class Structure extends Model
     {
         return $this->belongsTo(Quartier_Village::class, 'adresse_id');
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

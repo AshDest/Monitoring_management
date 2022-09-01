@@ -15,7 +15,8 @@ class Agent extends Model
         'sexe',
         'etatcivil',
         'adresse',
-        'codeStructure'
+        'codeStructure',
+        'role'
     ];
 
     public function structure()

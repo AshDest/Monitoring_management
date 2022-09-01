@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->string('numTelephone')->unique()->nullable();
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->foreign('agent_id')->references('id')->on('agents')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('structure_id')->nullable();
             $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
-            $table->collect('role', ['Super Admin', 'Admin', 'Utilisateur']);
+            $table->enum('role', ['Super Admin', 'Admin', 'Utilisateur']);
             $table->rememberToken();
             $table->timestamps();
         });
