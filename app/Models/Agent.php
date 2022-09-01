@@ -32,4 +32,8 @@ class Agent extends Model
     {
         return $this->hasMany(Utilisateur::class);
     }
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }
