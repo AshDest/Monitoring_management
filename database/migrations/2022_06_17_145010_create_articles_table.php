@@ -23,10 +23,10 @@ return new class extends Migration
             $table->integer('stockAlerte');
             $table->unsignedBigInteger('codeCategorie');
             $table->foreign('codeCategorie')->references('id')->on('categorie_articles')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('GLArticle');
-            $table->string('GLChargeArticle');
-            $table->string('GLProduitArticle');
-            $table->string('GLStockArticle');
+            $table->string('GLArticle')->nullable();
+            $table->string('GLChargeArticle')->nullable();
+            $table->string('GLProduitArticle')->nullable();
+            $table->string('GLStockArticle')->nullable();
             $table->unsignedBigInteger('structure_id');
             $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
