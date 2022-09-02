@@ -80,13 +80,15 @@ class UtilisateurController extends  BaseController
         if(Auth::attempt(['numTelephone' => $request->numTelephone, 'password' => $request->password])){
             $user = Auth::user();
             $success['numTelephone'] = $user->numTelephone;
+            $success['password'] = $user->password;
             $success['structure_id'] = $user->structure_id;
+
             $success['structure'] = Structure::find($user->structure_id);
 
             return $this->sendResponse($success, 'User login successfully.');
         }
         else{
-            return $this->sendError('Erreur.', ['error'=>"L'utilisateur n'existe pas."]);
+            return $this->sendError("L'utilisateur n'existe pas.");
         }
     }
 
