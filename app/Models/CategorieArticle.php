@@ -11,6 +11,6 @@ class CategorieArticle extends Model
 
     protected $fillable = [
         'designation',
-        'id_structure'
+        'structure_id'
     ];
 }

@@ -29,20 +29,25 @@ class CategorieArticleController extends  BaseController
      */
     public function store(Request $request)
     {
-        $input = $request->all();
+        try {
+            $input = $request->all();
 
-        $validator = Validator::make($input, [
-            'designation' => 'required',
-            'id_structure' => 'required'
-        ]);
+            $validator = Validator::make($input, [
+                'designation' => 'required',
+                'structure_id' => 'required'
+            ]);
 
-        if($validator->fails()){
-            return $this->sendError('Synchronisation Error.', $validator->errors());
+            if($validator->fails()){
+                // return $this->sendError('Synchronisation Error.', $validator->errors());
+                return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
+            }
+
+            $cat = CategorieArticle::create($input);
+            return $this->sendResponse(new $cat, 'Categorie Article created successfully.');
+
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: ". $th);
         }
-
-        $cat = CategorieArticle::create($input);
-
-        return $this->sendResponse(new $cat, 'Categorie Article created successfully.');
     }
 
     /**
