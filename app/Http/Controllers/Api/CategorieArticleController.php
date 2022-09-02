@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Api\BaseController as BaseController;
 use App\Http\Controllers\Controller;
 use App\Models\CategorieArticle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class CategorieArticleController extends Controller
+
+class CategorieArticleController extends  BaseController
 {
     /**
      * Display a listing of the resource.
@@ -26,14 +29,20 @@ class CategorieArticleController extends Controller
      */
     public function store(Request $request)
     {
-        if(CategorieArticle::create($request->all()))
-        {
-            return response()->json(
-                [
-                    'success' => 'Enregistrer avec Success'
-                ]
-            );
+        $input = $request->all();
+
+        $validator = Validator::make($input, [
+            'designation' => 'required',
+            'id_structure' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Synchronisation Error.', $validator->errors());
         }
+
+        $cat = CategorieArticle::create($input);
+
+        return $this->sendResponse(new $cat, 'Product created successfully.');
     }
 
     /**

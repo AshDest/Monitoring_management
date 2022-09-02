@@ -38,9 +38,9 @@ class BaseController extends Controller
             ];
 
 
-            // if(!empty($errorMessages)){
-            //     $response['data'] = $errorMessages;
-            // }
+            if(!empty($errorMessages)){
+                $response['data'] = null;
+            }
 
 
             return response()->json($response, $code);

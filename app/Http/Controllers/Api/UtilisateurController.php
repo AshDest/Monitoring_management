@@ -88,7 +88,7 @@ class UtilisateurController extends  BaseController
             return $this->sendResponse($success, 'User login successfully.');
         }
         else{
-            return $this->sendError("L'utilisateur n'existe pas.");
+            return $this->sendError("Erreur de Connexion au Serveur, Veuillez Verifier vos Information de connexion.");
         }
     }
 
