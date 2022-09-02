@@ -34,9 +34,9 @@ class ArticleController extends BaseController
             $validator = Validator::make($input, [
                 'code' => 'required|max:20',
                 'designation' => 'required|max:20',
-                'quantite' => 'required|max:20',
-                'codeMonnaie' => 'required',
-                'prixUnitaire' => 'required|max:4',
+                'quantite' => 'nullable',
+                'codeMonnaie' => 'nullable',
+                'prixUnitaire' => 'required|max:8',
                 'stockAlerte' => 'required|max:3',
                 'codeCategorie' => 'required|max:20',
                 'structure_id' => 'required'
