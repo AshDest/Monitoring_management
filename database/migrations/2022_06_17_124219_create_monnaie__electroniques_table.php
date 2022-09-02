@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('numTel');
             $table->double('soldeUSD')->nullable();
             $table->double('soldeCDF')->nullable();
-            $table->unsignedBigInteger('codeStructure');
-            $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('GLMonnaieE');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('GLMonnaieE')->nullable();
             $table->timestamps();
         });
     }

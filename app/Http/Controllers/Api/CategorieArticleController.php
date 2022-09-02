@@ -42,7 +42,7 @@ class CategorieArticleController extends  BaseController
 
         $cat = CategorieArticle::create($input);
 
-        return $this->sendResponse(new $cat, 'Product created successfully.');
+        return $this->sendResponse(new $cat, 'Categorie Article created successfully.');
     }
 
     /**

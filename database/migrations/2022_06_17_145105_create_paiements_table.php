@@ -19,7 +19,8 @@ return new class extends Migration
             $table->double('montantTotal');
             $table->unsignedBigInteger('idVente');
             $table->foreign('idVente')->references('id')->on('ventes')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('id_structure');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

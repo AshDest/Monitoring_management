@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('categorie_articles', function (Blueprint $table) {
             $table->id();
             $table->string('designation');
-            $table->integer('id_structure');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

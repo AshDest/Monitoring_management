@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('codeAgent');
             $table->foreign('codeAgent')->references('id')->on('agents')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('GLCaisse');
+            $table->string('GLCaisse')->nullable();
             $table->timestamps();
         });
     }

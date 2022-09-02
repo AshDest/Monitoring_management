@@ -20,8 +20,8 @@ return new class extends Migration
             $table->enum('sexe', ['M', 'F']);
             $table->enum('etatcivil', ['Marie', 'Celibataire']);
             $table->string('adresse');
-            $table->unsignedBigInteger('codeStructure');
-            $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

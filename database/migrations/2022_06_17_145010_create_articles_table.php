@@ -27,7 +27,8 @@ return new class extends Migration
             $table->string('GLChargeArticle');
             $table->string('GLProduitArticle');
             $table->string('GLStockArticle');
-            $table->integer('id_structure');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

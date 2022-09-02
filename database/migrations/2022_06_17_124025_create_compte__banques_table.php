@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('designation');
             $table->string('agence');
             $table->double('solde')->nullable();
-            $table->unsignedBigInteger('codeStructure');
-            $table->foreign('codeStructure')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('GLCompteBanque');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('GLCompteBanque')->nullable();
             $table->timestamps();
         });
     }

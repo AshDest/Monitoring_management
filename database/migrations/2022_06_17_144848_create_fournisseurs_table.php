@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('telephone');
             $table->string('email');
             $table->string('adresse');
-            $table->string('GLFournisseur');
-            $table->integer('id_structure');
+            $table->string('GLFournisseur')->nullable();
+            $table->unsignedBigInteger('structure_id')->nullable();
+            $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
