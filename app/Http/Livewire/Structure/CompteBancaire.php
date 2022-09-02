@@ -14,7 +14,7 @@ class CompteBancaire extends Component
     public $designation;
     public $agence;
     public $solde;
-    public $codeStructure;
+    public $structure_id;
     public $GLCompteBanque;
 
     public $structure;
@@ -82,7 +82,7 @@ class CompteBancaire extends Component
     }
     public function render()
     {
-        $comptebancaires = Compte_Banque::where('codeStructure', $this->structure)->get();
+        $comptebancaires = Compte_Banque::where('structure_id', $this->structure)->get();
         return view('livewire.structure.compte-bancaire', ['comptebancaires' => $comptebancaires]);
     }
 }

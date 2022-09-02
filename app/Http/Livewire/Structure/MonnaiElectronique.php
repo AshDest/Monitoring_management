@@ -69,7 +69,7 @@ class MonnaiElectronique extends Component
     }
     public function render()
     {
-        $monnaielectroniques = Monnaie_Electronique::where('codeStructure',$this->structure)->get();
+        $monnaielectroniques = Monnaie_Electronique::where('structure_id',$this->structure)->get();
         return view('livewire.structure.monnai-electronique', ['monnaielectroniques' => $monnaielectroniques]);
     }
 }

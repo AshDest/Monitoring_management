@@ -15,7 +15,7 @@ class AddAgents extends Component
     public $sexe;
     public $etatcivil;
     public $adresse;
-    public $codeStructure;
+    public $structure_id;
     public $structure;
 
 
@@ -50,7 +50,7 @@ class AddAgents extends Component
                 'sexe' => $this->sexe,
                 'etatcivil' => $this->etatcivil,
                 'adresse' => $this->adresse,
-                'codeStructure' => $this->structure,
+                'structure_id' => $this->structure,
 
             ])->save();
             $this->alert('success', 'Saved Successfully!', [

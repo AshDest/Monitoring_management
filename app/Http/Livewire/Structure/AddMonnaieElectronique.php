@@ -15,7 +15,7 @@ class AddMonnaieElectronique extends Component
     public $numTel;
     public $soldeUSD;
     public $soldeCDF;
-    public $codeStructure;
+    public $structure_id;
     public $GLMonnaieE;
 
     public $defaultValue = 0;
@@ -42,7 +42,7 @@ class AddMonnaieElectronique extends Component
                 'numTel' => $this->numTel,
                 'soldeUSD' => $this->defaultValue,
                 'soldeCDF' => $this->defaultValue,
-                'codeStructure' => $this->structure,
+                'structure_id' => $this->structure,
                 'GLMonnaieE' => $this->GLMonnaieE,
 
             ])->save();

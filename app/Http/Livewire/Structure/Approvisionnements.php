@@ -11,7 +11,7 @@ class Approvisionnements extends Component
 
     public function render()
     {
-        $approvisionnement = Approvisionnement::where('id_structure',$this->structure)->get();
+        $approvisionnement = Approvisionnement::where('structure_id',$this->structure)->get();
         return view('livewire.structure.approvisionnements', ['approvisionnement' => $approvisionnement]);
     }
 }

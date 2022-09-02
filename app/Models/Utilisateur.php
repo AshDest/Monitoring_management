@@ -14,11 +14,11 @@ class Utilisateur extends Model
         'username',
         'password',
         'role',
-        'codeStructure'
+        'structure_id'
     ];
 
-    public function agent()
-    {
-        return $this->belongsTo(Agent::class, 'agent_id');
-    }
+    // public function agent()
+    // {
+    //     return $this->belongsTo(Agent::class, 'agent_id');
+    // }
 }

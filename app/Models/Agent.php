@@ -15,13 +15,13 @@ class Agent extends Model
         'sexe',
         'etatcivil',
         'adresse',
-        'codeStructure',
+        'structure_id',
         'role'
     ];
 
     public function structure()
     {
-        return $this->belongsTo(Structure::class);
+        return $this->belongsTo(Structure::class, 'structure_id');
     }
 
     public function caissier()
@@ -33,7 +33,7 @@ class Agent extends Model
     {
         return $this->hasMany(Utilisateur::class);
     }
-    public function user()
+    public function users()
     {
         return $this->hasMany(User::class);
     }

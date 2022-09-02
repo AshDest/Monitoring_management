@@ -13,7 +13,7 @@ class Agents extends Component
     public $sexe;
     public $etatcivil;
     public $adresse;
-    public $codeStructure;
+    public $structure_id;
     public $structure;
 
     public $form_edit;
@@ -70,7 +70,7 @@ class Agents extends Component
     }
     public function render()
     {
-        $agents = Agent::where('codeStructure',$this->structure)->get();
+        $agents = Agent::where('structure_id',$this->structure)->get();
         return view('livewire.structure.agents', ['agents' => $agents]);
     }
 }

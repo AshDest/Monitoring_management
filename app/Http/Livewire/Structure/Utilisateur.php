@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Structure;
 
+use App\Models\Agent;
 use App\Models\User;
-use App\Models\Utilisateur as ModelsUtilisateur;
+// use App\Models\Utilisateur as ModelsUtilisateur;
 use Livewire\Component;
 
 class Utilisateur extends Component
@@ -13,13 +14,16 @@ class Utilisateur extends Component
     public $password;
     public $role;
 
+    public $structure_id;
+
+
     public $structure;
 
     public function render()
     {
-        $utilisateurs = User::select('*')
-                            ->whereNotNull('structure_id')
+
+        $users = User::whereNotNull('structure_id')
                             ->where('structure_id', $this->structure)->get();
-        return view('livewire.structure.utilisateur', ['utilisateurs' => $utilisateurs]);
+        return view('livewire.structure.utilisateur', ['users' => $users]);
     }
 }

@@ -14,7 +14,7 @@ class AddCompteBancaire extends Component
     public $designation;
     public $agence;
     public $solde;
-    public $codeStructure;
+    public $structure_id;
     public $GLCompteBanque;
 
     public $structure;
@@ -24,7 +24,7 @@ class AddCompteBancaire extends Component
         'numeroCompte' => 'required',
         'codeBanque' => 'required',
         'designation' => 'required',
-        'codeStructure' => 'required'
+        'structure_id' => 'required'
     ];
     // realtime validation
     public function updated($propertyName)
@@ -40,7 +40,7 @@ class AddCompteBancaire extends Component
                 'designation' => $this->designation,
                 'agence' => $this->agence,
                 'solde' => $this->solde,
-                'codeStructure' => $this->structure,
+                'structure_id' => $this->structure,
                 'GLCompteBanque' => $this->GLCompteBanque,
             ])->save();
             $this->alert('success', 'Saved Successfully!', [

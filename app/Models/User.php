@@ -51,7 +51,7 @@ class User extends Authenticatable
         return $this->belongsTo(Structure::class, 'structure_id');
     }
 
-    public function agent()
+    public function agents()
     {
         return $this->belongsTo(Agent::class, 'agent_id');
     }

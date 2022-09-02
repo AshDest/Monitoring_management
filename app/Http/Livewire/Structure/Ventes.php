@@ -10,7 +10,7 @@ class Ventes extends Component
     public $structure;
     public function render()
     {
-        $ventes = Vente::where('id_structure', $this->structure)->get();
+        $ventes = Vente::where('structure_id', $this->structure)->get();
         return view('livewire.structure.ventes', ['ventes' => $ventes]);
     }
 }

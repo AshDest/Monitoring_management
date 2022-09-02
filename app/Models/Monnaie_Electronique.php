@@ -14,7 +14,7 @@ class Monnaie_Electronique extends Model
         'numTel',
         'soldeUSD',
         'soldeCDF',
-        'codeStructure',
+        'structure_id',
         'GLMonnaieE'
     ];
 

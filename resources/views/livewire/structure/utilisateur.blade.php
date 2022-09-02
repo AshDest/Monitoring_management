@@ -2,85 +2,7 @@
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <div id="kt_content_container" class="container-xxl">
-                {{-- <div class="card">
-                    <div class="card-body pt-0">
-                        @if (!is_null($form_edit))
-                        <!--begin::Alert-->
-                        <div class="py-5">
-                            <div class="rounded border p-10 pb-0 d-flex flex-column">
-                                <!--begin::Alert-->
-                                <div
-                                    class="alert alert-dismissible bg-light-primary d-flex flex-column flex-sm-row w-100 p-5 mb-10">
-                                    <!--begin::Content-->
-                                    <div class="d-flex flex-column pe-0 pe-sm-10">
-                                        <h4 class="fw-bold">Modification</h4>
-                                        <!--begin::Content-->
-                                        <form>
-                                            <fieldset>
-                                                <div class="row mb-5">
-                                                    <div class="col-md-4 fv-row">
-                                                        <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Etat Civil</label>
-                                                        <!--end::Label-->
-                                                        <select name="etatcivil" wire:model='etatcivil' id="etatcivil"
-                                                            class="form-select">
-                                                            <option value="Marie">Marié</option>
-                                                            <option value="Celibataire">Célibataire</option>
-                                                        </select>
-                                                        @error('etatcivil')
-                                                        <span style="color: red;">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-md-4 fv-row">
-                                                        <!--end::Label-->
-                                                        <label class="required fs-5 fw-bold mb-2">Adresse</label>
-                                                        <!--end::Label-->
-                                                        <!--end::Input-->
-                                                        <input type="text" wire:model='adresse'
-                                                            class="form-control form-control-solid" placeholder=""
-                                                            name="adresse" />
-                                                        <!--end::Input-->
-                                                        @error('adresse')
-                                                        <span style="color: red;">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            <div class="text-right">
-                                                <button class="btn btn-light-success col-sm-12"
-                                                    wire:click=modifycmpt()><i
-                                                        class="fas fa-save"></i>&nbsp;&nbsp;Modifier</button>
-                                            </div>
-                                        </form>
-                                        <!--end::Content-->
-                                    </div>
-                                    <!--end::Content-->
-                                    <!--begin::Close-->
-                                    <button type="button"
-                                        class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto"
-                                        data-bs-dismiss="alert">
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                                        <span class="svg-icon svg-icon-1 svg-icon-primary">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
-                                                    transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                                                <rect x="7.41422" y="6" width="16" height="2" rx="1"
-                                                    transform="rotate(45 7.41422 6)" fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                    </button>
-                                    <!--end::Close-->
-                                </div>
-                                <!--end::Alert-->
-                            </div>
-                        </div>
-                        <!--end::Alert-->
 
-                        @endif
-                    </div>
-                </div> --}}
                 <div>
                 </div>
                 <!--begin::Card-->
@@ -172,27 +94,27 @@
                             <!--begin::Table body-->
                             <tbody class="text-gray-600 fw-bold">
                                 <tr>
-                                    @forelse ($utilisateurs as $utilisateur)
+                                    @forelse ($users as $user)
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="{{$utilisateur->id}}" />
+                                            <input class="form-check-input" type="checkbox" value="{{$user->id}}" />
                                         </div>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->agent->noms}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1"></a>
                                     </td>
                                     <td>
-                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->numTelephone}}</a>
+                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$user->numTelephone}}</a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$utilisateur->role}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$user->role}}</a>
                                     </td>
                                     <td class="text-end">
                                         <a href="#"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                            wire:click="displayformedit({{$utilisateur->id}})">
+                                            wire:click="">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -208,7 +130,7 @@
                                             <!--end::Svg Icon-->
                                         </a>
                                         <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
-                                            wire:click="delete({{ $utilisateur->id }})">
+                                            wire:click="">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

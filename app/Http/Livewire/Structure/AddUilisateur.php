@@ -74,7 +74,7 @@ class AddUilisateur extends Component
     }
     public function render()
     {
-        $agents = Agent::where('codeStructure',$this->structure)->get();
+        $agents = Agent::where('structure_id',$this->structure)->get();
         return view('livewire.structure.add-uilisateur', ['agents' => $agents]);
     }
 }

@@ -15,7 +15,7 @@ class Compte_Banque extends Model
         'designation',
         'agence',
         'solde',
-        'codeStructure',
+        'structure_id',
         'GLCompteBanque'
     ];
 
