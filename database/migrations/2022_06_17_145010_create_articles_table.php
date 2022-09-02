@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('designation');
-            $table->integer('quantite');
-            $table->string('codeMonnaie');
-            $table->double('prixUnitaire');
+            $table->integer('quantite')->default(0);
+            $table->string('codeMonnaie')->nullable();
+            $table->float('prixUnitaire', 8, 2);
             $table->integer('stockAlerte');
             $table->unsignedBigInteger('codeCategorie');
             $table->foreign('codeCategorie')->references('id')->on('categorie_articles')->onUpdate('cascade')->onDelete('cascade');

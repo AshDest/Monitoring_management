@@ -21,6 +21,6 @@ class Article extends Model
         'GLChargeArticle',
         'GLProduitArticle',
         'GLStockArticle',
-        'id_structure',
+        'structure_id',
     ];
 }
