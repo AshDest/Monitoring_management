@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Api\BaseController as BaseController;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Http\Controllers\Controller;
 use App\Models\CategorieArticle;
 use Illuminate\Http\Request;
@@ -38,12 +38,13 @@ class CategorieArticleController extends  BaseController
             ]);
 
             if($validator->fails()){
-                // return $this->sendError('Synchronisation Error.', $validator->errors());
-                return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
+                return $this->sendError('Synchronisation Error.', $validator->errors());
+                // return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
             }
 
             $cat = CategorieArticle::create($input);
-            return $this->sendResponse(new $cat, 'Categorie Article created successfully.');
+            $success['id'] =  $cat->id;
+            return $this->sendResponse($success, 'Categorie Article created successfully.');
 
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: ". $th);

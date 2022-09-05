@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Api\BaseController as BaseController;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
@@ -46,7 +46,8 @@ class ArticleController extends BaseController
             }
 
             $article = Article::create($input);
-            return $this->sendResponse(new $article, 'Article Synchoniser Avec Success.');
+            $success['id'] =  $article->id;
+            return $this->sendResponse($success, 'Article Synchoniser Avec Success.');
 
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: ". $th);
