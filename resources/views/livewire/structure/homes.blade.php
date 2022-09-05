@@ -215,7 +215,7 @@
             <div class="card card-xl-stretch mb-xl-8">
                 <!--begin::Header-->
                 <div class="card-header border-0">
-                    <h3 class="card-title fw-bolder text-dark">Notifications</h3>
+                    <h3 class="card-title fw-bolder text-dark">Catégories Article</h3>
                     <div class="card-toolbar">
                         <!--begin::Menu-->
                         <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
@@ -322,6 +322,9 @@
                 <!--begin::Body-->
                 <div class="card-body pt-0">
                     <!--begin::Item-->
+                    @foreach ($categArticles as $categArticle)
+
+                    @endforeach
                     <div class="d-flex align-items-center bg-light-warning rounded p-5 mb-7">
                         <!--begin::Icon-->
                         <span class="svg-icon svg-icon-warning me-5">
