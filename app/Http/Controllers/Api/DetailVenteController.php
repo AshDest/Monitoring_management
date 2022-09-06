@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\DetailVente;
 use Illuminate\Http\Request;
-
-class DetailVenteController extends Controller
+use Illuminate\Support\Facades\Validator;
+class DetailVenteController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -26,12 +26,25 @@ class DetailVenteController extends Controller
      */
     public function store(Request $request)
     {
-        if (DetailVente::create($request->all())) {
-            return response()->json(
-                [
-                    'success' => 'Enregistrer avec Success'
-                ]
-                );
+        try {
+            $input = $request->all();
+
+            $validator = Validator::make($input, [
+                'idVente' => 'required',
+                'quantite' => 'required',
+                'montant' => 'required',
+                'idArticle' => 'required'
+            ]);
+            if($validator->fails()){
+                return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
+            }
+
+            $article = DetailVente::create($input);
+            $success['id'] =  $article->id;
+            return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
+
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: ". $th);
         }
     }
 

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('codeVente');
             $table->dateTime('dateVente');
             $table->double('montantTotal');
-            $table->unsignedBigInteger('codeClient');
+            $table->unsignedBigInteger('codeClient')->nullable();
             $table->foreign('codeClient')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('structure_id');
             $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
