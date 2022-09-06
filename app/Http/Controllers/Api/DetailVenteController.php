@@ -26,26 +26,30 @@ class DetailVenteController extends BaseController
      */
     public function store(Request $request)
     {
-        try {
-            $input = $request->all();
+        // try {
+        //     $input = $request->all();
 
-            $validator = Validator::make($input, [
-                'idVente' => 'required',
-                'quantite' => 'required',
-                'montant' => 'required',
-                'idArticle' => 'required'
-            ]);
-            if($validator->fails()){
-                return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
-            }
+        //     $validator = Validator::make($input, [
+        //         'idVente' => 'required',
+        //         'quantite' => 'required',
+        //         'montant' => 'required',
+        //         'idArticle' => 'required'
+        //     ]);
+        //     if($validator->fails()){
+        //         return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
+        //     }
 
-            $article = DetailVente::create($input);
-            $success['id'] =  $article->id;
-            return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
+        //     $article = DetailVente::create(
+        //         [
 
-        } catch (\Throwable $th) {
-            return $this->sendError("Erreur Synchronisation Error: ". $th);
-        }
+        //         ]
+        //     );
+        //     $success['id'] =  $article->id;
+        //     return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
+
+        // } catch (\Throwable $th) {
+        //     return $this->sendError("Erreur Synchronisation Error: ". $th);
+        // }
     }
 
     /**

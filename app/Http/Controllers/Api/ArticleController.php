@@ -42,7 +42,7 @@ class ArticleController extends BaseController
                 'structure_id' => 'required'
             ]);
             if($validator->fails()){
-                return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
+                return $this->sendError("Erreur Synchronisation: ". $validator->errors());
             }
 
             $article = Article::create($input);

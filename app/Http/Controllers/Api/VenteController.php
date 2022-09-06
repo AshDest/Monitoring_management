@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\PostBaseController as BaseController;
+use App\Models\DetailVente;
 use App\Models\Vente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -31,18 +32,36 @@ class VenteController extends BaseController
             $input = $request->all();
 
             $validator = Validator::make($input, [
-                'codeVente' => 'required|max:20',
+                'codeVente' => 'nullable|max:20',
                 'dateVente' => 'required',
                 'montantTotal' => 'required',
                 'codeClient' => 'nullable',
-                'id_structure' => 'required'
+                'id_structure' => 'required',
+
+                // 'idVente' => 'required',
+                'quantite' => 'required',
+                'montant' => 'required',
+                'idArticle' => 'required'
             ]);
             if($validator->fails()){
                 return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
             }
 
-            $article = Vente::create($input);
-            $success['id'] =  $article->id;
+            $article = Vente::create([
+                'codeVente' => $request->codeVente,
+                'dateVente' => $request->dateVente,
+                'montantTotal' => $request->montantTotal,
+                'codeClient' => $request->codeClient,
+                'structure_id' => $request->id_structure,
+            ]);
+            $success['vente'] =  $article->id;
+            $dvente = DetailVente::create([
+                'idVente' => $article->id,
+                'quantite' => $request->quantite,
+                'montant' => $request->montant,
+                'idArticle' => $request->idArticle,
+            ]);
+            $success['detail'] =  $dvente->id;
             return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
 
         } catch (\Throwable $th) {

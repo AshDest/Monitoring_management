@@ -14,7 +14,7 @@ class Vente extends Model
         'dateVente',
         'montantTotal',
         'codeClient',
-        'id_structure'
+        'structure_id'
     ];
 
     public function client()
