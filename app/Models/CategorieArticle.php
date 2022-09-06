@@ -13,4 +13,9 @@ class CategorieArticle extends Model
         'designation',
         'structure_id'
     ];
+
+    public function article()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

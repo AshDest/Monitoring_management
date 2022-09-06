@@ -23,4 +23,9 @@ class Article extends Model
         'GLStockArticle',
         'structure_id',
     ];
+
+    public function categorie()
+    {
+        return $this->belongsTo(CategorieArticle::class, 'structure_id');
+    }
 }

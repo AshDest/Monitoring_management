@@ -323,9 +323,7 @@
                 <div class="card-body pt-0">
                     <!--begin::Item-->
                     @foreach ($categArticles as $categArticle)
-
-                    @endforeach
-                    <div class="d-flex align-items-center bg-light-warning rounded p-5 mb-7">
+                        <div class="d-flex align-items-center bg-light-warning rounded p-5 mb-7">
                         <!--begin::Icon-->
                         <span class="svg-icon svg-icon-warning me-5">
                             <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
@@ -345,109 +343,30 @@
                         <!--end::Icon-->
                         <!--begin::Title-->
                         <div class="flex-grow-1 me-2">
-                            <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">Group lunch
-                                celebration</a>
-                            <span class="text-muted fw-bold d-block">Due in 2 Days</span>
+                            <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">{{$categArticle->designation}}</a>
+                            @php
+                                $dateUpdate = $categArticle->created_at;
+                                $tdate = Carbon\Carbon::now();
+                                $datetime1 = new DateTime($dateUpdate);
+                                $datetime2 = new DateTime($tdate);
+                                $interval = ($datetime1->diff($datetime2)->days < 1)? 'today': $dateUpdate->diffForHumans($tdate);
+                                // $days = $interval->format('%a');//now do whatever you like with $day
+
+                            @endphp
+                            <span class="text-muted fw-bold d-block">{{$interval}}</span>
                         </div>
                         <!--end::Title-->
                         <!--begin::Lable-->
-                        <span class="fw-bolder text-warning py-1">+28%</span>
+                        @php
+                        // use App\Models\Article;
+                        $count = App\Models\Article::where('codeCategorie', $categArticle->id)->count();
+                        // dd($categArticle->codeCategorie)
+                        @endphp
+                        <span class="fw-bolder text-warning py-1">{{$count}}</span>
                         <!--end::Lable-->
                     </div>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-                    <div class="d-flex align-items-center bg-light-success rounded p-5 mb-7">
-                        <!--begin::Icon-->
-                        <span class="svg-icon svg-icon-success me-5">
-                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
-                            <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path opacity="0.3"
-                                        d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z"
-                                        fill="currentColor" />
-                                    <path
-                                        d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <!--end::Icon-->
-                        <!--begin::Title-->
-                        <div class="flex-grow-1 me-2">
-                            <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">Navigation
-                                optimization</a>
-                            <span class="text-muted fw-bold d-block">Due in 2 Days</span>
-                        </div>
-                        <!--end::Title-->
-                        <!--begin::Lable-->
-                        <span class="fw-bolder text-success py-1">+50%</span>
-                        <!--end::Lable-->
-                    </div>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-                    <div class="d-flex align-items-center bg-light-danger rounded p-5 mb-7">
-                        <!--begin::Icon-->
-                        <span class="svg-icon svg-icon-danger me-5">
-                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
-                            <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path opacity="0.3"
-                                        d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z"
-                                        fill="currentColor" />
-                                    <path
-                                        d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <!--end::Icon-->
-                        <!--begin::Title-->
-                        <div class="flex-grow-1 me-2">
-                            <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">Rebrand strategy
-                                planning</a>
-                            <span class="text-muted fw-bold d-block">Due in 5 Days</span>
-                        </div>
-                        <!--end::Title-->
-                        <!--begin::Lable-->
-                        <span class="fw-bolder text-danger py-1">-27%</span>
-                        <!--end::Lable-->
-                    </div>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-                    <div class="d-flex align-items-center bg-light-info rounded p-5">
-                        <!--begin::Icon-->
-                        <span class="svg-icon svg-icon-info me-5">
-                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
-                            <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path opacity="0.3"
-                                        d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z"
-                                        fill="currentColor" />
-                                    <path
-                                        d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <!--end::Icon-->
-                        <!--begin::Title-->
-                        <div class="flex-grow-1 me-2">
-                            <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">Product goals
-                                strategy</a>
-                            <span class="text-muted fw-bold d-block">Due in 7 Days</span>
-                        </div>
-                        <!--end::Title-->
-                        <!--begin::Lable-->
-                        <span class="fw-bolder text-info py-1">+8%</span>
-                        <!--end::Lable-->
-                    </div>
-                    <!--end::Item-->
+                    @endforeach
+
                 </div>
                 <!--end::Body-->
             </div>
