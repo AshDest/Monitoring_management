@@ -39,9 +39,9 @@ class VenteController extends BaseController
                 'id_structure' => 'required',
 
                 // 'idVente' => 'required',
-                'quantite' => 'required',
-                'montant' => 'required',
-                'idArticle' => 'required'
+                // 'quantite' => 'required',
+                // 'montant' => 'required',
+                // 'idArticle' => 'required'
             ]);
             if($validator->fails()){
                 return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
@@ -55,13 +55,18 @@ class VenteController extends BaseController
                 'structure_id' => $request->id_structure,
             ]);
             $success['vente'] =  $article->id;
-            $dvente = DetailVente::create([
-                'idVente' => $article->id,
-                'quantite' => $request->quantite,
-                'montant' => $request->montant,
-                'idArticle' => $request->idArticle,
-            ]);
-            $success['detail'] =  $dvente->id;
+            // dd($request['details'][0]['quantite']);
+            for ($i=0; $i < count($request->details); $i++) {
+                // dd($request['details'][$i]['quantite']);
+                $dvente = DetailVente::create([
+                    'idVente' => $article->id,
+                    'quantite' => $request['details'][$i]['quantite'],
+                    'montant' => $request['details'][$i]['montant'],
+                    'idArticle' => $request['details'][$i]['idArticle'],
+                ]);
+            }
+
+            // $success['detail'] =  $dvente->id;
             return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
 
         } catch (\Throwable $th) {
