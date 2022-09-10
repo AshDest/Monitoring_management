@@ -7,6 +7,7 @@ use App\Models\DetailVente;
 use App\Models\Vente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Psy\Readline\Hoa\Console;
 
 class VenteController extends BaseController
 {
@@ -55,19 +56,17 @@ class VenteController extends BaseController
                 'structure_id' => $request->id_structure,
             ]);
             $success['vente'] =  $article->id;
-            // dd($request['details'][0]['quantite']);
-            for ($i=0; $i < count($request->details); $i++) {
-                // dd($request['details'][$i]['quantite']);
+            $detVente = $request->details;
+            foreach($detVente as $dv) {
                 $dvente = DetailVente::create([
                     'idVente' => $article->id,
-                    'quantite' => $request['details'][$i]['quantite'],
-                    'montant' => $request['details'][$i]['montant'],
-                    'idArticle' => $request['details'][$i]['idArticle'],
+                    'quantite' => $dv['quantite'],
+                    'montant' => $dv['montant'],
+                    'idArticle' => $dv['idArticle'],
                 ]);
-            }
 
-            // $success['detail'] =  $dvente->id;
-            return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
+            }
+           return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
 
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: ". $th);
