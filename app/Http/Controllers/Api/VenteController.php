@@ -57,15 +57,27 @@ class VenteController extends BaseController
             ]);
             $success['vente'] =  $article->id;
             $detVente = $request->details;
-            foreach($detVente as $dv) {
-                $dvente = DetailVente::create([
-                    'idVente' => $article->id,
-                    'quantite' => $dv['quantite'],
-                    'montant' => $dv['montant'],
-                    'idArticle' => $dv['idArticle'],
-                ]);
+            if (is_array($detVente) || is_object($detVente))
+                {
+                    foreach ($detVente as $dv)
+                    {
+                        echo $dv['quantite'];
+                    }
+                }
+                else {
+                    return $this->sendResponse($success, 'totot.');
+                }
+            // foreach($detVente  as $key =>$dv) {
+                //echo (json_encode("toto"));
+                // echo $dv['quantite'];
+                // $dvente = DetailVente::create([
+                //     'idVente' => $article->id,
+                //     'quantite' => $dv['quantite'],
+                //     'montant' => $dv['montant'],
+                //     'idArticle' => $dv['idArticle'],
+                // ]);
 
-            }
+            // }
            return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
 
         } catch (\Throwable $th) {
