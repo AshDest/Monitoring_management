@@ -44,14 +44,14 @@ class LoginController extends Controller
         $input = $request->all();
 
         $this->validate($request, [
-            'username' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
 
-        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-        if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
+        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+        if(auth()->attempt(array($fieldType => $input['name'], 'password' => $input['password'])))
         {
-            return redirect()->route('home');
+            return redirect()->route('/home');
         }else{
             return redirect()->route('login')
                 ->with('error','Email-Address And Password Are Wrong.');

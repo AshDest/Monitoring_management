@@ -49,11 +49,11 @@
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">
 								<!--begin::Label-->
-								<label class="form-label fs-6 fw-bolder text-dark">Email</label>
+								<label class="form-label fs-6 fw-bolder text-dark">User name or email</label>
 								<!--end::Label-->
 								<!--begin::Input-->
-								<input class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" type="text" name="email"  autocomplete="email" autofocus />
+								<input class="form-control form-control-lg form-control-solid @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name') }}" type="text" name="name"  autocomplete="name" autofocus />
 								<!--end::Input-->
 							</div>
 							<!--end::Input group-->
