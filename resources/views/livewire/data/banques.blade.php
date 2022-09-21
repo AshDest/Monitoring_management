@@ -43,7 +43,9 @@
                                     placeholder="" name="contact" />
                                 <!--end::Input-->
                             </div>
-                            <button class="btn btn-success col-md-6 mb-2">Save</button>
+                            <div class="fv-row">
+                                <button class="btn btn-success col-md-6">Save</button>
+                            </div>
                         </div>
                     </div>
                     <!--end::Scroll-->
