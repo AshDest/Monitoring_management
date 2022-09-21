@@ -22,8 +22,13 @@
                         <div class="row mb-5">
                             <div class="fv-row">
                                 <label class="required fs-5 fw-bold mb-2">Code</label>
-                                <input type="text" wire:model='codeBanque' class="form-control form-control-solid"
+                                <input type="text" wire:model='codeBanque' class="form-control form-control-solid @error('codeBanque') is-invalid @enderror"
                                     placeholder="" name="codeBanque" />
+                                    @error('codeBanque')
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-exclamation-triangle"></i>&nbsp;{{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="fv-row">
                                 <!--end::Label-->
