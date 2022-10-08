@@ -30,61 +30,60 @@ class VenteController extends BaseController
     public function store(Request $request)
     {
         try {
-
+            // $ash = [];
+            // $quantite = array();
             $input = $request->all();
-            $detVentes = $request->details;
-            dd($detVentes);
-            foreach ($detVentes as $key => $user) {
-                echo $user['quantite'] . $user['montant'];
-            }
-            // $validator = Validator::make($input, [
-            //     'codeVente' => 'nullable|max:20',
-            //     'dateVente' => 'required',
-            //     'montantTotal' => 'required',
-            //     'codeClient' => 'nullable',
-            //     'id_structure' => 'required',
-
-            //     // 'idVente' => 'required',
-            //     // 'quantite' => 'required',
-            //     // 'montant' => 'required',
-            //     // 'idArticle' => 'required'
-            // ]);
-            // if ($validator->fails()) {
-            //     return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
+            // $ash[] = $request->details;
+            // $count = count($ash[0]);
+            // dd($ash[0][0]['quantite']);
+            // for ($i = 0; $i < $count; $i++) {
+            //     // echo $ash[$i][0]['quantite'];
+            //     // dd($ash[$i][0]['quantite']);
+            //     for ($a = 0; $a < count($ash[$i]); $a++) {
+            //         array_push($quantite, $ash[$i][$a]['quantite']);
+            //         // dd($quantite);
+            //         // $montant = $ash[$i][$a]['montant'];
+            //         // $idArticle = $ash[$i][$a]['idArticle'];
+            //         // dd($ash[$i][$a]['quantite']);
+            //     }
             // }
-
-            // $vente = Vente::create([
-            //     'codeVente' => $request->codeVente,
-            //     'dateVente' => $request->dateVente,
-            //     'montantTotal' => $request->montantTotal,
-            //     'codeClient' => $request->codeClient,
-            //     'structure_id' => $request->id_structure,
-            // ]);
-            // $success['vente'] =  $vente->id;
-            // $detVente = $request->details;
-
-            // // dd($detVente);
-            // // if (is_array($detVente) || is_object($detVente))
-            // //     {
-            // //         foreach ($detVente as $dv)
-            // //         {
-            // //             echo $dv['quantite'];
-            // //         }
-            // //     }
-            // //     else {
-            // //         return $this->sendResponse($success, 'totot.');
-            // //     }
-            // // foreach ($detVente  as $key => $dv) {
-            // //     // echo (json_encode("toto"));
-            // //     // echo $dv['quantite'];
-            // //     $dvente = DetailVente::create([
-            // //         'idVente' => $vente->id,
-            // //         'quantite' => $dv['quantite'],
-            // //         'montant' => $dv['montant'],
-            // //         'idArticle' => $dv['idArticle'],
-            // //     ]);
-            // // }
-            // return $this->sendResponse($detVente, 'Vente Synchoniser Avec Success.');
+            // dd($quantite);
+            // foreach ($ash as $key) {
+            //     $toto = $key[1];
+            // }
+            // dd($toto);
+            $validator = Validator::make($input, [
+                'codeVente' => 'nullable|max:20',
+                'dateVente' => 'required',
+                'montantTotal' => 'required',
+                'codeClient' => 'nullable',
+                'id_structure' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
+            }
+            $vente = Vente::create([
+                'codeVente' => $request->codeVente,
+                'dateVente' => $request->dateVente,
+                'montantTotal' => $request->montantTotal,
+                'codeClient' => $request->codeClient,
+                'structure_id' => $request->id_structure,
+            ]);
+            $success['vente'] =  $vente->id;
+            $detVente = [];
+            $detVente[] = $request->details;
+            $count = count($detVente);
+            for ($i = 0; $i < $count; $i++) {
+                foreach ($detVente[$i]  as $key => $dv) {
+                    $dvente = DetailVente::create([
+                        'idVente' => $vente->id,
+                        'quantite' => $dv['quantite'],
+                        'montant' => $dv['montant'],
+                        'idArticle' => $dv['idArticle'],
+                    ]);
+                }
+            }
+            return $this->sendResponse($detVente, 'Vente Synchoniser Avec Success.');
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
