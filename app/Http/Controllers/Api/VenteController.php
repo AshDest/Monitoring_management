@@ -30,28 +30,7 @@ class VenteController extends BaseController
     public function store(Request $request)
     {
         try {
-            // $ash = [];
-            // $quantite = array();
             $input = $request->all();
-            // $ash[] = $request->details;
-            // $count = count($ash[0]);
-            // dd($ash[0][0]['quantite']);
-            // for ($i = 0; $i < $count; $i++) {
-            //     // echo $ash[$i][0]['quantite'];
-            //     // dd($ash[$i][0]['quantite']);
-            //     for ($a = 0; $a < count($ash[$i]); $a++) {
-            //         array_push($quantite, $ash[$i][$a]['quantite']);
-            //         // dd($quantite);
-            //         // $montant = $ash[$i][$a]['montant'];
-            //         // $idArticle = $ash[$i][$a]['idArticle'];
-            //         // dd($ash[$i][$a]['quantite']);
-            //     }
-            // }
-            // dd($quantite);
-            // foreach ($ash as $key) {
-            //     $toto = $key[1];
-            // }
-            // dd($toto);
             $validator = Validator::make($input, [
                 'codeVente' => 'nullable|max:20',
                 'dateVente' => 'required',
@@ -88,7 +67,6 @@ class VenteController extends BaseController
             return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
     }
-
     /**
      * Display the specified resource.
      *
