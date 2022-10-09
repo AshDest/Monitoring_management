@@ -62,7 +62,7 @@ class VenteController extends BaseController
                     ]);
                 }
             }
-            return $this->sendResponse($detVente, 'Vente Synchoniser Avec Success.');
+            return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: " . $th);
         }

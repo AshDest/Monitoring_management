@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\Agent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class AgentController extends Controller
+class AgentController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -27,6 +28,32 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
+        try {
+            $input = $request->all();
+            $validator = Validator::make($input, [
+                'matricule' => 'required|max:20',
+                'noms' => 'required|max:20',
+                'sexe' => 'required',
+                'etatcivil' => 'required',
+                'adresse' => 'required',
+                'structure_id' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation: " . $validator->errors());
+            }
+            $agent = Agent::create([
+                'matricule' => $request->matricule,
+                'noms' => $request->noms,
+                'sexe' => $request->sexe,
+                'etatcivil' => $request->etatcivil,
+                'adresse' => $request->adresse,
+                'structure_id' => $request->id_structure,
+            ]);
+            $success['id'] =  $agent->id;
+            return $this->sendResponse($success, 'agent Synchoniser Avec Success.');
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
+        }
     }
 
     /**
