@@ -35,15 +35,15 @@ Route::apiResource('approvisionnement', ApprovisionnementController::class);
 Route::apiResource('article', ArticleController::class);
 Route::apiResource('categoriearticle', CategorieArticleController::class);
 Route::apiResource('client', ClientController::class);
-Route::apiResource('detailapprovionnement', DetailApprovisionnementController::class);
-Route::apiResource('detailvente', DetailVenteController::class);
+// Route::apiResource('detailapprovionnement', DetailApprovisionnementController::class);
+// Route::apiResource('detailvente', DetailVenteController::class);
 Route::apiResource('fournisseur', FournisseurController::class);
 Route::apiResource('paiement', PaiementController::class);
 Route::apiResource('structure', StructureController::class);
 Route::apiResource('vente', VenteController::class);
 Route::apiResource('utilisateurs', UtilisateurController::class);
 
-Route::controller(UtilisateurController::class)->group(function(){
+Route::controller(UtilisateurController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('login', 'login');
 });

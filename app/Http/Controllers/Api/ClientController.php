@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class ClientController extends Controller
+class ClientController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -26,12 +27,31 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        if (Client::create($request->all())) {
-            return response()->json(
-                [
-                    'success' => 'Enregistrer avec Success'
-                ]
-            );
+        try {
+            $input = $request->all();
+            $validator = Validator::make($input, [
+                'codeClient' => 'required|max:20',
+                'noms' => 'required|max:20',
+                'telephone' => 'required',
+                'email' => 'required',
+                'adresse' => 'required',
+                'structure_id' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation: " . $validator->errors());
+            }
+            $client = Client::create([
+                'codeClient' => $request->codeClient,
+                'noms' => $request->noms,
+                'telephone' => $request->telephone,
+                'email' => $request->email,
+                'adresse' => $request->adresse,
+                'structure_id' => $request->id_structure,
+            ]);
+            $success['id'] =  $client->id;
+            return $this->sendResponse($success, 'client Synchoniser Avec Success.');
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
     }
 
@@ -55,7 +75,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        if($client->update($request->all())){
+        if ($client->update($request->all())) {
             return response()->json(
                 [
                     'success' => 'Update avec Success'
