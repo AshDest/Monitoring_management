@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\Fournisseur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class FournisseurController extends Controller
+class FournisseurController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -26,12 +27,30 @@ class FournisseurController extends Controller
      */
     public function store(Request $request)
     {
-        if (Fournisseur::create($request->all())) {
-            return response()->json(
-                [
-                    'success' => 'Enregistrer avec Success'
-                ]
-                );
+        try {
+            $input = $request->all();
+            $validator = Validator::make($input, [
+                'codeFournisseur' => 'required|max:20',
+                'noms' => 'required|max:20',
+                'email' => 'required',
+                'adresse' => 'required',
+                'structure_id' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation: " . $validator->errors());
+            }
+            $fournisseur = Fournisseur::create([
+                'codeFournisseur' => $request->codeFournisseur,
+                'noms' => $request->noms,
+                'telephone' => $request->telephone,
+                'email' => $request->email,
+                'adresse' => $request->adresse,
+                'structure_id' => $request->id_structure,
+            ]);
+            $success['id'] =  $fournisseur->id;
+            return $this->sendResponse($success, 'fournisseur Synchoniser Avec Success.');
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
     }
 

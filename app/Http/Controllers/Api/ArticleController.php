@@ -41,16 +41,14 @@ class ArticleController extends BaseController
                 'codeCategorie' => 'required|max:20',
                 'structure_id' => 'required'
             ]);
-            if($validator->fails()){
-                return $this->sendError("Erreur Synchronisation: ". $validator->errors());
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation: " . $validator->errors());
             }
-
             $article = Article::create($input);
             $success['id'] =  $article->id;
             return $this->sendResponse($success, 'Article Synchoniser Avec Success.');
-
         } catch (\Throwable $th) {
-            return $this->sendError("Erreur Synchronisation Error: ". $th);
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
     }
 

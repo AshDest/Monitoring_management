@@ -15,8 +15,8 @@ class AgentController extends Controller
      */
     public function index()
     {
-        $agents = Agent::all();
-        return $agents->toJson();
+        // $agents = Agent::all();
+        // return $agents->toJson();
     }
 
     /**
@@ -27,7 +27,6 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
     /**
@@ -38,10 +37,6 @@ class AgentController extends Controller
      */
     public function show(Agent $agent)
     {
-        if($agent)
-        {
-            return $agent;
-        }
     }
 
     /**
@@ -53,26 +48,6 @@ class AgentController extends Controller
      */
     public function update(Request $request, Agent $agent)
     {
-        if($agent)
-        {
-            if($agent->update($request->all())){
-                return response()->json(
-                    [
-                        'success' => 'Update avec Success'
-                    ]
-                );
-            }
-        }else
-        {
-            if(Agent::create($request->all()))
-            {
-                return response()->json(
-                    [
-                        'success' => 'Enregistrer avec Success'
-                    ]
-                    );
-            }
-        }
     }
 
     /**
