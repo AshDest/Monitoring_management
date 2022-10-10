@@ -15,12 +15,10 @@ return new class extends Migration
     {
         Schema::create('detail_ventes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idVente');
-            $table->foreign('idVente')->references('id')->on('ventes')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('idVente');
             $table->integer('quantite');
             $table->double('montant');
-            $table->unsignedBigInteger('idArticle');
-            $table->foreign('idArticle')->references('id')->on('articles')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('idArticle');
             $table->timestamps();
         });
     }
