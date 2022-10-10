@@ -20,8 +20,7 @@ Auth::routes();
 //     return view('welcome');
 // });
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/structures', [App\Http\Controllers\HomeController::class, 'structures'])->name('structures');
 Route::get('/banques', [App\Http\Controllers\HomeController::class, 'banques'])->name('banques');
 Route::get('/operateurs', [App\Http\Controllers\HomeController::class, 'operateurs'])->name('operateurs');

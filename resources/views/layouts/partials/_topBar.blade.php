@@ -130,12 +130,11 @@
             <!--end::Menu separator-->
             <!--begin::Menu item-->
             <div class="menu-item px-5">
-                <a href="../../demo1/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+                <a href="#" class="menu-link px-5">My Profile</a>
             </div>
             <!--begin::Menu item-->
             <div class="menu-item px-5">
-                <a class="menu-link px-5" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
+                <a class="menu-link px-5" href="{{ route('logout') }}" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">Sign Out</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
