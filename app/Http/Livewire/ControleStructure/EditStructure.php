@@ -13,6 +13,7 @@ use Livewire\Component;
 class EditStructure extends Component
 {
     use LivewireAlert;
+    public $ids;
     public $codeStructure;
     public $designation;
     public $adresse_id;
