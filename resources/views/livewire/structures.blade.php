@@ -144,7 +144,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </a>
-                        <a wire:click="/edit-structure/{{$structure->id}}"
+                        <a href="/edit-structure/{{$structure->id}}"
                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                             <span class="svg-icon svg-icon-3">
