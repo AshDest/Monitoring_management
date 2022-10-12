@@ -12,7 +12,6 @@ use App\Http\Controllers\Api\PaiementController;
 use App\Http\Controllers\Api\StructureController;
 use App\Http\Controllers\Api\UtilisateurController;
 use App\Http\Controllers\Api\VenteController;
-use App\Models\DetailApprovisionnement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
