@@ -10,7 +10,7 @@ class Vente extends Model
     use HasFactory;
 
     protected $fillable = [
-        'codeVente',
+        'trans_id',
         'dateVente',
         'montantTotal',
         'codeClient',
@@ -26,6 +26,4 @@ class Vente extends Model
     {
         return $this->hasMany(DetailVente::class);
     }
-
-
 }

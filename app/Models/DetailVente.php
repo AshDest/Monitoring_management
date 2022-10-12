@@ -9,7 +9,7 @@ class DetailVente extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'idVente',
+        'trans_id',
         'quantite',
         'montant',
         'idArticle',
