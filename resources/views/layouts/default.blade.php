@@ -91,9 +91,9 @@
                     @include('layouts.partials._toolbar')
                     <!--end::Toolbar-->
                     <!--begin::Post-->
-                    <div class="post d-flex flex-column-fluid" id="kt_post">
+                    <div class="post d-flex flex-column-fluid">
                         <!--begin::Container-->
-                        <div id="kt_content_container" class="container-fluid">
+                        <div class="container-fluid">
                             <!--begin::Contacts App- Add New Contact-->
                             @yield('content')
                             <!--end::Contacts App- Add New Contact-->
