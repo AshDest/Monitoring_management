@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('approvisionnements', function (Blueprint $table) {
             $table->id();
-            $table->string('codeAprro')->unique();
+            $table->string('trans_id')->unique();
             $table->dateTime('dateAppro');
             $table->string('codeFournisseur');
             $table->unsignedBigInteger('structure_id');

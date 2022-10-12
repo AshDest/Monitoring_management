@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ventes', function (Blueprint $table) {
             $table->id();
-            $table->string('codeVente')->nullable();
+            $table->string('trans_id')->nullable();
             $table->dateTime('dateVente');
             $table->double('montantTotal');
             $table->unsignedBigInteger('codeClient')->nullable();

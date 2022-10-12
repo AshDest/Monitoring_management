@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('detail_ventes', function (Blueprint $table) {
             $table->id();
-            $table->string('idVente');
+            $table->string('trans_id');
             $table->integer('quantite');
             $table->double('montant');
             $table->string('idArticle');
