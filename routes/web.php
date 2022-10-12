@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/structures', [App\Http\Controllers\HomeController::class, 'structures'])->name('structures');
+Route::get('/add-structure', [App\Http\Controllers\HomeController::class, 'addstructure'])->name('add-structure');
 Route::get('/banques', [App\Http\Controllers\HomeController::class, 'banques'])->name('banques');
 Route::get('/operateurs', [App\Http\Controllers\HomeController::class, 'operateurs'])->name('operateurs');
 Route::get('/provinces', [App\Http\Controllers\HomeController::class, 'provinces'])->name('provinces');

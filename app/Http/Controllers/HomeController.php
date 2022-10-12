@@ -53,4 +53,9 @@ class HomeController extends Controller
     {
         return view('pages.localisation.quartier');
     }
+
+    public function addstructure()
+    {
+        return view('pages.ControleStructure.add-structure');
+    }
 }
