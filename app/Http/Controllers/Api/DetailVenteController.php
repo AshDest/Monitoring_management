@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\DetailVente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
 class DetailVenteController extends BaseController
 {
     /**
@@ -26,30 +27,31 @@ class DetailVenteController extends BaseController
      */
     public function store(Request $request)
     {
-        // try {
-        //     $input = $request->all();
+        try {
+            $input = $request->all();
 
-        //     $validator = Validator::make($input, [
-        //         'idVente' => 'required',
-        //         'quantite' => 'required',
-        //         'montant' => 'required',
-        //         'idArticle' => 'required'
-        //     ]);
-        //     if($validator->fails()){
-        //         return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
-        //     }
-
-        //     $article = DetailVente::create(
-        //         [
-
-        //         ]
-        //     );
-        //     $success['id'] =  $article->id;
-        //     return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
-
-        // } catch (\Throwable $th) {
-        //     return $this->sendError("Erreur Synchronisation Error: ". $th);
-        // }
+            $validator = Validator::make($input, [
+                'trans_id' => 'required',
+                'quantite' => 'required',
+                'montant' => 'required',
+                'idArticle' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
+            }
+            $dvente = DetailVente::create(
+                [
+                    'trans_id' => $request->trans_id,
+                    'quantite' => $request->dateVente,
+                    'montant' => $request->montantTotal,
+                    'idArticle' => $request->codeClient,
+                ]
+            );
+            $success['id'] =  $dvente->id;
+            return $this->sendResponse($success, 'Detail Vente Synchoniser Avec Success.');
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
+        }
     }
 
     /**

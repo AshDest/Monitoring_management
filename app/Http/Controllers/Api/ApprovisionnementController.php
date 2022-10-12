@@ -31,7 +31,7 @@ class ApprovisionnementController extends BaseController
         try {
             $input = $request->all();
             $validator = Validator::make($input, [
-                'codeAprro' => 'nullable|max:20',
+                'trans_id' => 'nullable|max:20',
                 'dateAppro' => 'required',
                 'codeFournisseur' => 'required',
                 'id_structure' => 'required',
@@ -40,25 +40,12 @@ class ApprovisionnementController extends BaseController
                 return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
             }
             $approvisionnement = Approvisionnement::create([
-                'codeAprro' => $request->codeAprro,
+                'trans_id' => $request->codeAprro,
                 'dateAppro' => $request->dateAppro,
                 'codeFournisseur' => $request->codeFournisseur,
                 'structure_id' => $request->id_structure,
             ]);
             $success['approvisionnement'] =  $approvisionnement->id;
-            $detapprovisionnement = [];
-            $detapprovisionnement[] = $request->details;
-            $count = count($detapprovisionnement);
-            for ($i = 0; $i < $count; $i++) {
-                foreach ($detapprovisionnement[$i]  as $key => $dv) {
-                    $dapprovisionnement = DetailApprovisionnement::create([
-                        'idAppro' => $approvisionnement->id,
-                        'idArticle' => $dv['idArticle'],
-                        'quantite' => $dv['quantite'],
-                        'prix_achat' => $dv['prix_achat'],
-                    ]);
-                }
-            }
             return $this->sendResponse($success, 'approvisionnement Synchoniser Avec Success.');
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: " . $th);

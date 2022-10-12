@@ -26,12 +26,30 @@ class DetailApprovisionnementController extends Controller
      */
     public function store(Request $request)
     {
-        if (DetailApprovisionnement::create($request->all())) {
-            return response()->json(
+        try {
+            $input = $request->all();
+
+            $validator = DetailApprovisionnement::make($input, [
+                'trans_id' => 'required',
+                'idArticle' => 'required',
+                'quantite' => 'required',
+                'prix_achat' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
+            }
+            $dvente = DetailApprovisionnement::create(
                 [
-                    'success' => 'Enregistrer avec Success'
+                    'trans_id' => $request->trans_id,
+                    'idArticle' => $request->idArticle,
+                    'quantite' => $request->quantite,
+                    'prix_achat' => $request->prix_achat,
                 ]
-                );
+            );
+            $success['id'] =  $dvente->id;
+            return $this->sendResponse($success, 'Detail Approvisionnement Synchoniser Avec Success.');
+        } catch (\Throwable $th) {
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
     }
 

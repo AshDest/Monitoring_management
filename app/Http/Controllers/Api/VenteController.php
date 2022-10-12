@@ -32,7 +32,7 @@ class VenteController extends BaseController
         try {
             $input = $request->all();
             $validator = Validator::make($input, [
-                'codeVente' => 'nullable|max:20',
+                'trans_id' => 'nullable|max:20',
                 'dateVente' => 'required',
                 'montantTotal' => 'required',
                 'codeClient' => 'nullable',
@@ -42,26 +42,13 @@ class VenteController extends BaseController
                 return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
             }
             $vente = Vente::create([
-                'codeVente' => $request->codeVente,
+                'trans_id' => $request->trans_id,
                 'dateVente' => $request->dateVente,
                 'montantTotal' => $request->montantTotal,
                 'codeClient' => $request->codeClient,
                 'structure_id' => $request->id_structure,
             ]);
             $success['vente'] =  $vente->id;
-            $detVente = [];
-            $detVente[] = $request->details;
-            $count = count($detVente);
-            for ($i = 0; $i < $count; $i++) {
-                foreach ($detVente[$i]  as $key => $dv) {
-                    $dvente = DetailVente::create([
-                        'idVente' => $vente->id,
-                        'quantite' => $dv['quantite'],
-                        'montant' => $dv['montant'],
-                        'idArticle' => $dv['idArticle'],
-                    ]);
-                }
-            }
             return $this->sendResponse($success, 'Vente Synchoniser Avec Success.');
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: " . $th);
