@@ -77,10 +77,91 @@ class EditStructure extends Component
         'numImpot' => 'ce Champ est obligatoire',
         'numCNSS' => 'ce Champ est obligatoire',
     ];
+    public function updatedSelectedProvince($province)
+    {
+        try {
+            if (!is_null($province)) {
+                $this->territoires = Ville_Territoire::where('province_id', $province)->get();
+                // $this->communes = null;
+                // $this->quartiers = null;
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+    public function updatedSelectedCity($territoires)
+    {
+        if (!is_null($territoires)) {
+            $this->communes = Commune_Secteur_Chefferie::where('ville_id', $territoires)->get();
+        }
+    }
+
+    public function updatedSelectedCommune($commune)
+    {
+        if (!is_null($commune)) {
+            $this->quartiers = Quartier_Village::where('commune_id', $commune)->get();
+        }
+    }
     // realtime validation
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+    public function edit()
+    {
+        try {
+            $this->validate();
+            Structure::find($this->ids)->fill([
+                'codeStructure' => $this->codeStructure,
+                'designation' => $this->designation,
+                'adresse_id' => $this->selectedQuartier,
+                'avenu' => $this->avenu,
+                'numParcelle' => $this->numParcelle,
+                'long' => $this->long,
+                'lat' => $this->lat,
+                'numTel1' => $this->numTel1,
+                'numTel2' => $this->numTel2,
+                'email' => $this->email,
+                'siteWeb' => $this->siteWeb,
+                'rccm' => $this->rccm,
+                'idNational' => $this->idNational,
+                'numImpot' => $this->numImpot,
+                'numCNSS' => $this->numCNSS,
+            ])->save();
+            $this->alert('success', 'Structure bien Modifier', [
+                'position' => 'center',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+            return redirect()->to('/structures');
+        } catch (\Exception $e) {
+            $this->alert('warning', 'Echec de modification!' . $e->getMessage());
+        }
+    }
+    public function mount()
+    {
+        $vars = Structure::find($this->ids);
+        $this->codeStructure = $vars->codeStructure;
+        $this->designation = $vars->designation;
+        $this->adresse_id = $vars->adresse_id;
+        $this->avenu = $vars->avenu;
+        $this->numParcelle = $vars->numParcelle;
+        $this->long = $vars->long;
+        $this->lat = $vars->lat;
+        $this->numTel1 = $vars->numTel1;
+        $this->numTel2 = $vars->numTel2;
+        $this->email = $vars->email;
+        $this->siteWeb = $vars->siteWeb;
+        $this->rccm = $vars->rccm;
+        $this->idNational = $vars->idNational;
+        $this->numImpot = $vars->numImpot;
+        $this->numCNSS = $vars->numCNSS;
+        $this->selectedQuartier = $vars->adresse_id;
+
+        $this->provinces = Province::all();
+        $this->territoires = collect();
+        $this->communes = collect();
+        $this->quartiers = collect();
     }
     public function render()
     {

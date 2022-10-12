@@ -58,4 +58,8 @@ class HomeController extends Controller
     {
         return view('pages.ControleStructure.add-structure');
     }
+    public function editstructure($ids)
+    {
+        return view('pages.ControleStructure.edit-structure', compact('ids'));
+    }
 }
