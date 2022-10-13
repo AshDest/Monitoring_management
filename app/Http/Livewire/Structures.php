@@ -12,7 +12,6 @@ class Structures extends Component
 {
 
     public $toto;
-
     public $provinces;
     public $territoires;
     public $communes;

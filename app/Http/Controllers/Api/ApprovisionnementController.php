@@ -40,7 +40,7 @@ class ApprovisionnementController extends BaseController
                 return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
             }
             $approvisionnement = Approvisionnement::create([
-                'trans_id' => $request->codeAprro,
+                'trans_id' => $request->trans_id,
                 'dateAppro' => $request->dateAppro,
                 'codeFournisseur' => $request->codeFournisseur,
                 'structure_id' => $request->id_structure,
