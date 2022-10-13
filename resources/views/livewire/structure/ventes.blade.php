@@ -28,44 +28,29 @@
         <table class="table align-middle table-row-dashed fs-6 gy-3" id="kt_table_widget_4_table">
             <!--begin::Table head-->
             <thead>
-                <!--begin::Table row-->
                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                    <th class="min-w-100px">Date Vente</th>
-                    <th class="text-end min-w-100px">Noms du Client</th>
+                    <th>N°</th>
+                    <th class="min-w-100px">Code Vente</th>
                     <th class="text-end min-w-125px">Montant Facture</th>
-                    <th class="text-end min-w-100px">Type Vente</th>
-                    {{-- <th class="text-end min-w-100px">Profit</th>
-                    <th class="text-end min-w-50px">Status</th> --}}
-                    <th class="text-end"></th>
+                    <th class="text-end min-w-100px">Date Vente</th>
                 </tr>
-                <!--end::Table row-->
             </thead>
-            <!--end::Table head-->
-            <!--begin::Table body-->
             <tbody class="fw-bolder text-gray-600">
+                <?php $i=1; $alert='';?>
                 @forelse ($ventes as $vente)
                 <tr>
+                    <td>
+                        <?php echo $i.''.$alert; $i++; ?>
+                    </td>
+                    <td>
+                        <a href="#" class="text-gray-600 text-hover-primary">{{$vente->trans_id}}</a>
+                    </td>
+                    <td class="text-end">
+                        <a href="#" class="text-gray-600 text-hover-primary">{{$vente->montantTotal}} FC</a>
+                    </td>
                     <td class="text-end">
                         <a href="#" class="text-gray-600 text-hover-primary">{{$vente->dateVente}}</a>
                     </td>
-                    <td class="text-end">
-                        <a href="#" class="text-gray-600 text-hover-primary"></a>
-                    </td>
-                    <td class="text-end">
-                        <a href="#" class="text-gray-600 text-hover-primary">{{$vente->montantTotal}}</a>
-                    </td>
-                    <td class="text-end">
-                        <a href="#" class="text-gray-600 text-hover-primary">{{$vente->dateVente}}</a>
-                    </td>
-                    {{-- <td class="text-end">
-                        <span class="badge py-3 px-4 fs-7 badge-light-success">Shipped</span>
-                    </td> --}}
-                    {{-- <td class="text-end">
-                        <span class="badge py-3 px-4 fs-7 badge-light-warning">Pending</span>
-                    </td>
-                    <td class="text-end">
-                        <span class="badge py-3 px-4 fs-7 badge-light-danger">Rejected</span>
-                    </td> --}}
                 </tr>
                 @empty
 
