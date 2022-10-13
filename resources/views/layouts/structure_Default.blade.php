@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <title>Dukaa</title>
+    <title>Njira SOFT</title>
     <meta charset="utf-8" />
     <meta name="description"
         content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="{{ asset('assets/media/logos/single-Duka.svg') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -24,6 +24,8 @@
     <link href="{{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}}" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet') }}"
+        type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.css') }}" rel="stylesheet"
         type="text/css" />
     <!--end::Page Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
@@ -37,9 +39,15 @@
 <body id="kt_body"
     class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed"
     style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+    <!--begin::Main-->
+    <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
         <div class="page d-flex flex-row flex-column-fluid">
+            <!--begin::Aside-->
             @include('layouts.Structures_partials._sideBar')
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 <!--begin::Header-->
                 <div id="kt_header" style="" class="header align-items-stretch">
@@ -68,7 +76,7 @@
                         <!--begin::Mobile logo-->
                         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
                             <a href="" class="d-lg-none">
-                                <img alt="Logo" src="{{ asset('assets/media/logos/single-Duka.svg') }}" class="h-30px" />
+                                <img alt="Logo" src="{{ asset('assets/media/logos/logo-2.svg') }}" class="h-30px" />
                             </a>
                         </div>
                         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
@@ -76,15 +84,36 @@
                         </div>
                     </div>
                 </div>
+                <!--end::Header-->
+                <!--begin::Content-->
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    @include('layouts.Structures_partials._toolbar')
-                    <main class="py-4">
-                        @yield('content')
-                    </main>
+                    <!--begin::Toolbar-->
+                    @include('layouts.partials._toolbar')
+                    <!--end::Toolbar-->
+                    <!--begin::Post-->
+                    <div class="post d-flex flex-column-fluid" id="kt_post">
+                        <!--begin::Container-->
+                        <div id="kt_content_container" class="container-fluid">
+                            <!--begin::Contacts App- Add New Contact-->
+                            @yield('content')
+                            <!--end::Contacts App- Add New Contact-->
+                        </div>
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Post-->
                 </div>
-                @include('layouts.Structures_partials._foot')
+                <!--end::Content-->
+                <!--begin::Footer-->
+                <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+                    <!--begin::Container-->
+                    @include('layouts.Structures_partials._foot')
+                    <!--end::Container-->
+                </div>
+                <!--end::Footer-->
             </div>
+            <!--end::Wrapper-->
         </div>
+        <!--end::Page-->
     </div>
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
@@ -134,6 +163,7 @@
     <!--end::Page Vendors Javascript-->
     <script src="{{ asset('assets/custom/waiting_buttons.js') }}"></script>
     <script src="{{ asset('assets/custom/cancelingModal.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.js') }}"></script>
 
     @livewireScripts
 
