@@ -42,9 +42,9 @@ class DetailVenteController extends BaseController
             $dvente = DetailVente::create(
                 [
                     'trans_id' => $request->trans_id,
-                    'quantite' => $request->dateVente,
-                    'montant' => $request->montantTotal,
-                    'idArticle' => $request->codeClient,
+                    'quantite' => $request->quantite,
+                    'montant' => $request->montant,
+                    'idArticle' => $request->idArticle,
                 ]
             );
             $success['id'] =  $dvente->id;
