@@ -39,3 +39,5 @@ Route::get('{structure}/monnais', [App\Http\Controllers\StructuresController::cl
 Route::get('{structure}/agents', [App\Http\Controllers\StructuresController::class, 'agents'])->name('agents');
 Route::get('{structure}/utilisateurs', [App\Http\Controllers\StructuresController::class, 'utilisateurs'])->name('utilisateurs');
 Route::get('{structure}/ventes', [App\Http\Controllers\StructuresController::class, 'ventes'])->name('ventes');
+
+Route::get('{structure}/add-monnaies', [App\Http\Controllers\StructuresController::class, 'addmonnais'])->name('addmonnais');

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class StructuresController extends Controller
 {
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -47,6 +47,8 @@ class StructuresController extends Controller
         return view('pages.structure.utilisateur', compact('structure'));
     }
 
-
-
+    public function addmonnais($structure)
+    {
+        return view('pages.structure.add-monnais', compact('structure'));
+    }
 }
