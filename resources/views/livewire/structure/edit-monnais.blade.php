@@ -1,6 +1,7 @@
 <div class="card">
     <div class="card-header border-0 pt-6">
         <div class="card-title">
+            <h2>Modification Monnaie Electronique</h2>
         </div>
     </div>
     <div class="card-body pt-0">
@@ -57,5 +58,4 @@
         </div>
         <!--end::Scroll-->
     </div>
-
 </div>
