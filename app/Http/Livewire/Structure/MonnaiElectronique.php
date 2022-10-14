@@ -6,6 +6,7 @@ use App\Models\Monnaie_Electronique;
 use App\Models\Operateur_tel;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+
 class MonnaiElectronique extends Component
 {
     public $codeOperateur;
@@ -16,30 +17,34 @@ class MonnaiElectronique extends Component
     public $operateurs;
     public $form_edit;
     use LivewireAlert;
-    public function modifycmpt(){
+    public function modifycmpt()
+    {
         Monnaie_Electronique::whereId($this->form_edit)
-                                ->update([
-                        'codeOperateur' => $this->codeOperateur,
-                        'numTel' => $this->numTel,
-                        'GLMonnaieE' => $this->GLMonnaieE,
-                    ]);
+            ->update([
+                'codeOperateur' => $this->codeOperateur,
+                'numTel' => $this->numTel,
+                'GLMonnaieE' => $this->GLMonnaieE,
+            ]);
         $this->form_edit =  NULL;
         $this->alert('success', 'Modifier avec Success', [
             'position' => 'center',
             'timer' => 3000,
-            'toast' => true,]);
+            'toast' => true,
+        ]);
     }
 
     protected $listeners = [
         'confirmed'
     ];
 
-    public function confirmed(){
+    public function confirmed()
+    {
         Monnaie_Electronique::whereId($this->ids)->delete();
         $this->alert('success', 'Suppression avec Success', [
             'position' => 'center',
             'timer' => 3000,
-            'toast' => true,]);
+            'toast' => true,
+        ]);
     }
 
     public function cancelled()
@@ -47,7 +52,8 @@ class MonnaiElectronique extends Component
         // Do something when cancel button is clicked
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         //
         $this->ids = $id;
         $this->confirm('Voulez vous supprimer?', [
@@ -55,7 +61,8 @@ class MonnaiElectronique extends Component
         ]);
     }
 
-    public function displayformedit($id){
+    public function displayformedit($id)
+    {
         $this->form_edit = $id;
         $var = Monnaie_Electronique::find($id);
 
@@ -69,7 +76,7 @@ class MonnaiElectronique extends Component
     }
     public function render()
     {
-        $monnaielectroniques = Monnaie_Electronique::where('structure_id',$this->structure)->get();
+        $monnaielectroniques = Monnaie_Electronique::where('structure_id', $this->structure)->get();
         return view('livewire.structure.monnai-electronique', ['monnaielectroniques' => $monnaielectroniques]);
     }
 }

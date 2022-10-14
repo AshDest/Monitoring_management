@@ -11,7 +11,7 @@
             data-kt-scroll-wrappers="#kt_modal_new_address_scroll" data-kt-scroll-offset="300px">
             <form class="form" wire:submit.prevent="save">
                 <div class="row mb-5">
-                    <div class="col-md-4 fv-row">
+                    <div class="col-md-6 fv-row">
                         <!--end::Label-->
                         <label class="required fs-5 fw-bold mb-2">Operateur Telephonique</label>
                         <!--end::Label-->
@@ -24,7 +24,7 @@
                         </select>
                         <!--end::Input-->
                     </div>
-                    <div class="col-md-4 fv-row">
+                    <div class="col-md-6 fv-row">
                         <!--end::Label-->
                         <label class="required fs-5 fw-bold mb-2">Numero Telephone</label>
                         <!--end::Label-->
@@ -33,20 +33,31 @@
                             name="numTel" />
                         <!--end::Input-->
                     </div>
-                    <div class="col-md-4 fv-row">
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6 fv-row">
                         <!--end::Label-->
-                        <label class="required fs-5 fw-bold mb-2">Num Comptable</label>
+                        <label class="required fs-5 fw-bold mb-2">Montant FC</label>
                         <!--end::Label-->
                         <!--end::Input-->
-                        <input type="text" wire:model='GLMonnaieE' class="form-control form-control-solid"
-                            placeholder="" name="GLMonnaieE" />
+                        <input type="number" wire:model='soldeCDF' class="form-control form-control-solid"
+                            placeholder="" name="soldeCDF" />
+                        <!--end::Input-->
+                    </div>
+                    <div class="col-md-6 fv-row">
+                        <!--end::Label-->
+                        <label class="required fs-5 fw-bold mb-2">Montant $</label>
+                        <!--end::Label-->
+                        <!--end::Input-->
+                        <input type="number" wire:model='soldeUSD' class="form-control form-control-solid"
+                            placeholder="" name="soldeUSD" />
                         <!--end::Input-->
                     </div>
                 </div>
                 <div class="row mb-5">
                     <button class="btn btn-primary">
                         <span class="indicator-label">
-                            Save
+                            Enregistrer
                         </span>
                         <span class="indicator-progress">
                             Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>

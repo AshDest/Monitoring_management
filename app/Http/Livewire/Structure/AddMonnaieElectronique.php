@@ -25,7 +25,8 @@ class AddMonnaieElectronique extends Component
     protected $rules = [
         'codeOperateur' => 'required',
         'numTel' => 'required',
-        'GLMonnaieE' => 'required',
+        'soldeUSD' => 'required',
+        'soldeCDF' => 'required',
     ];
 
     // realtime validation
@@ -40,8 +41,8 @@ class AddMonnaieElectronique extends Component
             Monnaie_Electronique::create([
                 'codeOperateur' => $this->codeOperateur,
                 'numTel' => $this->numTel,
-                'soldeUSD' => $this->defaultValue,
-                'soldeCDF' => $this->defaultValue,
+                'soldeUSD' => $this->soldeUSD,
+                'soldeCDF' => $this->soldeCDF,
                 'structure_id' => $this->structure,
                 'GLMonnaieE' => $this->GLMonnaieE,
 
