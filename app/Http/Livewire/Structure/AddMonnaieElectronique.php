@@ -50,7 +50,7 @@ class AddMonnaieElectronique extends Component
                 'timer' => 3000,
                 'toast' => true,
             ]);
-            return redirect()->to('/{{$structure}}/monnais');
+            return redirect()->to('{structure}/monnais');
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',
