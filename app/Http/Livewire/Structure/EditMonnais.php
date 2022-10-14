@@ -34,13 +34,14 @@ class EditMonnais extends Component
     {
         $this->validateOnly($propertyName);
     }
-    public function mount($structure)
+    public function mount()
     {
         $vars = Monnaie_Electronique::find($this->ids);
+        dd($vars);
         $this->codeOperateur = $vars->codeOperateur;
         $this->numTel = $vars->numTel;
-
-        $this->structure = $structure;
+        $this->soldeUSD = $vars->soldeUSD;
+        $this->soldeCDF = $vars->soldeCDF;
     }
     public function render()
     {

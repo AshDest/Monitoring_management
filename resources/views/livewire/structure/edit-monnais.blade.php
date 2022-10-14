@@ -18,7 +18,6 @@
                         <!--end::Label-->
                         <!--end::Input-->
                         <select name="codeOperateur" wire:model='codeOperateur' class="form-select form-select-solid">
-                            <option value=""> -- Select Operateur -- </option>
                             @foreach ($operateurs as $operateur)
                             <option value="{{$operateur->id}}">{{$operateur->nomOperateur}}</option>
                             @endforeach

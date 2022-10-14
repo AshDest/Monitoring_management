@@ -98,17 +98,18 @@
                         <a href="" class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->numTel}}</a>
                     </td>
                     <td>
-                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->soldeUSD}}</a>
+                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->soldeUSD}} $</a>
                     </td>
                     <td>
-                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->soldeCDF}}</a>
+                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->soldeCDF}}
+                            FC</a>
                     </td>
                     <td>
                         <a href="" class="text-gray-800 text-hover-primary mb-1">{{$monnaielectronique->GLMonnaieE}}</a>
                     </td>
                     <td class="text-end">
-                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                            wire:click="{{$structure}}/edit-monnaies/{{$monnaielectronique->id}}">
+                        <a href="/{{$structure}}/edit-monnaies/{{$monnaielectronique->id}}"
+                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                             <span class="svg-icon svg-icon-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

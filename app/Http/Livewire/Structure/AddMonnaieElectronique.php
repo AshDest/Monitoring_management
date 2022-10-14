@@ -44,15 +44,13 @@ class AddMonnaieElectronique extends Component
                 'soldeUSD' => $this->soldeUSD,
                 'soldeCDF' => $this->soldeCDF,
                 'structure_id' => $this->structure,
-                'GLMonnaieE' => $this->GLMonnaieE,
-
             ])->save();
             $this->alert('success', 'Saved Successfully!', [
                 'position' => 'center',
                 'timer' => 3000,
                 'toast' => true,
             ]);
-            // $this->$refresh();
+            return redirect()->to('/{{$structure}}/monnais');
         } catch (\Exception $e) {
             $this->dispatchBrowserEvent('alert', [
                 'type' => 'error',
