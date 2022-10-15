@@ -31,7 +31,6 @@ class AgentController extends BaseController
         try {
             $input = $request->all();
             $validator = Validator::make($input, [
-                'matricule' => 'required|max:20',
                 'noms' => 'required|max:20',
                 'sexe' => 'required',
                 'etatcivil' => 'required',

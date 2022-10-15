@@ -12,6 +12,7 @@ class Paiement extends Model
     protected $fillable = [
         'datePaiement',
         'montantTotal',
+        // 'restePaie',
         'idVente',
         'id_structure',
     ];
