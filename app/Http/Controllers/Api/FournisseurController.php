@@ -45,7 +45,7 @@ class FournisseurController extends BaseController
                 'telephone' => $request->telephone,
                 'email' => $request->email,
                 'adresse' => $request->adresse,
-                'structure_id' => $request->id_structure,
+                'structure_id' => $request->structure_id,
             ]);
             $success['id'] =  $fournisseur->id;
             return $this->sendResponse($success, 'fournisseur Synchoniser Avec Success.');

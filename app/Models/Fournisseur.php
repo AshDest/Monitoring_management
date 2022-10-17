@@ -16,6 +16,6 @@ class Fournisseur extends Model
         'email',
         'adresse',
         'GLFournisseur',
-        'id_structure'
+        'structure_id'
     ];
 }

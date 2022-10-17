@@ -13,6 +13,6 @@ class Approvisionnement extends Model
         'trans_id',
         'dateAppro',
         'codeFournisseur',
-        'id_structure',
+        'structure_id',
     ];
 }

@@ -34,7 +34,7 @@ class ApprovisionnementController extends BaseController
                 'trans_id' => 'nullable|max:20',
                 'dateAppro' => 'required',
                 'codeFournisseur' => 'required',
-                'id_structure' => 'required',
+                'structure_id' => 'required',
             ]);
             if ($validator->fails()) {
                 return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
@@ -43,7 +43,7 @@ class ApprovisionnementController extends BaseController
                 'trans_id' => $request->trans_id,
                 'dateAppro' => $request->dateAppro,
                 'codeFournisseur' => $request->codeFournisseur,
-                'structure_id' => $request->id_structure,
+                'structure_id' => $request->structure_id,
             ]);
             $success['approvisionnement'] =  $approvisionnement->id;
             return $this->sendResponse($success, 'approvisionnement Synchoniser Avec Success.');
