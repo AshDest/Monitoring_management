@@ -15,7 +15,7 @@ class Client extends Model
         'email',
         'adresse',
         'GLClient',
-        'id_structure'
+        'structure_id'
     ];
 
     public function vente()

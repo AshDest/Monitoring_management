@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\DetailApprovisionnement;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class DetailApprovisionnementController extends BaseController
@@ -28,7 +29,7 @@ class DetailApprovisionnementController extends BaseController
     {
         try {
             $input = $request->all();
-            $validator = DetailApprovisionnement::make($input, [
+            $validator = Validator::make($input, [
                 'trans_id' => 'required',
                 'idArticle' => 'required',
                 'quantite' => 'required',

@@ -46,7 +46,7 @@ class ClientController extends BaseController
                 'telephone' => $request->telephone,
                 'email' => $request->email,
                 'adresse' => $request->adresse,
-                'structure_id' => $request->id_structure,
+                'structure_id' => $request->structure_id,
             ]);
             $success['id'] =  $client->id;
             return $this->sendResponse($success, 'client Synchoniser Avec Success.');
