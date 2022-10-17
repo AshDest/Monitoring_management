@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\DetailApprovisionnement;
 use Illuminate\Http\Request;
 
-class DetailApprovisionnementController extends Controller
+class DetailApprovisionnementController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,6 @@ class DetailApprovisionnementController extends Controller
     {
         try {
             $input = $request->all();
-
             $validator = DetailApprovisionnement::make($input, [
                 'trans_id' => 'required',
                 'idArticle' => 'required',
@@ -38,7 +37,7 @@ class DetailApprovisionnementController extends Controller
             if ($validator->fails()) {
                 return $this->sendError("Erreur Synchronisation Error: " . $validator->errors());
             }
-            $dvente = DetailApprovisionnement::create(
+            $dapprov = DetailApprovisionnement::create(
                 [
                     'trans_id' => $request->trans_id,
                     'idArticle' => $request->idArticle,
@@ -46,7 +45,7 @@ class DetailApprovisionnementController extends Controller
                     'prix_achat' => $request->prix_achat,
                 ]
             );
-            $success['id'] =  $dvente->id;
+            $success['id'] =  $dapprov->id;
             return $this->sendResponse($success, 'Detail Approvisionnement Synchoniser Avec Success.');
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: " . $th);

@@ -46,7 +46,7 @@ class AgentController extends BaseController
                 'sexe' => $request->sexe,
                 'etatcivil' => $request->etatcivil,
                 'adresse' => $request->adresse,
-                'structure_id' => $request->id_structure,
+                'structure_id' => $request->structure_id,
             ]);
             $success['id'] =  $agent->id;
             return $this->sendResponse($success, 'agent Synchoniser Avec Success.');
