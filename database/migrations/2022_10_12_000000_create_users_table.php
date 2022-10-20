@@ -25,7 +25,6 @@ return new class extends Migration
             $table->foreign('agent_id')->references('id')->on('agents')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('structure_id')->nullable();
             $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
-            $table->enum('role', ['Super Admin', 'Admin', 'Utilisateur']);
             $table->rememberToken();
             $table->timestamps();
         });
