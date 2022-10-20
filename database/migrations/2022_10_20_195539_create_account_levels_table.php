@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('account_levels', function (Blueprint $table) {
             $table->id();
+            $table->integer('level');
             $table->timestamps();
         });
     }

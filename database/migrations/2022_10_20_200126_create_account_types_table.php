@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('account_types', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->text('description')->nullable();
+            $table->string('bs_order')->nullable();
             $table->timestamps();
         });
     }
