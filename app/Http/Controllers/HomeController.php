@@ -62,4 +62,8 @@ class HomeController extends Controller
     {
         return view('pages.ControleStructure.edit-structure', compact('ids'));
     }
+    public function accountlevel()
+    {
+        return view('pages.comptabilite.account-level');
+    }
 }

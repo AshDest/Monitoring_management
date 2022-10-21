@@ -32,6 +32,7 @@ Route::prefix('/')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/villes', [App\Http\Controllers\HomeController::class, 'villes'])->name('villes');
     Route::get('/communes', [App\Http\Controllers\HomeController::class, 'communes'])->name('communes');
     Route::get('/quartiers', [App\Http\Controllers\HomeController::class, 'quartiers'])->name('quartiers');
+    Route::get('/accountlevel', [App\Http\Controllers\HomeController::class, 'accountlevel'])->name('accountlevel');
 });
 
 
