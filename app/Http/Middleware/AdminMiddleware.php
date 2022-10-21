@@ -21,7 +21,7 @@ class AdminMiddleware
             if (Auth::user()->role == '0') {
                 return $next($request);
             } else {
-                return redirect('/home')->with('message', 'Access denied as you are not Admin');
+                return redirect(route('home', ['structure' => Auth::user()->structure_id]));
             }
         } else {
             return redirect(route('login'))->with('message', 'Login Access');
