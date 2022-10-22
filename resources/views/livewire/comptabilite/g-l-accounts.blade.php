@@ -55,9 +55,8 @@
                 <!--begin::Table row-->
                 <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
                     <th class="w-10px pe-2">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                            <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                data-kt-check-target="#kt_subscriptions_table .form-check-input" value="1" />
+                        <div class="badge badge-light-success fs-8 fw-bolder">
+                            N°
                         </div>
                     </th>
                     <th class="min-w-125px">CODE</th>
@@ -75,10 +74,11 @@
             <!--begin::Table body-->
             <tbody class="text-gray-600 fw-bold">
                 <tr>
+                    <?php $i=1; $alert='';?>
                     @forelse ($accounts as $account)
                     <td>
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="{{$account->id}}" />
+                        <div class="badge badge-light-success fs-8 fw-bolder">
+                            <?php echo $i.''.$alert; $i++; ?>
                         </div>
                     </td>
                     <td>
@@ -90,9 +90,20 @@
                     <td>
                         {{$account->balance}} - {{$account->currency_id}}
                     </td>
+
+                    @if (($account->isAccount_system) == 1)
                     <td>
-                        {{$account->isAccount_system}}
+                        <div class="badge badge-light-success fs-8 fw-bolder">
+                            true
+                        </div>
                     </td>
+                    @else
+                    <td>
+                        <div class="badge badge-light-danger fs-8 fw-bolder">
+                            false
+                        </div>
+                    </td>
+                    @endif
                     <td>
                         {{$account->accounttype->designation}}
                     </td>
@@ -100,11 +111,13 @@
                         {{$account->accountlevel->level}} Niveau
                     </td>
                     <td>
-                        {{$account->currency_id}}
+                        <div class="badge btn-primary fs-8 fw-bolder">
+                            {{$account->currency_id}}
+                        </div>
                     </td>
                     <td class="text-end">
-                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                            wire:click="displayInfo({{$account->id}})">
+                        <a href="gl-accounts/edit/{{$account->id}}"
+                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                             <span class="svg-icon svg-icon-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
