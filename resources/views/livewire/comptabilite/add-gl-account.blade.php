@@ -55,7 +55,7 @@
                             class="form-select form-select-solid">
                             <option value="">... Select Monnaie ...</option>
                             <option value="FC">Franc Congolais : FC</option>
-                            <option value="FC">Dollars Americain : $</option>
+                            <option value="$">Dollars Americain : $</option>
                         </select>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ class GLAccounts extends Component
     public $account_id;
     public function render()
     {
-        $accounts = GLAccount::all();
+        $accounts = GLAccount::orderBy('code', 'ASC')->get();
         return view('livewire.comptabilite.g-l-accounts', ['accounts' => $accounts]);
     }
 }

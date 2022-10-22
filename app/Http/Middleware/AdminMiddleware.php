@@ -21,7 +21,8 @@ class AdminMiddleware
             if (Auth::user()->role == '0') {
                 return $next($request);
             } else {
-                return redirect(route('home', ['structure' => Auth::user()->structure_id]));
+                return $next($request);
+                // return redirect(route('home', ['structure' => Auth::user()->structure_id]));
             }
         } else {
             return redirect(route('login'))->with('message', 'Login Access');

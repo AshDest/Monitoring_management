@@ -49,6 +49,7 @@
                             <!--begin::Table head-->
                             <thead>
                                 <!--begin::Table row-->
+
                                 <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
                                     <th class="w-10px pe-2">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
@@ -68,11 +69,12 @@
                             <!--begin::Table body-->
                             <tbody class="text-gray-600 fw-bold">
                                 <tr>
+                                    <?php $i=1; $alert='';?>
                                     @forelse ($accounttypes as $accounttype)
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
                                             <input class="form-check-input" type="checkbox"
-                                                value="{{$accounttype->id}}" />
+                                                value="{{<?php echo $i.''.$alert; $i++; ?>}}" />
                                         </div>
                                     </td>
                                     <td>
