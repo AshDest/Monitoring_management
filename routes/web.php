@@ -34,6 +34,8 @@ Route::prefix('/')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/quartiers', [App\Http\Controllers\HomeController::class, 'quartiers'])->name('quartiers');
     Route::get('/accountlevel', [App\Http\Controllers\HomeController::class, 'accountlevel'])->name('accountlevel');
     Route::get('/account-type', [App\Http\Controllers\HomeController::class, 'accounttype'])->name('accounttype');
+    Route::get('/gl-accounts', [App\Http\Controllers\HomeController::class, 'glaccount'])->name('glaccount');
+    Route::get('gl-accounts/add', [App\Http\Controllers\HomeController::class, 'addglaccount'])->name('add-glaccount');
 });
 
 
