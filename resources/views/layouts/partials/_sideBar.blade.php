@@ -381,6 +381,29 @@
                             </a>
                         </div>
                     </div>
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{route('accounttype')}}">
+                                <span class="menu-icon">
+                                    <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
+                                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
+                                    <span class="svg-icon svg-icon-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path opacity="0.3" d="M6 22H4V3C4 2.4 4.4 2 5 2C5.6 2 6 2.4 6 3V22Z"
+                                                fill="currentColor" />
+                                            <path
+                                                d="M18 14H4V4H18C18.8 4 19.2 4.9 18.7 5.5L16 9L18.8 12.5C19.3 13.1 18.8 14 18 14Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title">Type de comptes</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--end::Menu-->

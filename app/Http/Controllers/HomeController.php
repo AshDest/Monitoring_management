@@ -66,4 +66,8 @@ class HomeController extends Controller
     {
         return view('pages.comptabilite.account-level');
     }
+    public function accounttype()
+    {
+        return view('pages.comptabilite.account-type');
+    }
 }
