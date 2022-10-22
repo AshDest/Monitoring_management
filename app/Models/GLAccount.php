@@ -17,6 +17,7 @@ class GLAccount extends Model
         'account_type_id',
         'account_level_id',
         'currency_id',
-        'account_id'
+        'account_id',
+        'structure_id'
     ];
 }
