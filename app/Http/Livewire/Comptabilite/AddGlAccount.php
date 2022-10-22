@@ -2,10 +2,15 @@
 
 namespace App\Http\Livewire\Comptabilite;
 
+use App\Models\AccountLevel;
+use App\Models\AccountType;
+use App\Models\GLAccount;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class AddGlAccount extends Component
 {
+    use LivewireAlert;
     public $code;
     public $description;
     public $balance;
@@ -18,7 +23,7 @@ class AddGlAccount extends Component
     protected $rules = [
         'code' => 'required',
         'description' => 'required',
-        'isAccount_system' => 'required', // default Values
+        // 'isAccount_system' => 'required', // default Values
         'account_type_id' => 'required',
         'account_level_id' => 'required',
         'currency_id' => 'required',
@@ -37,8 +42,40 @@ class AddGlAccount extends Component
     {
         $this->validateOnly($propertyName);
     }
+    public function save()
+    {
+        // dd($this->validate());
+        try {
+            $this->validate();
+            GLAccount::create([
+                'code' => $this->code,
+                'description' => $this->description,
+                // 'balance' => $this->balance,
+                'isAccount_system' => "1",
+                'account_type_id' => $this->account_type_id,
+                'account_level_id' => $this->account_level_id,
+                'currency_id' => $this->currency_id,
+                // 'account_id' => $this->account_id,
+                // 'structure_id' => $this->structure_id,
+            ])->save();
+            $this->alert('success', 'Saved Successfully', [
+                'position' => 'center',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+            return redirect()->to(route('glaccount'));
+        } catch (\Exception $e) {
+            $this->alert('success', 'Erreur Enregistrement : ' . $e->getMessage(), [
+                'position' => 'center',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+        }
+    }
     public function render()
     {
-        return view('livewire.comptabilite.add-gl-account');
+        $levels = AccountLevel::all();
+        $accounttypes = AccountType::all();
+        return view('livewire.comptabilite.add-gl-account', ['levels' => $levels, 'accounttypes' => $accounttypes]);
     }
 }

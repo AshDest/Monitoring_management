@@ -70,4 +70,12 @@ class HomeController extends Controller
     {
         return view('pages.comptabilite.account-type');
     }
+    public function glaccount()
+    {
+        return view('pages.comptabilite.gl-account');
+    }
+    public function addglaccount()
+    {
+        return view('pages.comptabilite.add-gl-account');
+    }
 }
