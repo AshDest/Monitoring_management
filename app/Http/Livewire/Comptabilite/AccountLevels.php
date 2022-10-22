@@ -27,24 +27,68 @@ class AccountLevels extends Component
     public function save()
     {
         try {
-            AccountLevel::create([
-                'level' => $this->level,
-            ])->save();
-
-            $this->resetAllFiels();
-
-            $this->alert('success', 'Saved Successfully', [
+            if (!$this->ids) {
+                AccountLevel::create([
+                    'level' => $this->level,
+                ])->save();
+                $this->alert('success', 'Saved Successfully', [
+                    'position' => 'center',
+                    'timer' => 3000,
+                    'toast' => true,
+                ]);
+                $this->resetAllFiels();
+            } else {
+                AccountLevel::whereId($this->ids)
+                    ->update([
+                        'level' => $this->level,
+                    ]);
+                $this->alert('success', 'Modifier avec Success', [
+                    'position' => 'center',
+                    'timer' => 3000,
+                    'toast' => true,
+                ]);
+                $this->resetAllFiels();
+            }
+        } catch (\Throwable $th) {
+            $this->alert('success', $th->getMessage(), [
                 'position' => 'center',
                 'timer' => 3000,
                 'toast' => true,
             ]);
-            $this->resetAllFiels();
-        } catch (\Exception $e) {
-            $this->dispatchBrowserEvent('alert', [
-                'type' => 'error',
-                'message' => "Quelque chose ne va pas lors de l'enregistrement de la classe'!! " . $e->getMessage()
-            ]);
         }
+    }
+    public function displayInfo($id)
+    {
+        $vars = AccountLevel::find($id);
+        $this->ids = $vars->id;
+        $this->level = $vars->level;
+    }
+    protected $listeners = [
+        'confirmed'
+    ];
+
+    public function confirmed()
+    {
+        AccountLevel::whereId($this->ids)->delete();
+        $this->alert('success', 'Suppression avec Success', [
+            'position' => 'center',
+            'timer' => 3000,
+            'toast' => true,
+        ]);
+    }
+
+    public function cancelled()
+    {
+        // Do something when cancel button is clicked
+    }
+
+    public function delete($id)
+    {
+        //
+        $this->ids = $id;
+        $this->confirm('Voulez vous supprimer?', [
+            'onConfirmed' => 'confirmed',
+        ]);
     }
     public function render()
     {

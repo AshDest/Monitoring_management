@@ -69,7 +69,7 @@
                                     <td class="text-end">
                                         <a href="#"
                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                            wire:click="displayformedit({{$level->id}})">
+                                            wire:click="displayInfo({{$level->id}})">
                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                             <span class="svg-icon svg-icon-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
