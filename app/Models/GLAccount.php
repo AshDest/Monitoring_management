@@ -27,7 +27,7 @@ class GLAccount extends Model
         return $this->belongsTo(AccountLevel::class, 'account_level_id');
     }
 
-    public function accounttype()
+    public function accounttypes()
     {
         return $this->belongsTo(AccountType::class, 'account_type_id');
     }

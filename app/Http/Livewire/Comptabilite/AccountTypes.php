@@ -104,7 +104,7 @@ class AccountTypes extends Component
     }
     public function render()
     {
-        $accounttypes = AccountType::all();
+        $accounttypes = AccountType::orderBy('bs_order', 'ASC')->get();
         return view('livewire.comptabilite.account-types', ['accounttypes' => $accounttypes]);
     }
 }
