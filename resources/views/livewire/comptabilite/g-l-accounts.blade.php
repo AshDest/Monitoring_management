@@ -105,7 +105,7 @@
                     </td>
                     @endif
                     <td>
-                        {{$account->accounttype->designation}}
+                        {{$account->accounttypes->designation}}
                     </td>
                     <td>
                         {{$account->accountlevel->level}} Niveau
