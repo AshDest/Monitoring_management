@@ -61,7 +61,7 @@
                     </th>
                     <th class="min-w-125px">CODE</th>
                     <th class="min-w-125px">DESCRIPTION</th>
-                    <th class="min-w-125px">BALANCE</th>
+                    <th class="min-w-125px">CLASSE</th>
                     <th class="min-w-125px">COMPTE SYSTEME</th>
                     <th class="min-w-125px">TYPE DE COMPTE</th>
                     <th class="min-w-125px">NIVEAU DE COMPTE</th>
@@ -88,7 +88,7 @@
                         {{$account->description}}
                     </td>
                     <td>
-                        {{$account->balance}} - {{$account->currency_id}}
+                        {{$account->classes->designation}}
                     </td>
 
                     @if (($account->isAccount_system) == 1)
