@@ -15,6 +15,7 @@ class GLAccount extends Model
         'description',
         'balance',
         'isAccount_system',
+        'account_classe',
         'account_type_id',
         'account_level_id',
         'currency_id',
@@ -39,5 +40,10 @@ class GLAccount extends Model
     public function structure()
     {
         return $this->belongsTo(Structure::class, 'structure_id');
+    }
+
+    public function classes()
+    {
+        return $this->belongsTo(GLAccountClasse::class, 'account_classe');
     }
 }
