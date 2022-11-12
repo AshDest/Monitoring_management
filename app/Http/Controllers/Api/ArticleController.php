@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\GLAccount;
 use App\Models\GLAccountClasse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -56,22 +57,25 @@ class ArticleController extends BaseController
 
     public function add_gl_account($description, $structure)
     {
-        $accounts = GLAccountClasse::where('code', "31")->first();
-        $vars = GLAccountClasse::where('code', "31")->where('structure_id', $structure)->count()->get();
+        $accounts = GLAccount::where('code', "31")->first();
+        // dd($accounts);
+        $vars = Article::where('structure_id', $structure)->count();
+        // dd($vars);
         $newAccount = $vars + 1;
-        GLAccountClasse::create(
+        $codeAccount = "31" . "." . $newAccount;
+        GLAccount::create(
             [
-                'code' => $newAccount,
+                'code' => $codeAccount,
                 'description' => $description,
                 'isAccount_system' => "0",
                 'account_type_id' => $accounts->account_type_id,
-                'account_level_id' => "2",
+                'account_level_id' => "1",
                 'currency_id' => "$",
                 'account_classe' => $accounts->account_classe,
                 'account_id' => $accounts->id,
                 'structure_id' => $structure,
             ]
-        )->save();;
+        )->save();
     }
 
     /**
