@@ -82,4 +82,8 @@ class HomeController extends Controller
     {
         return view('pages.comptabilite.edit-gl-account', compact('ids'));
     }
+    public function classeaccount()
+    {
+        return view('pages.comptabilite.account-classes');
+    }
 }
