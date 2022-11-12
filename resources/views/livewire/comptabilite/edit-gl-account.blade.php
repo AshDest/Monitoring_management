@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="card-body pt-0">
-        <form wire:submit.prevent="save">
+        <form wire:submit.prevent="edit">
             <!--begin::Scroll-->
             <div class="scroll-y me-n7 pe-7" id="kt_modal_new_address_scroll" data-kt-scroll="true"
                 data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"

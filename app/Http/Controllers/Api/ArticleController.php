@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\GLAccountClasse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -46,10 +47,31 @@ class ArticleController extends BaseController
             }
             $article = Article::create($input);
             $success['id'] =  $article->id;
+            $this->add_gl_account($article->designation, $article->structure_id);
             return $this->sendResponse($success, 'Article Synchoniser Avec Success.');
         } catch (\Throwable $th) {
             return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
+    }
+
+    public function add_gl_account($description, $structure)
+    {
+        $accounts = GLAccountClasse::where('code', "31")->first();
+        $vars = GLAccountClasse::where('code', "31")->where('structure_id', $structure)->count()->get();
+        $newAccount = $vars + 1;
+        GLAccountClasse::create(
+            [
+                'code' => $newAccount,
+                'description' => $description,
+                'isAccount_system' => "0",
+                'account_type_id' => $accounts->account_type_id,
+                'account_level_id' => "2",
+                'currency_id' => "$",
+                'account_classe' => $accounts->account_classe,
+                'account_id' => $accounts->id,
+                'structure_id' => $structure,
+            ]
+        )->save();;
     }
 
     /**
