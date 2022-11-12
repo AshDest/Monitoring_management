@@ -37,10 +37,10 @@ class GLAccount extends Model
         return $this->belongsTo(GLAccount::class, 'account_id');
     }
 
-    public function structure()
-    {
-        return $this->belongsTo(Structure::class, 'structure_id');
-    }
+    // public function structure()
+    // {
+    //     return $this->belongsTo(Structure::class, 'structure_id');
+    // }
 
     public function classes()
     {
