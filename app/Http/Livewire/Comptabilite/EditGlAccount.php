@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Comptabilite;
 use App\Models\AccountLevel;
 use App\Models\AccountType;
 use App\Models\GLAccount;
+use App\Models\GLAccountClasse;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
@@ -29,6 +30,7 @@ class EditGlAccount extends Component
         'account_type_id' => 'required',
         'account_level_id' => 'required',
         'currency_id' => 'required',
+        'account_classe' => 'required'
     ];
     public function resetAllFiels()
     {
@@ -77,7 +79,7 @@ class EditGlAccount extends Component
                 'timer' => 3000,
                 'toast' => true,
             ]);
-            return redirect()->to('/structures');
+            return redirect()->to(route('glaccount'));
         } catch (\Exception $e) {
             $this->alert('warning', 'Echec de modification!' . $e->getMessage());
         }
@@ -86,6 +88,7 @@ class EditGlAccount extends Component
     {
         $levels = AccountLevel::all();
         $accounttypes = AccountType::all();
-        return view('livewire.comptabilite.edit-gl-account', ['levels' => $levels, 'accounttypes' => $accounttypes]);
+        $classes = GLAccountClasse::all();
+        return view('livewire.comptabilite.edit-gl-account', ['levels' => $levels, 'accounttypes' => $accounttypes, 'classes' => $classes]);
     }
 }
