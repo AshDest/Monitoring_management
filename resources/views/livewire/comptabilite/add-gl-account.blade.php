@@ -29,34 +29,69 @@
                     <!--end::Col-->
                 </div>
                 <div class="row mb-5">
-                    <div class="col-md-4 fv-row">
-                        <label class="required fs-5 fw-bold mb-2">Type de Compte</label>
-                        <select name="account_type_id" wire:model='account_type_id'
-                            data-placeholder="Select Type de Compte..." class="form-select form-select-solid">
-                            <option value="">... Select Type Compte ...</option>
-                            @foreach ($accounttypes as $accounttype)
-                            <option value="{{$accounttype->id}}">{{$accounttype->designation}}</option>
+                    <div class="col-md-6 fv-row">
+                        <label class="required fs-5 fw-bold mb-2">Classe</label>
+                        <select name="account_type_id" wire:model='account_classe'
+                            data-placeholder="Select Type de Compte..."
+                            class="form-select form-select-solid @error('account_classe') is-invalid @enderror">
+                            <option value=""> -- Select Classe Compte --</option>
+                            @foreach ($classes as $classe)
+                            <option value="{{$classe->id}}">{{$classe->designation}}</option>
                             @endforeach
                         </select>
+                        @error('account_classe')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                    <div class="col-md-4 fv-row">
+                    <div class="col-md-6 fv-row">
+                        <label class="required fs-5 fw-bold mb-2">Type de Compte</label>
+                        <select name="account_type_id" wire:model='account_type_id'
+                            data-placeholder="Select Type de Compte..."
+                            class="form-select form-select-solid @error('account_type_id') is-invalid @enderror">
+                            <option value="">-- Select Type Compte --</option>
+                            @foreach ($accounttypes as $accounttype)
+                            <option value=" {{$accounttype->id}}">{{$accounttype->designation}}</option>
+                            @endforeach
+                        </select>
+                        @error('account_type_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6 fv-row">
                         <label class="required fs-5 fw-bold mb-2">Niveau de Compte</label>
                         <select name="account_level_id" wire:model='account_level_id'
-                            data-placeholder="Select niveau de Compte...." class="form-select form-select-solid">
-                            <option value="">... Select Niveau Compte ...</option>
+                            data-placeholder="Select niveau de Compte...."
+                            class="form-select form-select-solid @error('account_level_id') is-invalid @enderror">
+                            <option value="">-- Select Niveau Compte --</option>
                             @foreach ($levels as $level)
                             <option value="{{$level->id}}">Niveau: {{$level->level}}</option>
                             @endforeach
                         </select>
+                        @error('account_level_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                    <div class="col-md-4 fv-row">
+                    <div class="col-md-6 fv-row">
                         <label class="required fs-5 fw-bold mb-2">Currency</label>
-                        <select name="currency_id" wire:model='currency_id' data-placeholder="... Select Currency ..."
-                            class="form-select form-select-solid">
-                            <option value="">... Select Monnaie ...</option>
+                        <select name="currency_id" wire:model='currency_id' data-placeholder="-- Select Currency --"
+                            class="form-select form-select-solid @error('currency_id') is-invalid @enderror">
+                            <option value="">-- Select Monnaie --</option>
                             <option value="FC">Franc Congolais : FC</option>
                             <option value="$">Dollars Americain : $</option>
                         </select>
+                        @error('currency_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="row g-9 mb-5">

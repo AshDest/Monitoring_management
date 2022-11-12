@@ -19,7 +19,7 @@ class EditGlAccount extends Component
     public $account_level_id;
     public $currency_id;
     public $account_id;
-
+    public $account_classe;
     public $ids;
 
     protected $rules = [
@@ -53,12 +53,13 @@ class EditGlAccount extends Component
         $this->account_type_id = $vars->account_type_id;
         $this->account_level_id = $vars->account_level_id;
         $this->currency_id = $vars->currency_id;
+        $this->account_classe = $vars->account_classe;
     }
 
     public function edit()
     {
+        $this->validate();
         try {
-            $this->validate();
             GLAccount::find($this->ids)->fill([
                 'code' => $this->code,
                 'description' => $this->description,
@@ -67,6 +68,7 @@ class EditGlAccount extends Component
                 'account_type_id' => $this->account_type_id,
                 'account_level_id' => $this->account_level_id,
                 'currency_id' => $this->currency_id,
+                'account_classe' => $this->account_classe,
                 // 'account_id' => $this->account_id,
                 // 'structure_id' => $this->structure_id,
             ])->save();

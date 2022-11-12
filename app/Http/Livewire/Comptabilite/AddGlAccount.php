@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Comptabilite;
 use App\Models\AccountLevel;
 use App\Models\AccountType;
 use App\Models\GLAccount;
+use App\Models\GLAccountClasse;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
@@ -19,11 +20,13 @@ class AddGlAccount extends Component
     public $account_level_id;
     public $currency_id;
     public $account_id;
+    public $account_classe;
 
     protected $rules = [
         'code' => 'required',
         'description' => 'required',
         // 'isAccount_system' => 'required', // default Values
+        'account_classe' => 'required',
         'account_type_id' => 'required',
         'account_level_id' => 'required',
         'currency_id' => 'required',
@@ -44,9 +47,9 @@ class AddGlAccount extends Component
     }
     public function save()
     {
-        // dd($this->validate());
+        $this->validate();
         try {
-            $this->validate();
+            // $this->validate();
             GLAccount::create([
                 'code' => $this->code,
                 'description' => $this->description,
@@ -55,6 +58,7 @@ class AddGlAccount extends Component
                 'account_type_id' => $this->account_type_id,
                 'account_level_id' => $this->account_level_id,
                 'currency_id' => $this->currency_id,
+                'account_classe' => $this->account_classe,
                 // 'account_id' => $this->account_id,
                 // 'structure_id' => $this->structure_id,
             ])->save();
@@ -76,6 +80,7 @@ class AddGlAccount extends Component
     {
         $levels = AccountLevel::all();
         $accounttypes = AccountType::all();
-        return view('livewire.comptabilite.add-gl-account', ['levels' => $levels, 'accounttypes' => $accounttypes]);
+        $classes = GLAccountClasse::all();
+        return view('livewire.comptabilite.add-gl-account', ['levels' => $levels, 'accounttypes' => $accounttypes, 'classes' => $classes]);
     }
 }

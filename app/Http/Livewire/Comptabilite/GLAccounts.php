@@ -15,6 +15,8 @@ class GLAccounts extends Component
     public $account_level_id;
     public $currency_id;
     public $account_id;
+    public $account_classe;
+
     public function render()
     {
         $accounts = GLAccount::orderBy('code', 'ASC')->get();
