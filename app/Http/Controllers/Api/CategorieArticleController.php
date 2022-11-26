@@ -37,7 +37,7 @@ class CategorieArticleController extends  BaseController
                 'structure_id' => 'required'
             ]);
 
-            if($validator->fails()){
+            if ($validator->fails()) {
                 return $this->sendError('Synchronisation Error.', $validator->errors());
                 // return $this->sendError("Erreur Synchronisation Error: ". $validator->errors());
             }
@@ -45,9 +45,8 @@ class CategorieArticleController extends  BaseController
             $cat = CategorieArticle::create($input);
             $success['id'] =  $cat->id;
             return $this->sendResponse($success, 'Categorie Article created successfully.');
-
         } catch (\Throwable $th) {
-            return $this->sendError("Erreur Synchronisation Error: ". $th);
+            return $this->sendError("Erreur Synchronisation Error: " . $th);
         }
     }
 
@@ -57,9 +56,12 @@ class CategorieArticleController extends  BaseController
      * @param  \App\Models\CategorieArticle  $categorieArticle
      * @return \Illuminate\Http\Response
      */
-    public function show(CategorieArticle $categorieArticle)
+    public function show($structure)
     {
-        //
+        if ($structure) {
+            $categorieArticle = CategorieArticle::where('structure_id', $structure)->get();
+            return $categorieArticle;
+        }
     }
 
     /**
@@ -71,13 +73,13 @@ class CategorieArticleController extends  BaseController
      */
     public function update(Request $request, CategorieArticle $categorieArticle)
     {
-            if($categorieArticle->update($request->all())){
-                return response()->json(
-                    [
-                        'success' => 'Update avec Success'
-                    ]
-                );
-            }
+        if ($categorieArticle->update($request->all())) {
+            return response()->json(
+                [
+                    'success' => 'Update avec Success'
+                ]
+            );
+        }
     }
 
     /**

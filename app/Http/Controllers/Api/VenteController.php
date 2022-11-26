@@ -60,9 +60,12 @@ class VenteController extends BaseController
      * @param  \App\Models\Vente  $vente
      * @return \Illuminate\Http\Response
      */
-    public function show(Vente $vente)
+    public function show($structure)
     {
-        //
+        if ($structure) {
+            $vente = Vente::where('structure_id', $structure)->get();
+            return $vente;
+        }
     }
 
     /**

@@ -31,7 +31,7 @@ class PaiementController extends Controller
                 [
                     'success' => 'Enregistrer avec Success'
                 ]
-                );
+            );
         }
     }
 
@@ -41,9 +41,12 @@ class PaiementController extends Controller
      * @param  \App\Models\Paiement  $paiement
      * @return \Illuminate\Http\Response
      */
-    public function show(Paiement $paiement)
+    public function show($structure)
     {
-        //
+        if ($structure) {
+            $paiement = Paiement::where('structure_id', $structure)->get();
+            return $paiement;
+        }
     }
 
     /**

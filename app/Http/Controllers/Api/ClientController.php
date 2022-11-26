@@ -61,9 +61,12 @@ class ClientController extends BaseController
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show($structure)
     {
-        //
+        if ($structure) {
+            $client = Client::where('structure_id', $structure)->get();
+            return $client;
+        }
     }
 
     /**

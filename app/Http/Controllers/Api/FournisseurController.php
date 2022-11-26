@@ -60,9 +60,12 @@ class FournisseurController extends BaseController
      * @param  \App\Models\Fournisseur  $fournisseur
      * @return \Illuminate\Http\Response
      */
-    public function show(Fournisseur $fournisseur)
+    public function show($structure)
     {
-        //
+        if ($structure) {
+            $fournisseur = Fournisseur::where('structure_id', $structure)->get();
+            return $fournisseur;
+        }
     }
 
     /**
