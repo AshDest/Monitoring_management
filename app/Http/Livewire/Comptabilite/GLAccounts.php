@@ -19,7 +19,7 @@ class GLAccounts extends Component
 
     public function render()
     {
-        $accounts = GLAccount::orderBy('code', 'ASC')->get();
+        $accounts = GLAccount::where('structure_id', null)->orderBy('code', 'ASC')->get();
         return view('livewire.comptabilite.g-l-accounts', ['accounts' => $accounts]);
     }
 }
