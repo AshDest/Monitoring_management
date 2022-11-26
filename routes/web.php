@@ -52,4 +52,5 @@ Route::prefix('{structure}')->middleware(['auth', 'isUser'])->group(function () 
 
     Route::get('/add-monnaies', [App\Http\Controllers\StructuresController::class, 'addmonnais'])->name('addmonnais');
     Route::get('/edit-monnaies/{ids}', [App\Http\Controllers\StructuresController::class, 'editmonnais'])->name('editmonnais');
+    Route::get('/accounts', [App\Http\Controllers\StructuresController::class, 'accounts'])->name('accounts');
 });

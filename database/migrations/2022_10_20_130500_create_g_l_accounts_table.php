@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('g_l_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
+            $table->string('code');
             $table->text('description')->nullable();
             $table->double('balance')->default('0');
             $table->string('isAccount_system')->default('0');

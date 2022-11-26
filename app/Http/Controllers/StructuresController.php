@@ -55,4 +55,9 @@ class StructuresController extends Controller
     {
         return view('pages.structure.add-monnais', compact('structure', 'ids'));
     }
+
+    public function accounts($structure)
+    {
+        return view('pages.structure.accounts_compte', compact('structure'));
+    }
 }
