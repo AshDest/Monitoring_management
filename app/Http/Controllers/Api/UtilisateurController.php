@@ -39,12 +39,12 @@ class UtilisateurController extends  BaseController
      * @param  \App\Models\Utilisateur  $utilisateur
      * @return \Illuminate\Http\Response
      */
-    public function show(Structure $structure)
+    public function show($structure)
     {
-        // if($structure)
-        // {
-        //     return $structure;
-        // }
+        if ($structure) {
+            $utilisateurs = Utilisateur::where('structure_id', $structure)->get();
+            return $utilisateurs;
+        }
     }
 
     /**
@@ -70,14 +70,14 @@ class UtilisateurController extends  BaseController
         //
     }
 
-        /**
+    /**
      * Login api
      *
      * @return \Illuminate\Http\Response
      */
     public function login(Request $request)
     {
-        if(Auth::attempt(['numTelephone' => $request->numTelephone, 'password' => $request->password])){
+        if (Auth::attempt(['numTelephone' => $request->numTelephone, 'password' => $request->password])) {
             $user = Auth::user();
             $success['numTelephone'] = $user->numTelephone;
             $success['password'] = $user->password;
@@ -86,8 +86,7 @@ class UtilisateurController extends  BaseController
             $success['structure'] = Structure::find($user->structure_id);
 
             return $this->sendResponse($success, 'User login successfully.');
-        }
-        else{
+        } else {
             return $this->sendError("Erreur de Connexion au Serveur, Veuillez Verifier vos Information de connexion.");
         }
     }

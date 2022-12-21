@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\PostBaseController as BaseController;
 use App\Models\Agent;
+use App\Models\Structure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -61,8 +62,12 @@ class AgentController extends BaseController
      * @param  \App\Models\Agent  $agent
      * @return \Illuminate\Http\Response
      */
-    public function show(Agent $agent)
+    public function show(Structure $structure)
     {
+        if ($structure) {
+            $agents = Agent::where('structure_id', $structure);
+            return $agents;
+        }
     }
 
     /**

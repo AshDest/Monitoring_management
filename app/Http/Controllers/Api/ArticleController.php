@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\GLAccount;
 use App\Models\GLAccountClasse;
+use App\Models\Structure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,7 +20,8 @@ class ArticleController extends BaseController
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        return $articles->toJson();
     }
 
     /**
@@ -122,9 +124,12 @@ class ArticleController extends BaseController
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($structure)
     {
-        //
+        if ($structure) {
+            $articles = Article::where('structure_id', $structure)->get();
+            return $articles;
+        }
     }
 
     /**
