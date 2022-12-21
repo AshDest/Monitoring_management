@@ -8,7 +8,7 @@
                 <!--begin::Card widget 4-->
                 <div class="card card-flush h-md-50 mb-5 mb-xl-10">
                     <!--begin::Header-->
-                    <div class="card-header pt-5">
+                    {{-- <div class="card-header pt-5">
                         <!--begin::Title-->
                         <div class="card-title d-flex flex-column">
                             <!--begin::Info-->
@@ -42,10 +42,10 @@
                             <!--end::Subtitle-->
                         </div>
                         <!--end::Title-->
-                    </div>
+                    </div> --}}
                     <!--end::Header-->
                     <!--begin::Card body-->
-                    <div class="card-body pt-2 pb-4 d-flex align-items-center">
+                    {{-- <div class="card-body pt-2 pb-4 d-flex align-items-center">
                         <!--begin::Chart-->
                         <div class="d-flex flex-center me-5 pt-2">
                             <div id="kt_card_widget_4_chart" style="min-width: 70px; min-height: 70px" data-kt-size="70"
@@ -95,7 +95,7 @@
                             <!--end::Label-->
                         </div>
                         <!--end::Labels-->
-                    </div>
+                    </div> --}}
                     <!--end::Card body-->
                 </div>
                 <!--end::Card widget 4-->
@@ -104,7 +104,7 @@
                     <!--begin::Header-->
                     <div class="card-header pt-5">
                         <!--begin::Title-->
-                        <div class="card-title d-flex flex-column">
+                        {{-- <div class="card-title d-flex flex-column">
                             <!--begin::Info-->
                             <div class="d-flex align-items-center">
                                 <!--begin::Amount-->
@@ -131,14 +131,14 @@
                             <!--begin::Subtitle-->
                             <span class="text-gray-400 pt-1 fw-bold fs-6">Orders This Month</span>
                             <!--end::Subtitle-->
-                        </div>
+                        </div> --}}
                         <!--end::Title-->
                     </div>
                     <!--end::Header-->
                     <!--begin::Card body-->
                     <div class="card-body d-flex align-items-end pt-0">
                         <!--begin::Progress-->
-                        <div class="d-flex align-items-center flex-column mt-3 w-100">
+                        {{-- <div class="d-flex align-items-center flex-column mt-3 w-100">
                             <div class="d-flex justify-content-between w-100 mt-auto mb-2">
                                 <span class="fw-boldest fs-6 text-dark">1,048 to Goal</span>
                                 <span class="fw-bolder fs-6 text-gray-400">62%</span>
@@ -147,7 +147,7 @@
                                 <div class="bg-success rounded h-8px" role="progressbar" style="width: 62%;"
                                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--end::Progress-->
                     </div>
                     <!--end::Card body-->
@@ -158,7 +158,7 @@
                 <!--begin::Card widget 6-->
                 <div class="card card-flush h-md-50 mb-5 mb-xl-10">
                     <!--begin::Header-->
-                    <div class="card-header pt-5">
+                    {{-- <div class="card-header pt-5">
                         <!--begin::Title-->
                         <div class="card-title d-flex flex-column">
                             <!--begin::Info-->
@@ -192,14 +192,14 @@
                             <!--end::Subtitle-->
                         </div>
                         <!--end::Title-->
-                    </div>
+                    </div> --}}
                     <!--end::Header-->
                     <!--begin::Card body-->
-                    <div class="card-body d-flex align-items-end px-0 pb-0">
+                    {{-- <div class="card-body d-flex align-items-end px-0 pb-0">
                         <!--begin::Chart-->
                         <div id="kt_card_widget_6_chart" class="w-100" style="height: 80px"></div>
                         <!--end::Chart-->
-                    </div>
+                    </div> --}}
                     <!--end::Card body-->
                 </div>
                 <!--end::Card widget 6-->
@@ -208,24 +208,24 @@
                     <!--begin::Header-->
                     <div class="card-header pt-5">
                         <!--begin::Title-->
-                        <div class="card-title d-flex flex-column">
+                        {{-- <div class="card-title d-flex flex-column">
                             <!--begin::Amount-->
                             <span class="fs-2hx fw-bolder text-dark me-2 lh-1 ls-n2">6.3k</span>
                             <!--end::Amount-->
                             <!--begin::Subtitle-->
                             <span class="text-gray-400 pt-1 fw-bold fs-6">New Customers This Month</span>
                             <!--end::Subtitle-->
-                        </div>
+                        </div> --}}
                         <!--end::Title-->
                     </div>
                     <!--end::Header-->
                     <!--begin::Card body-->
                     <div class="card-body d-flex flex-column justify-content-end pe-0">
                         <!--begin::Title-->
-                        <span class="fs-6 fw-boldest text-gray-800 d-block mb-2">Today’s Heroes</span>
+                        {{-- <span class="fs-6 fw-boldest text-gray-800 d-block mb-2">Today’s Heroes</span> --}}
                         <!--end::Title-->
                         <!--begin::Users group-->
-                        <div class="symbol-group symbol-hover flex-nowrap">
+                        {{-- <div class="symbol-group symbol-hover flex-nowrap">
                             <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Alan Warden">
                                 <span class="symbol-label bg-warning text-inverse-warning fw-bolder">A</span>
                             </div>
@@ -251,7 +251,7 @@
                                 data-bs-target="#kt_modal_view_users">
                                 <span class="symbol-label bg-light text-gray-400 fs-8 fw-bolder">+42</span>
                             </a>
-                        </div>
+                        </div> --}}
                         <!--end::Users group-->
                     </div>
                     <!--end::Card body-->
@@ -263,7 +263,7 @@
                 <!--begin::Chart widget 3-->
                 <div class="card card-flush overflow-hidden h-md-100">
                     <!--begin::Header-->
-                    <div class="card-header py-5">
+                    {{-- <div class="card-header py-5">
                         <!--begin::Title-->
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bolder text-dark">Sales This Months</span>
@@ -360,10 +360,10 @@
                             <!--end::Menu-->
                         </div>
                         <!--end::Toolbar-->
-                    </div>
+                    </div> --}}
                     <!--end::Header-->
                     <!--begin::Card body-->
-                    <div class="card-body d-flex justify-content-between flex-column pb-1 px-0">
+                    {{-- <div class="card-body d-flex justify-content-between flex-column pb-1 px-0">
                         <!--begin::Statistics-->
                         <div class="px-9 mb-5">
                             <!--begin::Statistics-->
@@ -380,7 +380,7 @@
                         <!--begin::Chart-->
                         <div id="kt_charts_widget_3" class="min-h-auto ps-4 pe-6" style="height: 300px"></div>
                         <!--end::Chart-->
-                    </div>
+                    </div> --}}
                     <!--end::Card body-->
                 </div>
                 <!--end::Chart widget 3-->
