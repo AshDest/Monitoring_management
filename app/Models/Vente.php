@@ -19,7 +19,7 @@ class Vente extends Model
 
     public function client()
     {
-        return $this->belongsTo(Client::class, 'id_structure');
+        return $this->belongsTo(Client::class, 'codeClient');
     }
 
     public function detail()

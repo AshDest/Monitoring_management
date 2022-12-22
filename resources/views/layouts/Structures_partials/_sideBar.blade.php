@@ -68,6 +68,9 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                         <span class="menu-section text-muted text-uppercase fs-8 ls-1">VENTES</span>
                     </div>
                 </div>
+
+                {{-- =================================================== VENTES
+                ================================================== --}}
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -131,7 +134,7 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                                     <!--end::Svg Icon-->
                                     <!--end::Svg Icon-->
                                 </span>
-                                <span class="menu-title">All Ventes</span>
+                                <span class="menu-title">Liste Ventes</span>
                             </a>
                         </div>
                     </div>
@@ -139,6 +142,74 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                 <div class="menu-item">
                     <div class="menu-content pt-8 pb-2">
                         <span class="menu-section text-muted text-uppercase fs-8 ls-1">PRODUITS</span>
+                    </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                    fill="none">
+                                    <path opacity="0.3"
+                                        d="M16 0.200012H4C1.8 0.200012 0 2.00001 0 4.20001V16.2C0 18.4 1.8 20.2 4 20.2H16C18.2 20.2 20 18.4 20 16.2V4.20001C20 2.00001 18.2 0.200012 16 0.200012ZM15 10.2C15 10.9 14.8 11.6 14.6 12.2H18V16.2C18 17.3 17.1 18.2 16 18.2H12V14.8C11.4 15.1 10.7 15.2 10 15.2C9.3 15.2 8.6 15 8 14.8V18.2H4C2.9 18.2 2 17.3 2 16.2V12.2H5.4C5.1 11.6 5 10.9 5 10.2C5 9.50001 5.2 8.80001 5.4 8.20001H2V4.20001C2 3.10001 2.9 2.20001 4 2.20001H8V5.60001C8.6 5.30001 9.3 5.20001 10 5.20001C10.7 5.20001 11.4 5.40001 12 5.60001V2.20001H16C17.1 2.20001 18 3.10001 18 4.20001V8.20001H14.6C14.8 8.80001 15 9.50001 15 10.2Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M12 1.40002C15.4 2.20002 18 4.80003 18.8 8.20003H14.6C14.1 7.00003 13.2 6.10003 12 5.60003V1.40002ZM5.40001 8.20003C5.90001 7.00003 6.80001 6.10003 8.00001 5.60003V1.40002C4.60001 2.20002 2.00001 4.80003 1.20001 8.20003H5.40001ZM14.6 12.2C14.1 13.4 13.2 14.3 12 14.8V19C15.4 18.2 18 15.6 18.8 12.2H14.6ZM8.00001 14.8C6.80001 14.3 5.90001 13.4 5.40001 12.2H1.20001C2.00001 15.6 4.60001 18.2 8.00001 19V14.8Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Produits</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a class="menu-link" href="#">
+                                <span class="menu-icon">
+                                    <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
+                                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
+                                    <span class="svg-icon svg-icon-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5"
+                                                fill="currentColor" />
+                                            <rect x="10.8891" y="17.8033" width="12" height="2" rx="1"
+                                                transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                            <rect x="6.01041" y="10.9247" width="12" height="2" rx="1"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title">Liste des Produits</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="/{{$structure}}/ventes">
+                                <span class="menu-icon">
+                                    <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
+                                    <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen011.svg-->
+                                    <span class="svg-icon svg-icon-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path opacity="0.3"
+                                                d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM12.5 18C12.5 17.4 12.6 17.5 12 17.5H8.5C7.9 17.5 8 17.4 8 18C8 18.6 7.9 18.5 8.5 18.5L12 18C12.6 18 12.5 18.6 12.5 18ZM16.5 13C16.5 12.4 16.6 12.5 16 12.5H8.5C7.9 12.5 8 12.4 8 13C8 13.6 7.9 13.5 8.5 13.5H15.5C16.1 13.5 16.5 13.6 16.5 13ZM12.5 8C12.5 7.4 12.6 7.5 12 7.5H8C7.4 7.5 7.5 7.4 7.5 8C7.5 8.6 7.4 8.5 8 8.5H12C12.6 8.5 12.5 8.6 12.5 8Z"
+                                                fill="currentColor" />
+                                            <rect x="7" y="17" width="6" height="2" rx="1" fill="currentColor" />
+                                            <rect x="7" y="12" width="10" height="2" rx="1" fill="currentColor" />
+                                            <rect x="7" y="7" width="6" height="2" rx="1" fill="currentColor" />
+                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title">Liste Ventes</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
