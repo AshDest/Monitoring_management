@@ -65,7 +65,7 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                 </div>
                 <div class="menu-item">
                     <div class="menu-content pt-8 pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">STRUCTURES</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">VENTES</span>
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -134,6 +134,11 @@ $struc = Structure::select('id','designation')->where('id',$structure)->first();
                                 <span class="menu-title">All Ventes</span>
                             </a>
                         </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-content pt-8 pb-2">
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">PRODUITS</span>
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">

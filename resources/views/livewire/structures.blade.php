@@ -55,17 +55,12 @@
                 <!--begin::Table row-->
                 <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
                     <th class="w-25px">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" data-kt-check="true"
-                                data-kt-check-target=".widget-13-check" />
-                        </div>
+                        N°
                     </th>
                     <th class="min-w-60px">Code</th>
                     <th class="min-w-120px">Nommination</th>
                     <th class="min-w-140px">Adresse Complete</th>
-                    <th class="min-w-120px">Email</th>
                     <th class="min-w-120px">Contact</th>
-                    <th class="min-w-120px">Numero Impot</th>
                     <th class="min-w-100px text-end">Actions</th>
                 </tr>
                 <!--end::Table row-->
@@ -73,11 +68,17 @@
             <!--end::Table head-->
             <!--begin::Table body-->
             <tbody class="text-gray-600 fw-bold">
+                @php
+                $i = 1;
+                @endphp
                 @forelse ($structures as $structure)
                 <tr>
                     <td>
                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input widget-13-check" type="checkbox" value="1" />
+                            @php
+                            echo $i;
+                            $i++;
+                            @endphp
                         </div>
                     </td>
                     <td>
@@ -91,28 +92,15 @@
                     <td>
                         <a href="/{{$structure->id}}/home"
                             class="text-gray-800 text-hover-primary mb-1">{{$structure->avenu}}</a>
-                        <span
-                            class="text-muted fw-bold text-muted d-block fs-7">{{$structure->addresse->designation}}</span>
-                        <span class="text-muted fw-bold text-muted d-block fs-7">
-                            {{$structure->addresse->communesecteurchefferie->villeterritoires->designation}}:
-                            {{$structure->addresse->communesecteurchefferie->designation}}
-                        </span>
-                        <span class="text-muted fw-bold text-muted d-block fs-7">
-                            {{$structure->addresse->communesecteurchefferie->villeterritoires->province->designation}}
-                        </span>
-                    </td>
-                    <td>
-                        <a href="/{{$structure->id}}/home"
-                            class="text-gray-800 text-hover-primary mb-1">{{$structure->email}}</a>
+                        <span class="text-muted fw-bold text-muted d-block fs-7">{{$structure->addresse->designation}}-
+                            {{$structure->addresse->communesecteurchefferie->villeterritoires->designation}}-
+                            {{$structure->addresse->communesecteurchefferie->designation}}-
+                            {{$structure->addresse->communesecteurchefferie->villeterritoires->province->designation}}</span>
                     </td>
                     <td>
                         <a href="/{{$structure->id}}/home"
                             class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$structure->numTel1}}</a>
                         <span class="text-muted fw-bold text-muted d-block fs-7">{{$structure->numTel2}}</span>
-                    </td>
-                    <td>
-                        <a href="/{{$structure->id}}/home"
-                            class="text-gray-800 text-hover-primary mb-1">{{$structure->numImpot}}</a>
                     </td>
                     <td class="text-end">
                         <a href="/{{$structure->id}}/home"
