@@ -2,7 +2,6 @@
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <div id="kt_content_container" class="container-xxl">
-
                 <div>
                 </div>
                 <!--begin::Card-->
@@ -101,15 +100,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1"></a>
-                                    </td>
-                                    <td>
-                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$user->numTelephone}}</a>
+                                        <a href="" class="text-gray-800 text-hover-primary mb-1"></a>
                                     </td>
                                     <td>
                                         <a href=""
-                                            class="text-gray-800 text-hover-primary mb-1">{{$user->role}}</a>
+                                            class="text-gray-800 text-hover-primary mb-1">{{$user->numTelephone}}</a>
+                                    </td>
+                                    <td>
+                                        <a href="" class="text-gray-800 text-hover-primary mb-1">{{$user->role}}</a>
                                     </td>
                                     <td class="text-end">
                                         <a href="#"

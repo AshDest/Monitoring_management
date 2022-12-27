@@ -97,12 +97,12 @@
                         @if ($vente->codeClient)
                         <a href="#" class="text-gray-600 text-hover-primary">{{$vente->client->noms}}</a>
                         @else
-                        <span class="badge py-3 px-4 fs-7 badge-light-warning">Pas de Client</span>
+                        <span class="badge py-3 px-4 fs-7 badge-light-danger">Pas de Client</span>
                         @endif
                     </td>
                     <td class="text-end">${{$vente->montantTotal}}</td>
                     <td class="text-end">
-                        <span class="badge py-3 px-4 fs-7 badge-light-warning">Pending</span>
+                        <span class="badge py-3 px-4 fs-7 badge-light-success">Pending</span>
                     </td>
                     <td class="text-end">
                         <button type="button"
